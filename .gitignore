@@ -2,3 +2,4 @@
 
 # Ignore Library/PackageCache directory
 /Library/PackageCache/
+/Temp/
