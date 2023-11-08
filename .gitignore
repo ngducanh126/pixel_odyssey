@@ -1,0 +1,4 @@
+# .gitignore content
+
+# Ignore Library/PackageCache directory
+/Library/PackageCache/
