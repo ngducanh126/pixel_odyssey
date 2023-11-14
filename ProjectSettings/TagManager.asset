@@ -8,6 +8,8 @@ TagManager:
   - Fire
   - Monster
   - Terrain
+  - Trap
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - Ground
   - Monster
   - Player
-  - 
-  - 
+  - Trap
+  - Coin
   - 
   - 
   - 
