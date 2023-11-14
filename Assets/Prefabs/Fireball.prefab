@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8269517072975720491}
   - component: {fileID: 8269517072975720660}
   - component: {fileID: -8655820676183627816}
+  - component: {fileID: 5146791036172420152}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Untagged
@@ -181,3 +182,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 0.66}
   m_EdgeRadius: 0
+--- !u!114 &5146791036172420152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8269517072975720495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a5582a864bb9a04887527c56d76d85d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

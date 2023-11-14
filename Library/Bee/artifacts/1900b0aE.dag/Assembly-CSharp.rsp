@@ -380,6 +380,7 @@
 "Assets/Scripts/CoinController.cs"
 "Assets/Scripts/CoinMovement.cs"
 "Assets/Scripts/Fire.cs"
+"Assets/Scripts/Fireball.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/GameStateManager.cs"
 "Assets/Scripts/LoopingBackground.cs"
