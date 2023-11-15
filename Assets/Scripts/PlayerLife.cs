@@ -21,6 +21,8 @@ public class PlayerLife : MonoBehaviour
         if (collision.gameObject.CompareTag("Trap"))
         {
             Die();
+        } else if(collision.gameObject.tag == "Monster") {
+            Die();
         }
         
         // if (collision.gameObject.CompareTag("Coin"))
