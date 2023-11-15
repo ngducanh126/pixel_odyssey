@@ -29,10 +29,12 @@ public class PlayerCollectCoin : MonoBehaviour
         if (collision.gameObject.CompareTag("Coin"))
         {
             Debug.Log("Collided with a coin!");
+            collision.gameObject.GetComponent<Collider2D>().enabled = false; // Disable the collider
             Destroy(collision.gameObject); // Destroy the coin
             score++; // Increase the score
             UpdateScoreText(); // Update the score display
         }
+
     }
 
     private void UpdateScoreText()
