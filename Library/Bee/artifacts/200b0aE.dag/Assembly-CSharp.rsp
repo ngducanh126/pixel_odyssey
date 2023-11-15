@@ -377,6 +377,7 @@
 "Assets/Scripts/CameraPlayerController.cs"
 "Assets/Scripts/Chicken/ChickenMover.cs"
 "Assets/Scripts/Chicken/ChickenMover1.cs"
+"Assets/Scripts/ChickenHit.cs"
 "Assets/Scripts/CoinController.cs"
 "Assets/Scripts/CoinMovement.cs"
 "Assets/Scripts/EnemyPatrol.cs"

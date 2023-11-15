@@ -10,6 +10,8 @@ TagManager:
   - Terrain
   - Trap
   - Coin
+  - Chicken
+  - Fireball
   layers:
   - Default
   - TransparentFX
