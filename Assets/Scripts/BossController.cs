@@ -1,65 +1,78 @@
 using UnityEngine;
-using UnityEngine.UI;
+
 public class BossController : MonoBehaviour
 {
-    public LayerMask playerLayer; 
-    public float trackingRange = 10f;
-    public float movementSpeed = 5f;
-    public int maxHealth = 100; 
-    public Slider healthBar;
+    [Header("Attack Parameters")]
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float range;
+    [SerializeField] private int damage;
 
-    private Transform player;
-    private bool isAlive = true;
-    private int currentHealth;
+    [Header("Collider Parameters")]
+    [SerializeField] private float colliderDistance;
+    [SerializeField] private BoxCollider2D boxCollider;
 
-    void Start()
+    [Header("Player Layer")]
+    [SerializeField] private LayerMask playerLayer;
+    private float cooldownTimer = Mathf.Infinity;
+
+
+    private Animator anim;
+    private EnemyPatrol enemyPatrol;
+
+    private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        Physics2D.IgnoreLayerCollision(gameObject.layer, playerLayer); 
-        currentHealth = maxHealth;
+        anim = GetComponent<Animator>();
+        enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (isAlive)
+        cooldownTimer += Time.deltaTime;
+
+        // Attack only when the player is in sight?
+        if (PlayerInSight())
         {
-            TrackPlayer();
+            if (cooldownTimer >= attackCooldown)
+            {
+                cooldownTimer = 0;
+
+                // Randomly choose between "melee" and "flykick" attacks
+                int randomAttack = Random.Range(0, 2);
+                if (randomAttack == 0)
+                {
+                    anim.SetTrigger("meele");
+                }
+                else
+                {
+                    anim.SetTrigger("flykick");
+                }
+            }
         }
-        healthBar.value = currentHealth;
+
+        if (enemyPatrol != null)
+            enemyPatrol.enabled = !PlayerInSight();
     }
 
-    void TrackPlayer()
+    private bool PlayerInSight()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        RaycastHit2D hit =
+            Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
+                new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
+                0, Vector2.left, 0, playerLayer);
 
-        if (distanceToPlayer <= trackingRange)
-        {
-            Vector2 direction = (player.position - transform.position).normalized;
-            transform.Translate(direction * movementSpeed * Time.deltaTime);
-        }
+
+        return hit.collider != null;
     }
 
-    public void TakeDamage(int damage)
+    private void OnDrawGizmos()
     {
-        if (!isAlive) return;
-
-        currentHealth -= damage;
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
+            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    public void Die()
+    private void DamagePlayer()
     {
-        isAlive = false;
-        Destroy(gameObject);
-        LevelClear(); // Call the function to clear the level
-    }
-
-    void LevelClear()
-    {
-        // Add code here to handle level clearing (e.g., load next level, show victory screen, etc.)
-        Debug.Log("Level Cleared!");
+        if (PlayerInSight());
     }
 }
