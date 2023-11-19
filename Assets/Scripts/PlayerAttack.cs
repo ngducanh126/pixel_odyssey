@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour
     public float fireballSpeed = 10f; 
     public float maxDistance = 10f; // Set your desired maximum distance
     [SerializeField] private Transform firePoint;
+    
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;

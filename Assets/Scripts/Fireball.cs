@@ -4,6 +4,7 @@ public class Fireball : MonoBehaviour
 {
     private Animator anim;
     private bool hasExploded = false;
+    [SerializeField] private AudioSource fireHitAudioSource; 
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class Fireball : MonoBehaviour
         // Check to ensure the explosion only happens once
         if (!hasExploded)
         {
+            fireHitAudioSource.Play();
             // Trigger the explosion animation
             anim.SetTrigger("explode");
             

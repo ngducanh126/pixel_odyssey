@@ -8,6 +8,7 @@ public class PlayerCollectCoin : MonoBehaviour
 {
     public int score = 0; // Initial score
     public TextMeshProUGUI scoreText; // Reference to the TextMeshPro GUI element
+    [SerializeField] private AudioSource collectCoinAudioSource; 
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class PlayerCollectCoin : MonoBehaviour
         // Check if the collided object is a coin
         if (collision.gameObject.CompareTag("Coin"))
         {
+            collectCoinAudioSource.Play();
             Debug.Log("Collided with a coin!");
             collision.gameObject.GetComponent<Collider2D>().enabled = false; // Disable the collider
             Destroy(collision.gameObject); // Destroy the coin
