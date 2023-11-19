@@ -376,11 +376,13 @@
 "Assets/Scripts/CameraMovement.cs"
 "Assets/Scripts/CameraPlayerController.cs"
 "Assets/Scripts/Chicken/ChickenMover.cs"
-"Assets/Scripts/Chicken/ChickenMover1.cs"
 "Assets/Scripts/ChickenHit.cs"
 "Assets/Scripts/CloudMove.cs"
 "Assets/Scripts/CloudSpawn.cs"
+<<<<<<< Updated upstream
 "Assets/Scripts/CoinAnimation.cs"
+=======
+>>>>>>> Stashed changes
 "Assets/Scripts/CoinController.cs"
 "Assets/Scripts/CoinMovement.cs"
 "Assets/Scripts/EnemyPatrol.cs"
