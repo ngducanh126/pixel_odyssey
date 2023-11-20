@@ -20,12 +20,12 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Monster
-  - Player
-  - Trap
-  - Coin
-  - Boss
   - 
+  - coin
+  - Trap
+  - Player
+  - Monster
+  - boss
   - 
   - 
   - 

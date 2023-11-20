@@ -379,10 +379,7 @@
 "Assets/Scripts/ChickenHit.cs"
 "Assets/Scripts/CloudMove.cs"
 "Assets/Scripts/CloudSpawn.cs"
-<<<<<<< Updated upstream
 "Assets/Scripts/CoinAnimation.cs"
-=======
->>>>>>> Stashed changes
 "Assets/Scripts/CoinController.cs"
 "Assets/Scripts/CoinMovement.cs"
 "Assets/Scripts/EnemyPatrol.cs"
@@ -393,16 +390,18 @@
 "Assets/Scripts/LoopingBackground.cs"
 "Assets/Scripts/Monster.cs"
 "Assets/Scripts/MonsterSpawner.cs"
+"Assets/Scripts/Pause.cs"
 "Assets/Scripts/PlayerAttack.cs"
 "Assets/Scripts/PlayerCollectCoin.cs"
 "Assets/Scripts/PlayerHealth.cs"
-"Assets/Scripts/PlayerLife.cs"
 "Assets/Scripts/PlayerMovement.cs"
 "Assets/Scripts/SawRotation.cs"
 "Assets/Scripts/ScoreManager.cs"
+"Assets/Scripts/Start.cs"
 "Assets/Scripts/Temp.cs"
 "Assets/Scripts/TerrainSpawner.cs"
 "Assets/Scripts/TerrainSpawner2.cs"
+"Assets/Scripts/TrapDamage.cs"
 "Assets/Scripts/UIManager.cs"
 "Assets/Scripts/WaypointFollower.cs"
 -langversion:9.0
