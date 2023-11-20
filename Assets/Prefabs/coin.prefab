@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7159725160830013811}
   - component: {fileID: 137186941315227604}
   - component: {fileID: 6347476696519831188}
+  - component: {fileID: -678378029664052424}
   m_Layer: 8
   m_Name: coin
   m_TagString: Coin
@@ -127,3 +128,24 @@ MonoBehaviour:
   rotationSpeed: 300
   bounceHeight: 0.1
   bounceSpeed: 6
+--- !u!50 &-678378029664052424
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2288198109325978010}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

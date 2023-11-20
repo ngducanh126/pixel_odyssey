@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
     private Vector2 startPosition;
-
+    public CameraShake cameraShake; // Reference to the CameraShake script
     private AudioSource deathSoundEffect; // Reference to the death sound audio source
     private bool isInvulnerable = false;
     [SerializeField] private AudioSource deathAudioSource; 
@@ -45,10 +45,16 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("Takaing damage");
+        
+        // Start the shake coroutine
+        StartCoroutine(cameraShake.Shake(0.1f, 0.2f)); // Adjust duration and magnitude for subtlety
+
         if (isInvulnerable) return;
         Vector2 previousPosition = transform.position;
 
         health -= damage;
+        Debug.Log("Health is now " + health);
         UpdateHealthBar();
 
         if (health <= 0)
@@ -65,20 +71,32 @@ public class PlayerHealth : MonoBehaviour
     {
         isInvulnerable = true;
         Physics2D.IgnoreLayerCollision(10, 11, true);
-        for (float i = 0; i < 1.5; i++)
+
+        // Turn red for 0.3 seconds
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(0.3f);
+
+        // Rapid blinking for 1.2 seconds
+        float blinkTime = 0.1f; // Time for each blink
+        float blinkingDuration = 1.2f; // Total duration of blinking
+
+        for (float i = 0; i < blinkingDuration; i += blinkTime)
         {
-            sprite.color = new Color(1, 0, 0, 0.5f);
-            yield return new WaitForSeconds(1);
-            sprite.color = Color.white;
-            yield return new WaitForSeconds(1);
+            sprite.enabled = !sprite.enabled; // Toggle visibility
+            yield return new WaitForSeconds(blinkTime);
         }
+
+        // Reset to normal
+        sprite.enabled = true; // Ensure sprite is visible
+        sprite.color = Color.white; // Reset color to white (original)
         Physics2D.IgnoreLayerCollision(10, 11, false);
         isInvulnerable = false;
     }
 
+
     void UpdateHealthBar()
     {
-        float maxBarWidth = 800f;
+        float maxBarWidth = 300f;
         float currentWidth = maxBarWidth * (health / 100f);
 
         RectTransform rect = healthBar.rectTransform;

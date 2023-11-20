@@ -5,6 +5,7 @@ public class SawRotation : MonoBehaviour
 {
     [SerializeField] private float damage;
     public float rotationSpeed = 100f; // Speed of rotation
+    [SerializeField] private AudioSource hitMonsterAudioSource; 
 
     void Update()
     {
@@ -17,6 +18,7 @@ public class SawRotation : MonoBehaviour
         if (collision.tag == "Player")
         {
             collision.GetComponent<PlayerHealth>().TakeDamage(25f);
+            hitMonsterAudioSource.Play();
         }
 }
 }
