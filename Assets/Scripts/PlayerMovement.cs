@@ -85,8 +85,28 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jumpAudioSource != null && jumpAudioSource.clip != null)
         {
-            Debug.Log("jumping audio soruce played");
+            // Debug.Log("jumping audio soruce played");
             jumpAudioSource.Play();
         }
     }
+
+    // In PlayerMovement script
+    public void ModifySpeed(float multiplier, float duration)
+    {
+        StartCoroutine(AdjustSpeed(multiplier, duration));
+    }
+
+    private IEnumerator AdjustSpeed(float multiplier, float duration)
+    {
+        float originalSpeed = moveSpeed;
+        moveSpeed *= multiplier;
+
+        yield return new WaitForSeconds(5f); // Change to 5 seconds
+
+        moveSpeed = originalSpeed;
+    }
+
+
+
 }
+

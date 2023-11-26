@@ -5,19 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Pixel Adventure 1/Scenes/Demo.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/Introduction.unity
     guid: a6f22133b7c57184da50bfe8b418cf8d
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
-    guid: 063d5a6a0e9f4804da14ff48d6bdda0e
+    path: Assets/Scenes/Level1_Restore.unity
+    guid: 5d4cdefec43b46a478d7a00436520b06
   - enabled: 1
-    path: Assets/Scenes/Level2_Anh.unity
-    guid: d03da86922afcf34888ee531281ef01a
+    path: Assets/Scenes/Level2_Restore.unity
+    guid: 568087ea9da69b34d8f229008aafc066
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: d63e511cb52079d4db73cfb1baa456ca
+  - enabled: 0
+    path: Assets/Scenes/Level1_Anh.unity
+    guid: c396111c6685e7b4c93dd3e7c006e2b4
+  - enabled: 0
+    path: Assets/Scenes/Level2_Anh.unity
+    guid: be5b60a3f55ebca45a1dbd942d7ffcc4
+  - enabled: 0
+    path: Assets/Pixel Adventure 1/Scenes/Demo.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
