@@ -18,6 +18,7 @@ public class BossController : MonoBehaviour
 
     private Animator anim;
     private EnemyPatrol enemyPatrol;
+    private float timeBtwDamage = 1.5f;
 
     private void Awake()
     {
@@ -51,6 +52,10 @@ public class BossController : MonoBehaviour
 
         if (enemyPatrol != null)
             enemyPatrol.enabled = !PlayerInSight();
+
+        if (timeBtwDamage > 0) {
+            timeBtwDamage -= Time.deltaTime;
+        }
     }
 
     private bool PlayerInSight()
@@ -69,5 +74,20 @@ public class BossController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
+    }
+
+    // private void DamagePlayer()
+    // {
+    //     if (PlayerInSight());
+    // }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // deal the player damage ! 
+\        if (other.CompareTag("Player")) {
+            if (timeBtwDamage <= 0) {
+                other.GetComponent<PlayerHealth>().TakeDamage(damage);
+            }
+        } 
     }
 }
