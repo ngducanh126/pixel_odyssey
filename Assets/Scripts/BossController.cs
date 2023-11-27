@@ -84,7 +84,7 @@ public class BossController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // deal the player damage ! 
-\        if (other.CompareTag("Player")) {
+       if (other.CompareTag("Player")) {
             if (timeBtwDamage <= 0) {
                 other.GetComponent<PlayerHealth>().TakeDamage(damage);
             }
