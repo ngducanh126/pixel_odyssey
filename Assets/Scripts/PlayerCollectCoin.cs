@@ -55,7 +55,7 @@ public class PlayerCollectCoin : MonoBehaviour
 
     public void UpdateScoreText()
     {
-        scoreText.text = "Score: " + score.ToString(); // Update the TextMeshPro text
+        scoreText.text = "Coins: " + score.ToString(); // Update the TextMeshPro text
         // if (score >= 3)
         // {
         //     buyItemButton.interactable = true; // Enable the BuyItem button

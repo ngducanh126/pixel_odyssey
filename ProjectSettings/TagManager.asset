@@ -29,7 +29,7 @@ TagManager:
   - 
   - 
   - Panel
-  - 
+  - BuyItem
   - 
   - 
   - 
@@ -54,4 +54,7 @@ TagManager:
     locked: 0
   - name: Terrain
     uniqueID: 1201709845
+    locked: 0
+  - name: BuyItem
+    uniqueID: 2623939481
     locked: 0
