@@ -88,4 +88,8 @@ Library\Bee\artifacts\mvdfrm\UnityEngine.WindModule.dll_3F763E8E64BCA5A6.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.XRModule.dll_2BCF1C7A591894A8.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.OSXStandalone.Extensions.dll_1046DE62A0B8F759.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEditor.WindowsStandalone.Extensions.dll_D64CCA4FCFAEF8AE.mvfrm
+<<<<<<< HEAD
 Library\Bee\artifacts\mvdfrm\Unity.Plastic.Newtonsoft.Json.dll_886A68BA1992C01D.mvfrm
+=======
+Library\Bee\artifacts\mvdfrm\Unity.Plastic.Newtonsoft.Json.dll_5F72BD9FF9266C98.mvfrm
+>>>>>>> 07dfed6dd921329d26fb6f8459691a9613c73745
