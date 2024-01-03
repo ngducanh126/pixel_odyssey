@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public void Move(float horizontal) {
+    public void Jump() {
+        if (rb.velocity.y == 0) {
+            rb.AddForce(Vector2.up * 7f, ForceMode2D.Impulse);
+            anim.SetTrigger("jump");
+            Debug.Log("Player jumps");
+        }
+    }
+        public void Move(float horizontal) {
         float moveAmount = horizontal * speed * Time.deltaTime;
         rb.MovePosition(rb.position + new Vector2(moveAmount, 0));
         Debug.Log($"Player moves with input: {horizontal}");
