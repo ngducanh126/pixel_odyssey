@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public void Jump() {
+    public void SetHealth(int value) {
+        health = value;
+        Debug.Log($"Player health set to: {value}");
+        if (health <= 0) {
+            anim.SetTrigger("dead");
+        }
+    }
+        public void Jump() {
         if (rb.velocity.y == 0) {
             rb.AddForce(Vector2.up * 7f, ForceMode2D.Impulse);
             anim.SetTrigger("jump");
