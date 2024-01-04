@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public void SetHealth(int value) {
+    public void CollectCoin(int amount) {
+        int coins = PlayerPrefs.GetInt("coins", 0);
+        coins += amount;
+        PlayerPrefs.SetInt("coins", coins);
+        Debug.Log($"Player collected {amount} coins");
+    }
+        public void SetHealth(int value) {
         health = value;
         Debug.Log($"Player health set to: {value}");
         if (health <= 0) {
