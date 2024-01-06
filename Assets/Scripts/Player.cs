@@ -4,7 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public void CollectCoin(int amount) {
+    public void TakeDamage(int damage) {
+        health -= damage;
+        anim.SetTrigger("hurt");
+        Debug.Log($"Player takes {damage} damage");
+        if (health <= 0) {
+            anim.SetTrigger("dead");
+        }
+    }
+        public void CollectCoin(int amount) {
         int coins = PlayerPrefs.GetInt("coins", 0);
         coins += amount;
         PlayerPrefs.SetInt("coins", coins);
