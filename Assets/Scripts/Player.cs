@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public void TakeDamage(int damage) {
+    public void Respawn(Vector3 position) {
+        transform.position = position;
+        health = 100;
+        anim.SetTrigger("respawn");
+        Debug.Log($"Player respawned at {position}");
+    }
+        public void TakeDamage(int damage) {
         health -= damage;
         anim.SetTrigger("hurt");
         Debug.Log($"Player takes {damage} damage");
