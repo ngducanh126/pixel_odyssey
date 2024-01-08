@@ -4,7 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public void Respawn(Vector3 position) {
+    public void Sprint(bool isSprinting) {
+        speed = isSprinting ? 10f : 5f;
+        anim.SetBool("isSprinting", isSprinting);
+        Debug.Log($"Player sprinting: {isSprinting}");
+    }
+        public void Respawn(Vector3 position) {
         transform.position = position;
         health = 100;
         anim.SetTrigger("respawn");
