@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public void Sprint(bool isSprinting) {
+    public void Interact(GameObject npc) {
+        if (npc != null) {
+            Debug.Log($"Player interacts with: {npc.name}");
+            // Example: npc.GetComponent<NPC>().Talk();
+        }
+    }
+        public void Sprint(bool isSprinting) {
         speed = isSprinting ? 10f : 5f;
         anim.SetBool("isSprinting", isSprinting);
         Debug.Log($"Player sprinting: {isSprinting}");
