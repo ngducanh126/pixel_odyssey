@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public void Interact(GameObject npc) {
+    public void AddToInventory(string item) {
+        Debug.Log($"Added {item} to inventory");
+        // Example: inventoryList.Add(item);
+    }
+        public void Interact(GameObject npc) {
         if (npc != null) {
             Debug.Log($"Player interacts with: {npc.name}");
             // Example: npc.GetComponent<NPC>().Talk();
