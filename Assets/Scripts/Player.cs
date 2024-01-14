@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
-    public void AddToInventory(string item) {
+    public void SaveProgress() {
+        PlayerPrefs.SetInt("player_health", health);
+        PlayerPrefs.SetFloat("player_x", transform.position.x);
+        PlayerPrefs.SetFloat("player_y", transform.position.y);
+        PlayerPrefs.SetFloat("player_z", transform.position.z);
+        Debug.Log("Player progress saved");
+    }
+        public void AddToInventory(string item) {
         Debug.Log($"Added {item} to inventory");
         // Example: inventoryList.Add(item);
     }
