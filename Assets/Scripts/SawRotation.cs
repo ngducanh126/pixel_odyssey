@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    [SerializeField] private float damage;
+    public void ReverseRotation() {
+        rotationSpeed = -rotationSpeed;
+    }
+        [SerializeField] private float damage;
     public float rotationSpeed = 100f; // Speed of rotation
     [SerializeField] private AudioSource hitMonsterAudioSource; 
 
