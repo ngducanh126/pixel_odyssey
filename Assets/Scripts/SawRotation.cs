@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void ReverseRotation() {
+    public void ScaleDamage(float multiplier) {
+        damage *= multiplier;
+    }
+        public void ReverseRotation() {
         rotationSpeed = -rotationSpeed;
     }
         [SerializeField] private float damage;
