@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void ScaleDamage(float multiplier) {
+    public bool soundEnabled = true;
+    public void ToggleSound() {
+        soundEnabled = !soundEnabled;
+    }
+        public void ScaleDamage(float multiplier) {
         damage *= multiplier;
     }
         public void ReverseRotation() {
