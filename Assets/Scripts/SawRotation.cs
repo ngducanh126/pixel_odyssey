@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public bool soundEnabled = true;
+    private bool isActive = true;
+    public void SetActive(bool active) {
+        isActive = active;
+        gameObject.SetActive(active);
+    }
+        public bool soundEnabled = true;
     public void ToggleSound() {
         soundEnabled = !soundEnabled;
     }
