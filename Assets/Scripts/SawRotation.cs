@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    private bool isActive = true;
+    public void SetRotationSpeed(float speed) {
+        rotationSpeed = speed;
+    }
+        private bool isActive = true;
     public void SetActive(bool active) {
         isActive = active;
         gameObject.SetActive(active);
