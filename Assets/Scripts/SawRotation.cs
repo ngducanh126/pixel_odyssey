@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void SetRotationSpeed(float speed) {
+    public void ChangeColorOnContact(Color color) {
+        var renderer = GetComponent<SpriteRenderer>();
+        if (renderer != null) renderer.color = color;
+    }
+        public void SetRotationSpeed(float speed) {
         rotationSpeed = speed;
     }
         private bool isActive = true;
