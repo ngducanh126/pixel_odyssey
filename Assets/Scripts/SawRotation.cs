@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void ChangeColorOnContact(Color color) {
+    public delegate void SawHitPlayer();
+    public event SawHitPlayer OnSawHitPlayer;
+    private void NotifySawHitPlayer() {
+        if (OnSawHitPlayer != null) OnSawHitPlayer();
+    }
+        public void ChangeColorOnContact(Color color) {
         var renderer = GetComponent<SpriteRenderer>();
         if (renderer != null) renderer.color = color;
     }
