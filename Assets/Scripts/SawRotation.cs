@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    private bool paused = false;
+    public void SelfDestructAfter(float seconds) {
+        Destroy(gameObject, seconds);
+    }
+        private bool paused = false;
     public void PauseRotation() {
         paused = true;
     }
