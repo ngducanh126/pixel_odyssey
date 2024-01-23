@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public delegate void SawHitPlayer();
+    private bool paused = false;
+    public void PauseRotation() {
+        paused = true;
+    }
+    public void ResumeRotation() {
+        paused = false;
+    }
+        public delegate void SawHitPlayer();
     public event SawHitPlayer OnSawHitPlayer;
     private void NotifySawHitPlayer() {
         if (OnSawHitPlayer != null) OnSawHitPlayer();
