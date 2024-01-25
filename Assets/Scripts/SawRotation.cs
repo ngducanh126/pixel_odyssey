@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void SelfDestructAfter(float seconds) {
+    private float initialSpeed;
+    private float initialDamage;
+    public void ResetSaw() {
+        rotationSpeed = initialSpeed;
+        damage = initialDamage;
+        isActive = true;
+    }
+        public void SelfDestructAfter(float seconds) {
         Destroy(gameObject, seconds);
     }
         private bool paused = false;
