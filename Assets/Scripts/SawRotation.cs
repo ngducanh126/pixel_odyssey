@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    private float initialSpeed;
+    public float GetCurrentAngle() {
+        return transform.eulerAngles.z;
+    }
+        private float initialSpeed;
     private float initialDamage;
     public void ResetSaw() {
         rotationSpeed = initialSpeed;
