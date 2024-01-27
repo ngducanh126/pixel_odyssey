@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public float GetCurrentAngle() {
+    public void IgnoreCollisionIfInvulnerable(Collider2D collision) {
+        PlayerHealth ph = collision.GetComponent<PlayerHealth>();
+        if (ph != null && ph.IsInvulnerable()) Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
+    }
+        public float GetCurrentAngle() {
         return transform.eulerAngles.z;
     }
         private float initialSpeed;
