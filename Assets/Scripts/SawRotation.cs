@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void IgnoreCollisionIfInvulnerable(Collider2D collision) {
+    public void PlayCustomHitSound(AudioClip clip) {
+        if (soundEnabled && clip != null) hitMonsterAudioSource.PlayOneShot(clip);
+    }
+        public void IgnoreCollisionIfInvulnerable(Collider2D collision) {
         PlayerHealth ph = collision.GetComponent<PlayerHealth>();
         if (ph != null && ph.IsInvulnerable()) Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
     }
