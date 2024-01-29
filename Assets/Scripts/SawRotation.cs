@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void PlayCustomHitSound(AudioClip clip) {
+    public void SetSawSize(Vector3 newSize) {
+        transform.localScale = newSize;
+    }
+        public void PlayCustomHitSound(AudioClip clip) {
         if (soundEnabled && clip != null) hitMonsterAudioSource.PlayOneShot(clip);
     }
         public void IgnoreCollisionIfInvulnerable(Collider2D collision) {
