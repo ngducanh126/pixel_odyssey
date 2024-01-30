@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void SetSawSize(Vector3 newSize) {
+    public void RandomizeRotationSpeed(float min, float max) {
+        rotationSpeed = UnityEngine.Random.Range(min, max);
+    }
+        public void SetSawSize(Vector3 newSize) {
         transform.localScale = newSize;
     }
         public void PlayCustomHitSound(AudioClip clip) {
