@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void RandomizeRotationSpeed(float min, float max) {
+    public bool IsActive() {
+        return isActive;
+    }
+        public void RandomizeRotationSpeed(float min, float max) {
         rotationSpeed = UnityEngine.Random.Range(min, max);
     }
         public void SetSawSize(Vector3 newSize) {
