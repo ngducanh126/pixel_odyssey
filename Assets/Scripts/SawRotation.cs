@@ -2,7 +2,19 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public bool IsActive() {
+    public void BlinkOnActivation(float duration, Color blinkColor) {
+        var renderer = GetComponent<SpriteRenderer>();
+        if (renderer != null) {
+            Color original = renderer.color;
+            renderer.color = blinkColor;
+            Invoke("RestoreColor", duration);
+        }
+    }
+    private void RestoreColor() {
+        var renderer = GetComponent<SpriteRenderer>();
+        if (renderer != null) renderer.color = Color.white;
+    }
+        public bool IsActive() {
         return isActive;
     }
         public void RandomizeRotationSpeed(float min, float max) {
