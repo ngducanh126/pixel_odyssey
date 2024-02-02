@@ -4,7 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-
+    public void AttackPattern() {
+        if (health > 50) {
+            anim.SetTrigger("attack1");
+            Debug.Log("Boss uses basic attack pattern");
+        } else {
+            anim.SetTrigger("attack2");
+            Debug.Log("Boss switches to aggressive pattern");
+        }
+    }
+    
     public int health;
     public int damage;
     private float timeBtwDamage = 1.5f;
