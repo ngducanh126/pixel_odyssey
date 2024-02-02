@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void BlinkOnActivation(float duration, Color blinkColor) {
+    public void SetDamage(float newDamage) {
+        damage = newDamage;
+    }
+        public void BlinkOnActivation(float duration, Color blinkColor) {
         var renderer = GetComponent<SpriteRenderer>();
         if (renderer != null) {
             Color original = renderer.color;
