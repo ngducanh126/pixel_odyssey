@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void AttackPattern() {
+    public void TriggerEnrage() {
+        if (health <= 25 && !isDead) {
+            anim.SetTrigger("enrage");
+            damage += 10;
+            Debug.Log("Boss is now enraged!");
+        }
+    }
+        public void AttackPattern() {
         if (health > 50) {
             anim.SetTrigger("attack1");
             Debug.Log("Boss uses basic attack pattern");
