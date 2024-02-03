@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public void SetDamage(float newDamage) {
+    public int GetRotationDirection() {
+        return rotationSpeed > 0 ? 1 : -1;
+    }
+        public void SetDamage(float newDamage) {
         damage = newDamage;
     }
         public void BlinkOnActivation(float duration, Color blinkColor) {
