@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class SawRotation : MonoBehaviour
 {
-    public int GetRotationDirection() {
+    private int hitCount = 0;
+    public void IncrementHitCounter() {
+        hitCount++;
+    }
+    public int GetHitCount() {
+        return hitCount;
+    }
+        public int GetRotationDirection() {
         return rotationSpeed > 0 ? 1 : -1;
     }
         public void SetDamage(float newDamage) {
