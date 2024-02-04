@@ -4,7 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void TriggerEnrage() {
+    public void Heal() {
+        if (health < 30 && !isDead) {
+            health += 15;
+            healthBar.value = health;
+            anim.SetTrigger("heal");
+            Debug.Log("Boss heals for 15 HP");
+        }
+    }
+        public void TriggerEnrage() {
         if (health <= 25 && !isDead) {
             anim.SetTrigger("enrage");
             damage += 10;
