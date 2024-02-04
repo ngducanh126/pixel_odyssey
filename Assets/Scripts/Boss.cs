@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void Heal() {
+    public void ShootProjectile(GameObject projectilePrefab, Transform firePoint) {
+        if (!isDead) {
+            Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            anim.SetTrigger("shoot");
+            Debug.Log("Boss shoots a projectile at the player");
+        }
+    }
+        public void Heal() {
         if (health < 30 && !isDead) {
             health += 15;
             healthBar.value = health;
