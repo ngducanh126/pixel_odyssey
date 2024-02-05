@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public void SetSpeed(float newSpeed) {
+    public float lifetime = 5f;
+    private void Start() {
+        Destroy(gameObject, lifetime);
+    }
+        public void SetSpeed(float newSpeed) {
         speed = newSpeed;
     }
     
