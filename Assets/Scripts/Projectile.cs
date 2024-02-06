@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public float lifetime = 5f;
+    public int pierceCount = 1;
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (pierceCount > 0 && other.CompareTag("Enemy")) {
+            pierceCount--;
+            if (pierceCount == 0) Destroy(gameObject);
+        }
+    }
+        public float lifetime = 5f;
     private void Start() {
         Destroy(gameObject, lifetime);
     }
