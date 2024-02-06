@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void ShootProjectile(GameObject projectilePrefab, Transform firePoint) {
+    public void Taunt() {
+        if (!isDead) {
+            anim.SetTrigger("taunt");
+            Debug.Log("Boss taunts the player");
+        }
+    }
+        public void ShootProjectile(GameObject projectilePrefab, Transform firePoint) {
         if (!isDead) {
             Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
             anim.SetTrigger("shoot");
