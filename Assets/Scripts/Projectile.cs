@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public int pierceCount = 1;
+    public void SetColor(Color color) {
+        var renderer = GetComponent<SpriteRenderer>();
+        if (renderer != null) renderer.color = color;
+    }
+        public int pierceCount = 1;
     private void OnTriggerEnter2D(Collider2D other) {
         if (pierceCount > 0 && other.CompareTag("Enemy")) {
             pierceCount--;
