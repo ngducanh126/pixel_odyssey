@@ -4,7 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void Taunt() {
+    public void ActivateShield(float duration) {
+        StartCoroutine(ShieldRoutine(duration));
+    }
+    private System.Collections.IEnumerator ShieldRoutine(float duration) {
+        isDead = true;
+        anim.SetTrigger("shield");
+        Debug.Log("Boss shield activated");
+        yield return new WaitForSeconds(duration);
+        isDead = false;
+        Debug.Log("Boss shield deactivated");
+    }
+        public void Taunt() {
         if (!isDead) {
             anim.SetTrigger("taunt");
             Debug.Log("Boss taunts the player");
