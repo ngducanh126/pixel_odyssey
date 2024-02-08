@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public void SetColor(Color color) {
+    public AudioClip impactSound;
+    public void PlayImpactSound() {
+        if (impactSound != null) AudioSource.PlayClipAtPoint(impactSound, transform.position);
+    }
+        public void SetColor(Color color) {
         var renderer = GetComponent<SpriteRenderer>();
         if (renderer != null) renderer.color = color;
     }
