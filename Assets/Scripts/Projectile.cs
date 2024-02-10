@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public int bounceCount = 1;
+    public void SetDamage(int newDamage) {
+        damage = newDamage;
+    }
+        public int bounceCount = 1;
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.collider.CompareTag("Wall") && bounceCount > 0) {
             speed = -speed;
