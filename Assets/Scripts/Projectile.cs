@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public void SetDamage(int newDamage) {
+    public float explosionRadius = 2f;
+    private void Explode() {
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+        foreach (var hit in hits) {
+            if (hit.CompareTag("Enemy")) hit.GetComponent<Enemy>().TakeDamage(damage);
+        }
+    }
+        public void SetDamage(int newDamage) {
         damage = newDamage;
     }
         public int bounceCount = 1;
