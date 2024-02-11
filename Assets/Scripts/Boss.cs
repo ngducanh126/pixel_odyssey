@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void ActivateShield(float duration) {
+    public void SummonMinions(GameObject minionPrefab, int count) {
+        for (int i = 0; i < count; i++) {
+            Instantiate(minionPrefab, transform.position + new Vector3(i * 2, 0, 0), Quaternion.identity);
+        }
+        anim.SetTrigger("summon");
+        Debug.Log("Boss summons minions to assist");
+    }
+        public void ActivateShield(float duration) {
         StartCoroutine(ShieldRoutine(duration));
     }
     private System.Collections.IEnumerator ShieldRoutine(float duration) {
