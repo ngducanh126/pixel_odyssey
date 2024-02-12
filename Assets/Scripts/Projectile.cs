@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public float explosionRadius = 2f;
+    public delegate void ProjectileDestroyed();
+    public event ProjectileDestroyed OnProjectileDestroyed;
+    private void OnDestroy() {
+        if (OnProjectileDestroyed != None) OnProjectileDestroyed();
+    }
+        public float explosionRadius = 2f;
     private void Explode() {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
         foreach (var hit in hits) {
