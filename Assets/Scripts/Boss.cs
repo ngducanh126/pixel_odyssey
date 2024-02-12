@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void SummonMinions(GameObject minionPrefab, int count) {
+    public void Teleport(Vector3 newPosition) {
+        if (!isDead) {
+            transform.position = newPosition;
+            anim.SetTrigger("teleport");
+            Debug.Log($"Boss teleports to {newPosition}");
+        }
+    }
+        public void SummonMinions(GameObject minionPrefab, int count) {
         for (int i = 0; i < count; i++) {
             Instantiate(minionPrefab, transform.position + new Vector3(i * 2, 0, 0), Quaternion.identity);
         }
