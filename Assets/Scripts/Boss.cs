@@ -4,7 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void Teleport(Vector3 newPosition) {
+    public void Stun(float duration) {
+        StartCoroutine(StunRoutine(duration));
+    }
+    private System.Collections.IEnumerator StunRoutine(float duration) {
+        anim.SetTrigger("stun");
+        Debug.Log("Boss is stunned");
+        yield return new WaitForSeconds(duration);
+        Debug.Log("Boss recovers from stun");
+    }
+        public void Teleport(Vector3 newPosition) {
         if (!isDead) {
             transform.position = newPosition;
             anim.SetTrigger("teleport");
