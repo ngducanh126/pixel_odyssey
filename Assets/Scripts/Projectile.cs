@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public delegate void ProjectileDestroyed();
+    public void TriggerSlowMotion(float duration) {
+        Time.timeScale = 0.2f;
+        Invoke("RestoreTimeScale", duration);
+    }
+    private void RestoreTimeScale() {
+        Time.timeScale = 1f;
+    }
+        public delegate void ProjectileDestroyed();
     public event ProjectileDestroyed OnProjectileDestroyed;
     private void OnDestroy() {
         if (OnProjectileDestroyed != None) OnProjectileDestroyed();
