@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public void TriggerSlowMotion(float duration) {
+    private bool paused = false;
+    public void PauseProjectile() {
+        paused = true;
+    }
+    public void ResumeProjectile() {
+        paused = false;
+    }
+        public void TriggerSlowMotion(float duration) {
         Time.timeScale = 0.2f;
         Invoke("RestoreTimeScale", duration);
     }
