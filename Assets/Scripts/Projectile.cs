@@ -3,7 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    private bool paused = false;
+    public bool homing = false;
+    public void EnableHoming(bool enable) {
+        homing = enable;
+    }
+    private void FixedUpdate() {
+        if (homing) {
+            GameObject target = GameObject.FindWithTag("Enemy");
+            if (target != null) {
+                Vector2 dir = (target.transform.position - transform.position).normalized;
+                transform.Translate(dir * speed * Time.fixedDeltaTime);
+            }
+        }
+    }
+        private bool paused = false;
     public void PauseProjectile() {
         paused = true;
     }
