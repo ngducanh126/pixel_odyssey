@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public bool homing = false;
+    public GameObject trailEffect;
+    public void AddTrailEffect() {
+        if (trailEffect != null) Instantiate(trailEffect, transform);
+    }
+        public bool homing = false;
     public void EnableHoming(bool enable) {
         homing = enable;
     }
