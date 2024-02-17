@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public GameObject trailEffect;
+    public bool friendlyFire = false;
+    public void SetFriendlyFire(bool enable) {
+        friendlyFire = enable;
+    }
+        public GameObject trailEffect;
     public void AddTrailEffect() {
         if (trailEffect != null) Instantiate(trailEffect, transform);
     }
