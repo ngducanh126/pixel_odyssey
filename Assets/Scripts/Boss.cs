@@ -4,7 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void Stun(float duration) {
+    public void DashToPlayer(Transform player) {
+        if (!isDead) {
+            Vector3 dashTarget = player.position;
+            transform.position = Vector3.MoveTowards(transform.position, dashTarget, 5f);
+            anim.SetTrigger("dash");
+            Debug.Log("Boss dashes towards the player");
+        }
+    }
+        public void Stun(float duration) {
         StartCoroutine(StunRoutine(duration));
     }
     private System.Collections.IEnumerator StunRoutine(float duration) {
