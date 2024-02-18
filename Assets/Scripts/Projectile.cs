@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public bool friendlyFire = false;
+    public void ReflectOffShield(Vector2 normal) {
+        Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
+        GetComponent<Rigidbody2D>().velocity = Vector2.Reflect(velocity, normal);
+    }
+        public bool friendlyFire = false;
     public void SetFriendlyFire(bool enable) {
         friendlyFire = enable;
     }
