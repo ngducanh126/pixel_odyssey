@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public void ReflectOffShield(Vector2 normal) {
+    public bool freezeOnHit = false;
+    private void FreezeTarget(GameObject target) {
+        if (freezeOnHit && target.CompareTag("Enemy")) target.GetComponent<Enemy>().Freeze();
+    }
+        public void ReflectOffShield(Vector2 normal) {
         Vector2 velocity = GetComponent<Rigidbody2D>().velocity;
         GetComponent<Rigidbody2D>().velocity = Vector2.Reflect(velocity, normal);
     }
