@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void DashToPlayer(Transform player) {
+    public void AreaOfEffectAttack() {
+        anim.SetTrigger("aoe");
+        Debug.Log("Boss performs an area-of-effect attack");
+    }
+        public void DashToPlayer(Transform player) {
         if (!isDead) {
             Vector3 dashTarget = player.position;
             transform.position = Vector3.MoveTowards(transform.position, dashTarget, 5f);
