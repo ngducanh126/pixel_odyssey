@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public bool freezeOnHit = false;
+    public void SpawnSpread(int count, float angle) {
+        for (int i = 0; i < count; i++) {
+            float a = -angle/2 + angle*i/(count-1);
+            Instantiate(gameObject, transform.position, Quaternion.Euler(0,0,a));
+        }
+    }
+        public bool freezeOnHit = false;
     private void FreezeTarget(GameObject target) {
         if (freezeOnHit && target.CompareTag("Enemy")) target.GetComponent<Enemy>().Freeze();
     }
