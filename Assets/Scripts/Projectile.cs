@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public void SpawnSpread(int count, float angle) {
+    public bool gravityEnabled = false;
+    public void ToggleGravity(bool enable) {
+        gravityEnabled = enable;
+        GetComponent<Rigidbody2D>().gravityScale = enable ? 1 : 0;
+    }
+        public void SpawnSpread(int count, float angle) {
         for (int i = 0; i < count; i++) {
             float a = -angle/2 + angle*i/(count-1);
             Instantiate(gameObject, transform.position, Quaternion.Euler(0,0,a));
