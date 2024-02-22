@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void AreaOfEffectAttack() {
+    public void RegenerateHealth() {
+        if (!isDead && health < 100) {
+            health += 2;
+            healthBar.value = health;
+            Debug.Log("Boss regenerates 2 HP");
+        }
+    }
+        public void AreaOfEffectAttack() {
         anim.SetTrigger("aoe");
         Debug.Log("Boss performs an area-of-effect attack");
     }
