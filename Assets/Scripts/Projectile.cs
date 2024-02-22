@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public void AttachToPlatform(GameObject platform) {
+    public void CameraZoomOnImpact(float zoom, float duration) {
+        Camera.main.orthographicSize = zoom;
+        Invoke("RestoreCameraZoom", duration);
+    }
+    private void RestoreCameraZoom() {
+        Camera.main.orthographicSize = 5f;
+    }
+        public void AttachToPlatform(GameObject platform) {
         transform.parent = platform.transform;
     }
         public bool gravityEnabled = false;
