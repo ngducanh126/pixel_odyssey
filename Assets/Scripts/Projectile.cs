@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
-    public bool gravityEnabled = false;
+    public void AttachToPlatform(GameObject platform) {
+        transform.parent = platform.transform;
+    }
+        public bool gravityEnabled = false;
     public void ToggleGravity(bool enable) {
         gravityEnabled = enable;
         GetComponent<Rigidbody2D>().gravityScale = enable ? 1 : 0;
