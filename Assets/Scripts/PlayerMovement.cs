@@ -6,7 +6,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    public void Dash(float dashForce, float duration) {
+        StartCoroutine(DashRoutine(dashForce, duration));
+    }
+    private IEnumerator DashRoutine(float dashForce, float duration) {
+        float originalSpeed = moveSpeed;
+        moveSpeed = dashForce;
+        yield return new WaitForSeconds(duration);
+        moveSpeed = originalSpeed;
+    }
+        private Rigidbody2D rb;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
