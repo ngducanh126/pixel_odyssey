@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void Dash(float dashForce, float duration) {
+    public void WallJump(float forceX, float forceY) {
+        rb.velocity = new Vector2(forceX, forceY);
+    }
+        public void Dash(float dashForce, float duration) {
         StartCoroutine(DashRoutine(dashForce, duration));
     }
     private IEnumerator DashRoutine(float dashForce, float duration) {
