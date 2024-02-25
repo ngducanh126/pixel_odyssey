@@ -6,7 +6,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void WallJump(float forceX, float forceY) {
+    private bool isCrouching = false;
+    public void Crouch(bool enable) {
+        isCrouching = enable;
+        coll.size = enable ? new Vector2(coll.size.x, coll.size.y / 2) : new Vector2(coll.size.x, coll.size.y * 2);
+    }
+        public void WallJump(float forceX, float forceY) {
         rb.velocity = new Vector2(forceX, forceY);
     }
         public void Dash(float dashForce, float duration) {
