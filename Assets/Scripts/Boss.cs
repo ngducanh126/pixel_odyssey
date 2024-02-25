@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void RegenerateHealth() {
+    public void ReflectProjectile(GameObject projectile) {
+        if (projectile != null) {
+            Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+            if (rb != null) rb.velocity = -rb.velocity;
+            Debug.Log("Boss reflects incoming projectile");
+        }
+    }
+        public void RegenerateHealth() {
         if (!isDead && health < 100) {
             health += 2;
             healthBar.value = health;
