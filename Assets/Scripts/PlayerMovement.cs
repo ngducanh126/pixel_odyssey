@@ -6,7 +6,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool isCrouching = false;
+    private int jumpCount = 0;
+    public int maxJumps = 2;
+    public void DoubleJump() {
+        if (jumpCount < maxJumps) {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            jumpCount++;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.contacts[0].normal.y > 0.5f) jumpCount = 0;
+    }
+        private bool isCrouching = false;
     public void Crouch(bool enable) {
         isCrouching = enable;
         coll.size = enable ? new Vector2(coll.size.x, coll.size.y / 2) : new Vector2(coll.size.x, coll.size.y * 2);
