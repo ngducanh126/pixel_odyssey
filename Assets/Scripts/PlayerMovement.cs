@@ -6,7 +6,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private int jumpCount = 0;
+    public void GrabLedge(Transform ledge) {
+        rb.velocity = Vector2.zero;
+        transform.position = ledge.position;
+    }
+    public void ClimbLedge(Vector3 climbOffset) {
+        transform.position += climbOffset;
+    }
+        private int jumpCount = 0;
     public int maxJumps = 2;
     public void DoubleJump() {
         if (jumpCount < maxJumps) {
