@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void ReflectProjectile(GameObject projectile) {
+    public void DeathSequence() {
+        if (!isDead) {
+            anim.SetTrigger("death");
+            isDead = true;
+            Debug.Log("Boss death sequence started");
+        }
+    }
+        public void ReflectProjectile(GameObject projectile) {
         if (projectile != null) {
             Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
             if (rb != null) rb.velocity = -rb.velocity;
