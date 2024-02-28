@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void GrabLedge(Transform ledge) {
+    public void ApplyKnockback(Vector2 force) {
+        rb.AddForce(force, ForceMode2D.Impulse);
+    }
+        public void GrabLedge(Transform ledge) {
         rb.velocity = Vector2.zero;
         transform.position = ledge.position;
     }
