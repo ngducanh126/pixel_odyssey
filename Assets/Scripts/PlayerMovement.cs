@@ -6,7 +6,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void ApplyKnockback(Vector2 force) {
+    private bool isSprinting = false;
+    public void ToggleSprint(bool enable) {
+        isSprinting = enable;
+        moveSpeed = enable ? moveSpeed * 1.5f : moveSpeed / 1.5f;
+    }
+        public void ApplyKnockback(Vector2 force) {
         rb.AddForce(force, ForceMode2D.Impulse);
     }
         public void GrabLedge(Transform ledge) {
