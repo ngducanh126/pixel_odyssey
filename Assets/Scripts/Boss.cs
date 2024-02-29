@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void DeathSequence() {
+    public void DropLoot(GameObject lootPrefab) {
+        if (isDead) {
+            Instantiate(lootPrefab, transform.position, Quaternion.identity);
+            Debug.Log("Boss drops loot for the player");
+        }
+    }
+        public void DeathSequence() {
         if (!isDead) {
             anim.SetTrigger("death");
             isDead = true;
