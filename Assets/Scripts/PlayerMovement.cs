@@ -6,7 +6,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool isSprinting = false;
+    private bool isSwimming = false;
+    public void SetSwimming(bool enable) {
+        isSwimming = enable;
+        rb.gravityScale = enable ? 0.2f : 1f;
+    }
+        private bool isSprinting = false;
     public void ToggleSprint(bool enable) {
         isSprinting = enable;
         moveSpeed = enable ? moveSpeed * 1.5f : moveSpeed / 1.5f;
