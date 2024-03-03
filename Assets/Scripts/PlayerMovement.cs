@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void GroundPound(float poundForce) {
+    public void SetAirControl(float multiplier) {
+        moveSpeed *= multiplier;
+    }
+        public void GroundPound(float poundForce) {
         rb.velocity = new Vector2(rb.velocity.x, -poundForce);
     }
         private bool isSwimming = false;
