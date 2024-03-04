@@ -6,7 +6,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void SetAirControl(float multiplier) {
+    private bool movementFrozen = false;
+    public void FreezeMovement(bool freeze) {
+        movementFrozen = freeze;
+        rb.velocity = freeze ? Vector2.zero : rb.velocity;
+    }
+        public void SetAirControl(float multiplier) {
         moveSpeed *= multiplier;
     }
         public void GroundPound(float poundForce) {
