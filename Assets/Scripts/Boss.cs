@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void DropLoot(GameObject lootPrefab) {
+    public void PlayIntroCutscene() {
+        anim.SetTrigger("intro");
+        Debug.Log("Boss intro cutscene plays");
+    }
+        public void DropLoot(GameObject lootPrefab) {
         if (isDead) {
             Instantiate(lootPrefab, transform.position, Quaternion.identity);
             Debug.Log("Boss drops loot for the player");
