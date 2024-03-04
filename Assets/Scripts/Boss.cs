@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void PlayIntroCutscene() {
+    public void SlowPlayer(GameObject player) {
+        var move = player.GetComponent<PlayerMovement>();
+        if (move != null) {
+            move.speed *= 0.5f;
+            Debug.Log("Boss slows the player's movement");
+        }
+    }
+        public void PlayIntroCutscene() {
         anim.SetTrigger("intro");
         Debug.Log("Boss intro cutscene plays");
     }
