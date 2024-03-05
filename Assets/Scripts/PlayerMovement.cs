@@ -6,7 +6,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool movementFrozen = false;
+    public void TriggerSlowMotion(float duration) {
+        Time.timeScale = 0.5f;
+        StartCoroutine(RestoreTimeScale(duration));
+    }
+    private IEnumerator RestoreTimeScale(float duration) {
+        yield return new WaitForSecondsRealtime(duration);
+        Time.timeScale = 1f;
+    }
+        private bool movementFrozen = false;
     public void FreezeMovement(bool freeze) {
         movementFrozen = freeze;
         rb.velocity = freeze ? Vector2.zero : rb.velocity;
