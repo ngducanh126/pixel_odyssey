@@ -6,7 +6,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void TriggerSlowMotion(float duration) {
+    public void Slide(float slideSpeed, float duration) {
+        StartCoroutine(SlideRoutine(slideSpeed, duration));
+    }
+    private IEnumerator SlideRoutine(float slideSpeed, float duration) {
+        float originalSpeed = moveSpeed;
+        moveSpeed = slideSpeed;
+        yield return new WaitForSeconds(duration);
+        moveSpeed = originalSpeed;
+    }
+        public void TriggerSlowMotion(float duration) {
         Time.timeScale = 0.5f;
         StartCoroutine(RestoreTimeScale(duration));
     }
