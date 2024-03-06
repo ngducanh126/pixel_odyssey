@@ -4,7 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void SlowPlayer(GameObject player) {
+    public void EscapePhase(Vector3 escapePoint) {
+        if (!isDead) {
+            transform.position = Vector3.MoveTowards(transform.position, escapePoint, 3f);
+            anim.SetTrigger("escape");
+            Debug.Log("Boss attempts to escape");
+        }
+    }
+        public void SlowPlayer(GameObject player) {
         var move = player.GetComponent<PlayerMovement>();
         if (move != null) {
             move.speed *= 0.5f;
