@@ -6,7 +6,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void Slide(float slideSpeed, float duration) {
+    private float stamina = 100f;
+    public void UseStamina(float amount) {
+        stamina = Mathf.Max(0, stamina - amount);
+    }
+    public void RecoverStamina(float amount) {
+        stamina = Mathf.Min(100f, stamina + amount);
+    }
+        public void Slide(float slideSpeed, float duration) {
         StartCoroutine(SlideRoutine(slideSpeed, duration));
     }
     private IEnumerator SlideRoutine(float slideSpeed, float duration) {
