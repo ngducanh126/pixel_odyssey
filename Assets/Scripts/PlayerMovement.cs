@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float stamina = 100f;
+    public void TeleportToCheckpoint(Vector3 checkpoint) {
+        transform.position = checkpoint;
+    }
+        private float stamina = 100f;
     public void UseStamina(float amount) {
         stamina = Mathf.Max(0, stamina - amount);
     }
