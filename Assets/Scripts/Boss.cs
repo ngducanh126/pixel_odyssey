@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void EscapePhase(Vector3 escapePoint) {
+    public void PhaseTransition(int phase) {
+        anim.SetInteger("phase", phase);
+        Debug.Log($"Boss transitions to phase {phase}");
+    }
+        public void EscapePhase(Vector3 escapePoint) {
         if (!isDead) {
             transform.position = Vector3.MoveTowards(transform.position, escapePoint, 3f);
             anim.SetTrigger("escape");
