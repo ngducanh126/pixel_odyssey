@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void TeleportToCheckpoint(Vector3 checkpoint) {
+    private bool onMovingPlatform = false;
+    public void SetOnMovingPlatform(bool enable) {
+        onMovingPlatform = enable;
+    }
+        public void TeleportToCheckpoint(Vector3 checkpoint) {
         transform.position = checkpoint;
     }
         private float stamina = 100f;
