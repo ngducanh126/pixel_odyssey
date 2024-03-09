@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Boss : MonoBehaviour {
-    public void PhaseTransition(int phase) {
+    public void BlockAttack() {
+        anim.SetTrigger("block");
+        Debug.Log("Boss blocks the player's attack");
+    }
+        public void PhaseTransition(int phase) {
         anim.SetInteger("phase", phase);
         Debug.Log($"Boss transitions to phase {phase}");
     }
