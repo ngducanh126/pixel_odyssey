@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool onMovingPlatform = false;
+    public void TriggerLandingAnimation() {
+        if (anim != null) anim.SetTrigger("Land");
+    }
+        private bool onMovingPlatform = false;
     public void SetOnMovingPlatform(bool enable) {
         onMovingPlatform = enable;
     }
