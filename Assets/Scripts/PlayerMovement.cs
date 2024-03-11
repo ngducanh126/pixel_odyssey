@@ -6,7 +6,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void TriggerLandingAnimation() {
+    private bool invincible = false;
+    public void SetInvincibility(float duration) {
+        invincible = true;
+        StartCoroutine(RemoveInvincibility(duration));
+    }
+    private IEnumerator RemoveInvincibility(float duration) {
+        yield return new WaitForSeconds(duration);
+        invincible = false;
+    }
+        public void TriggerLandingAnimation() {
         if (anim != null) anim.SetTrigger("Land");
     }
         private bool onMovingPlatform = false;
