@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool invincible = false;
+    public void FlipSprite(bool facingRight) {
+        sprite.flipX = !facingRight;
+    }
+        private bool invincible = false;
     public void SetInvincibility(float duration) {
         invincible = true;
         StartCoroutine(RemoveInvincibility(duration));
