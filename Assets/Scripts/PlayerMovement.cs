@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void VariableJump(float holdTime) {
+    private bool controlsLocked = false;
+    public void LockControls(bool lockState) {
+        controlsLocked = lockState;
+    }
+        public void VariableJump(float holdTime) {
         float jumpStrength = Mathf.Lerp(jumpForce * 0.5f, jumpForce, holdTime);
         rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
     }
