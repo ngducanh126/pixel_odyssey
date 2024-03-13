@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void FlipSprite(bool facingRight) {
+    public void VariableJump(float holdTime) {
+        float jumpStrength = Mathf.Lerp(jumpForce * 0.5f, jumpForce, holdTime);
+        rb.velocity = new Vector2(rb.velocity.x, jumpStrength);
+    }
+        public void FlipSprite(bool facingRight) {
         sprite.flipX = !facingRight;
     }
         private bool invincible = false;
