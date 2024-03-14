@@ -6,7 +6,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool controlsLocked = false;
+    public void AutoMove(float speed, float duration) {
+        StartCoroutine(AutoMoveRoutine(speed, duration));
+    }
+    private IEnumerator AutoMoveRoutine(float speed, float duration) {
+        float timer = 0f;
+        while (timer < duration) {
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+    }
+        private bool controlsLocked = false;
     public void LockControls(bool lockState) {
         controlsLocked = lockState;
     }
