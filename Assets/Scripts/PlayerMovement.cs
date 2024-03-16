@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void AutoMove(float speed, float duration) {
+    public void SetGravityScale(float scale) {
+        rb.gravityScale = scale;
+    }
+        public void AutoMove(float speed, float duration) {
         StartCoroutine(AutoMoveRoutine(speed, duration));
     }
     private IEnumerator AutoMoveRoutine(float speed, float duration) {
