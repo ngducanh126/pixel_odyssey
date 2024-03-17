@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool onLadder = false;
+    public void PlayCustomAnimation(string animName) {
+        if (anim != null) anim.Play(animName);
+    }
+        private bool onLadder = false;
     public void SetOnLadder(bool enable) {
         onLadder = enable;
     }
