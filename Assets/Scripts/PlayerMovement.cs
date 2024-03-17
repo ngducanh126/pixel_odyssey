@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void SetGravityScale(float scale) {
+    private bool onLadder = false;
+    public void SetOnLadder(bool enable) {
+        onLadder = enable;
+    }
+        public void SetGravityScale(float scale) {
         rb.gravityScale = scale;
     }
         public void AutoMove(float speed, float duration) {
