@@ -6,7 +6,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void PlayCustomAnimation(string animName) {
+    private bool stunned = false;
+    public void Stun(float duration) {
+        stunned = true;
+        StartCoroutine(RemoveStun(duration));
+    }
+    private IEnumerator RemoveStun(float duration) {
+        yield return new WaitForSeconds(duration);
+        stunned = false;
+    }
+        public void PlayCustomAnimation(string animName) {
         if (anim != null) anim.Play(animName);
     }
         private bool onLadder = false;
