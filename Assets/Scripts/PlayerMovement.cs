@@ -6,7 +6,13 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool stunned = false;
+    public void ResetMovementStates() {
+        isCrouching = false;
+        isSprinting = false;
+        stunned = false;
+        controlsLocked = false;
+    }
+        private bool stunned = false;
     public void Stun(float duration) {
         stunned = true;
         StartCoroutine(RemoveStun(duration));
