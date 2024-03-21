@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void ResetMovementStates() {
+    private bool pushingObject = false;
+    public void SetPushingObject(bool enable) {
+        pushingObject = enable;
+    }
+        public void ResetMovementStates() {
         isCrouching = false;
         isSprinting = false;
         stunned = false;
