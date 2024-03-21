@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private bool pushingObject = false;
+    public void SetJumpForce(float newJumpForce) {
+        jumpForce = newJumpForce;
+    }
+        private bool pushingObject = false;
     public void SetPushingObject(bool enable) {
         pushingObject = enable;
     }
