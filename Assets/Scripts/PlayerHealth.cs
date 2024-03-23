@@ -5,7 +5,18 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public Image healthBar;
+    public void ApplyPoison(float dps, float duration) {
+        StartCoroutine(PoisonRoutine(dps, duration));
+    }
+    private IEnumerator PoisonRoutine(float dps, float duration) {
+        float timer = 0f;
+        while (timer < duration) {
+            TakeDamage(dps * Time.deltaTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+    }
+        public Image healthBar;
     public float health = 100f; // Player's health
     private Rigidbody2D rb;
     private BoxCollider2D coll;
