@@ -6,7 +6,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public void SetJumpForce(float newJumpForce) {
+    public delegate void PlayerLanded();
+    public event PlayerLanded OnPlayerLanded;
+    public void NotifyPlayerLanded() {
+        if (OnPlayerLanded != null) OnPlayerLanded();
+    }
+        public void SetJumpForce(float newJumpForce) {
         jumpForce = newJumpForce;
     }
         private bool pushingObject = false;
