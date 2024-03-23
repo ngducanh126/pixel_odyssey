@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void ApplyPoison(float dps, float duration) {
+    public void Revive(Vector2 position, float reviveHealth) {
+        transform.position = position;
+        health = reviveHealth;
+        UpdateHealthBar();
+    }
+        public void ApplyPoison(float dps, float duration) {
         StartCoroutine(PoisonRoutine(dps, duration));
     }
     private IEnumerator PoisonRoutine(float dps, float duration) {
