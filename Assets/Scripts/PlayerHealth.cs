@@ -5,7 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void Revive(Vector2 position, float reviveHealth) {
+    private float shield = 0f;
+    public void AddShield(float amount) {
+        shield += amount;
+    }
+    private void AbsorbDamage(float damage) {
+        if (shield > 0) {
+            float absorbed = Mathf.Min(shield, damage);
+            shield -= absorbed;
+            damage -= absorbed;
+        }
+        if (damage > 0) TakeDamage(damage);
+    }
+        public void Revive(Vector2 position, float reviveHealth) {
         transform.position = position;
         health = reviveHealth;
         UpdateHealthBar();
