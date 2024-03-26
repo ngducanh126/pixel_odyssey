@@ -5,7 +5,21 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float shield = 0f;
+    private bool bleeding = false;
+    public void StartBleeding(float dps, float duration) {
+        if (!bleeding) StartCoroutine(BleedRoutine(dps, duration));
+    }
+    private IEnumerator BleedRoutine(float dps, float duration) {
+        bleeding = true;
+        float timer = 0f;
+        while (timer < duration) {
+            TakeDamage(dps * Time.deltaTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        bleeding = false;
+    }
+        private float shield = 0f;
     public void AddShield(float amount) {
         shield += amount;
     }
