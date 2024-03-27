@@ -5,7 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void FullHeal() {
+    public void RegenerateHealth(float amount, float duration) {
+        StartCoroutine(RegenerateRoutine(amount, duration));
+    }
+    private IEnumerator RegenerateRoutine(float amount, float duration) {
+        float timer = 0f;
+        float perSecond = amount / duration;
+        while (timer < duration) {
+            Heal(perSecond * Time.deltaTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+    }
+        public void FullHeal() {
         health = 100f;
         UpdateHealthBar();
     }
