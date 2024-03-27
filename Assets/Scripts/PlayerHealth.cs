@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private bool bleeding = false;
+    public void FullHeal() {
+        health = 100f;
+        UpdateHealthBar();
+    }
+        private bool bleeding = false;
     public void StartBleeding(float dps, float duration) {
         if (!bleeding) StartCoroutine(BleedRoutine(dps, duration));
     }
