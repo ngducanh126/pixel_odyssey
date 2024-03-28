@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void RegenerateHealth(float amount, float duration) {
+    public delegate void HealthZero();
+    public event HealthZero OnHealthZero;
+    private void CheckHealthZero() {
+        if (health <= 0 && OnHealthZero != null) OnHealthZero();
+    }
+        public void RegenerateHealth(float amount, float duration) {
         StartCoroutine(RegenerateRoutine(amount, duration));
     }
     private IEnumerator RegenerateRoutine(float amount, float duration) {
