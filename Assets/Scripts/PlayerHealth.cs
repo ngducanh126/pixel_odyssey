@@ -5,7 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public delegate void HealthZero();
+    public void AddTempHealth(float tempAmount, float duration) {
+        StartCoroutine(TempHealthRoutine(tempAmount, duration));
+    }
+    private IEnumerator TempHealthRoutine(float tempAmount, float duration) {
+        health += tempAmount;
+        UpdateHealthBar();
+        yield return new WaitForSeconds(duration);
+        health -= tempAmount;
+        UpdateHealthBar();
+    }
+        public delegate void HealthZero();
     public event HealthZero OnHealthZero;
     private void CheckHealthZero() {
         if (health <= 0 && OnHealthZero != null) OnHealthZero();
