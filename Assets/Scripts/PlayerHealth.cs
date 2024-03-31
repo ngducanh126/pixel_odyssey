@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void AddTempHealth(float tempAmount, float duration) {
+    public void ReduceMaxHealth(float amount) {
+        health = Mathf.Min(health, 100f - amount);
+        UpdateHealthBar();
+    }
+        public void AddTempHealth(float tempAmount, float duration) {
         StartCoroutine(TempHealthRoutine(tempAmount, duration));
     }
     private IEnumerator TempHealthRoutine(float tempAmount, float duration) {
