@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void Overheal(float extra) {
+    public string GetHealthPercent() {
+        return ((health / 100f) * 100f).ToString("F0") + "%";
+    }
+        public void Overheal(float extra) {
         health += extra;
         // Visual feedback could be added here
         UpdateHealthBar();
