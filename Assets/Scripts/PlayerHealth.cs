@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void ReduceMaxHealth(float amount) {
+    public void Overheal(float extra) {
+        health += extra;
+        // Visual feedback could be added here
+        UpdateHealthBar();
+    }
+        public void ReduceMaxHealth(float amount) {
         health = Mathf.Min(health, 100f - amount);
         UpdateHealthBar();
     }
