@@ -5,7 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public string GetHealthPercent() {
+    private float armor = 0f;
+    public void SetArmor(float value) {
+        armor = value;
+    }
+    private void ApplyArmor(ref float damage) {
+        damage = Mathf.Max(0, damage - armor);
+    }
+        public string GetHealthPercent() {
         return ((health / 100f) * 100f).ToString("F0") + "%";
     }
         public void Overheal(float extra) {
