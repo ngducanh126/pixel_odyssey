@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float armor = 0f;
+    public void SetInvulnerable(bool enable) {
+        isInvulnerable = enable;
+    }
+        private float armor = 0f;
     public void SetArmor(float value) {
         armor = value;
     }
