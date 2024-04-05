@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void ApplyDelayedDamage(float damage, float delay) {
+    public delegate void Healed(float amount);
+    public event Healed OnHealed;
+    public void NotifyHealed(float amount) {
+        if (OnHealed != null) OnHealed(amount);
+    }
+        public void ApplyDelayedDamage(float damage, float delay) {
         StartCoroutine(DelayedDamageRoutine(damage, delay));
     }
     private IEnumerator DelayedDamageRoutine(float damage, float delay) {
