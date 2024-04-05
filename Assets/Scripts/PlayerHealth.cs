@@ -5,7 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void SetInvulnerable(bool enable) {
+    public void ApplyDelayedDamage(float damage, float delay) {
+        StartCoroutine(DelayedDamageRoutine(damage, delay));
+    }
+    private IEnumerator DelayedDamageRoutine(float damage, float delay) {
+        yield return new WaitForSeconds(delay);
+        TakeDamage(damage);
+    }
+        public void SetInvulnerable(bool enable) {
         isInvulnerable = enable;
     }
         private float armor = 0f;
