@@ -5,7 +5,14 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public delegate void Healed(float amount);
+    private bool inHazard = false;
+    public void SetHazardZone(bool enable) {
+        inHazard = enable;
+    }
+    private void Update() {
+        if (inHazard) TakeDamage(Time.deltaTime * 2f);
+    }
+        public delegate void Healed(float amount);
     public event Healed OnHealed;
     public void NotifyHealed(float amount) {
         if (OnHealed != null) OnHealed(amount);
