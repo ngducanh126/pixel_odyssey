@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private bool inHazard = false;
+    public void PlayHealSound(AudioClip clip) {
+        if (clip != null) AudioSource.PlayClipAtPoint(clip, transform.position);
+    }
+        private bool inHazard = false;
     public void SetHazardZone(bool enable) {
         inHazard = enable;
     }
