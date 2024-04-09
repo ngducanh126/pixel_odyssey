@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void PlayHealSound(AudioClip clip) {
+    public void SetHealthBarColor(Color color) {
+        if (healthBar != null) healthBar.color = color;
+    }
+        public void PlayHealSound(AudioClip clip) {
         if (clip != null) AudioSource.PlayClipAtPoint(clip, transform.position);
     }
         private bool inHazard = false;
