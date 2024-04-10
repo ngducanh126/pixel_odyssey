@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void ResetHealthBarVisuals() {
+    public void CollectHealthPickup(float amount) {
+        Heal(amount);
+    }
+        public void ResetHealthBarVisuals() {
         if (healthBar != null) healthBar.color = Color.green;
     }
         public void SetHealthBarColor(Color color) {
