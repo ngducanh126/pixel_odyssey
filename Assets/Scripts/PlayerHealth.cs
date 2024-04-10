@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void SetHealthBarColor(Color color) {
+    public void ResetHealthBarVisuals() {
+        if (healthBar != null) healthBar.color = Color.green;
+    }
+        public void SetHealthBarColor(Color color) {
         if (healthBar != null) healthBar.color = color;
     }
         public void PlayHealSound(AudioClip clip) {
