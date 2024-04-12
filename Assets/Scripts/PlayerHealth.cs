@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void CollectHealthPickup(float amount) {
+    public void ShowFloatingDamage(float amount) {
+        // Instantiate floating text prefab here
+    }
+        public void CollectHealthPickup(float amount) {
         Heal(amount);
     }
         public void ResetHealthBarVisuals() {
