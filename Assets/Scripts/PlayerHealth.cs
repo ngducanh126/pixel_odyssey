@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void PlayReviveAnimation() {
+    public bool IsAtMaxHealth() {
+        return health >= 100f;
+    }
+        public void PlayReviveAnimation() {
         if (anim != null) anim.SetTrigger("Revive");
     }
     public void PlayReviveSound(AudioClip clip) {
