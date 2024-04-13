@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    [Header("Attack Parameters")]
+    public void RangedAttack(GameObject projectile, Transform firePoint) {
+        if (projectile != null && firePoint != null) {
+            Instantiate(projectile, firePoint.position, Quaternion.identity);
+            anim.SetTrigger("ranged");
+            Debug.Log("BossController: Boss fires a ranged attack");
+        }
+    }
+        [Header("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
     [SerializeField] private int damage;
