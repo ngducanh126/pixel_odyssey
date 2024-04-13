@@ -5,7 +5,13 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void ShowFloatingDamage(float amount) {
+    public void PlayReviveAnimation() {
+        if (anim != null) anim.SetTrigger("Revive");
+    }
+    public void PlayReviveSound(AudioClip clip) {
+        if (clip != null) AudioSource.PlayClipAtPoint(clip, transform.position);
+    }
+        public void ShowFloatingDamage(float amount) {
         // Instantiate floating text prefab here
     }
         public void CollectHealthPickup(float amount) {
