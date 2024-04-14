@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void RangedAttack(GameObject projectile, Transform firePoint) {
+    public void Jump() {
+        if (GetComponent<Rigidbody2D>() != null) {
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * 8f, ForceMode2D.Impulse);
+            anim.SetTrigger("jump");
+            Debug.Log("BossController: Boss jumps");
+        }
+    }
+        public void RangedAttack(GameObject projectile, Transform firePoint) {
         if (projectile != null && firePoint != null) {
             Instantiate(projectile, firePoint.position, Quaternion.identity);
             anim.SetTrigger("ranged");
