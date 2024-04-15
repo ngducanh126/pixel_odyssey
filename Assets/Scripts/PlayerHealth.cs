@@ -5,7 +5,16 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public bool IsAtMaxHealth() {
+    public void LoseHealthOnTimer(float amount, float interval) {
+        StartCoroutine(TimerHealthLoss(amount, interval));
+    }
+    private IEnumerator TimerHealthLoss(float amount, float interval) {
+        while (true) {
+            TakeDamage(amount);
+            yield return new WaitForSeconds(interval);
+        }
+    }
+        public bool IsAtMaxHealth() {
         return health >= 100f;
     }
         public void PlayReviveAnimation() {
