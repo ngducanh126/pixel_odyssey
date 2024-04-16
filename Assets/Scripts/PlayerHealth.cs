@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void LoseHealthOnTimer(float amount, float interval) {
+    public void SetHealthBarVisible(bool visible) {
+        if (healthBar != null) healthBar.enabled = visible;
+    }
+        public void LoseHealthOnTimer(float amount, float interval) {
         StartCoroutine(TimerHealthLoss(amount, interval));
     }
     private IEnumerator TimerHealthLoss(float amount, float interval) {
