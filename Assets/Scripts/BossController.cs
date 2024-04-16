@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void Jump() {
+    public void Roar() {
+        anim.SetTrigger("roar");
+        Debug.Log("BossController: Boss roars intimidatingly");
+    }
+        public void Jump() {
         if (GetComponent<Rigidbody2D>() != null) {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * 8f, ForceMode2D.Impulse);
             anim.SetTrigger("jump");
