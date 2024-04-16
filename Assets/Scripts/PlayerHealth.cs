@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void SetHealthBarVisible(bool visible) {
+    public void PoisonZoneEffect(float dps) {
+        if (inHazard) TakeDamage(dps * Time.deltaTime);
+    }
+        public void SetHealthBarVisible(bool visible) {
         if (healthBar != null) healthBar.enabled = visible;
     }
         public void LoseHealthOnTimer(float amount, float interval) {
