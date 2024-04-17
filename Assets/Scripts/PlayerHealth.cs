@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void PoisonZoneEffect(float dps) {
+    public void ShakeCameraOnHeal(float intensity, float duration) {
+        if (cameraShake != null) cameraShake.Shake(intensity, duration);
+    }
+        public void PoisonZoneEffect(float dps) {
         if (inHazard) TakeDamage(dps * Time.deltaTime);
     }
         public void SetHealthBarVisible(bool visible) {
