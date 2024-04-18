@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void ShakeCameraOnHeal(float intensity, float duration) {
+    public void SpeedBoostOnHighHealth(float threshold, float boost) {
+        if (health > threshold) moveSpeed += boost;
+    }
+        public void ShakeCameraOnHeal(float intensity, float duration) {
         if (cameraShake != null) cameraShake.Shake(intensity, duration);
     }
         public void PoisonZoneEffect(float dps) {
