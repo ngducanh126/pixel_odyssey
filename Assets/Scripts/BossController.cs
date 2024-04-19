@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void Roar() {
+    public void BlockDamage() {
+        anim.SetTrigger("block");
+        Debug.Log("BossController: Boss blocks incoming damage");
+    }
+        public void Roar() {
         anim.SetTrigger("roar");
         Debug.Log("BossController: Boss roars intimidatingly");
     }
