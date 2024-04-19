@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void SpeedBoostOnHighHealth(float threshold, float boost) {
+    public void ClampHealth(float min, float max) {
+        health = Mathf.Clamp(health, min, max);
+        UpdateHealthBar();
+    }
+        public void SpeedBoostOnHighHealth(float threshold, float boost) {
         if (health > threshold) moveSpeed += boost;
     }
         public void ShakeCameraOnHeal(float intensity, float duration) {
