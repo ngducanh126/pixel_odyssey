@@ -8,7 +8,14 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public int coinMultiplier = 1;
+    public float magnetRadius = 3f;
+    public void ActivateCoinMagnet() {
+        Collider2D[] coins = Physics2D.OverlapCircleAll(transform.position, magnetRadius);
+        foreach (var c in coins) {
+            if (c.CompareTag("Coin")) c.transform.position = Vector3.MoveTowards(c.transform.position, transform.position, 0.2f);
+        }
+    }
+        public int coinMultiplier = 1;
     public void SetCoinMultiplier(int multiplier) {
         coinMultiplier = multiplier;
     }
