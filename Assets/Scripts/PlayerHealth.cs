@@ -5,7 +5,12 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public void ClampHealth(float min, float max) {
+    public delegate void InvulnerableEvent();
+    public event InvulnerableEvent OnInvulnerable;
+    public void NotifyInvulnerable() {
+        if (OnInvulnerable != null) OnInvulnerable();
+    }
+        public void ClampHealth(float min, float max) {
         health = Mathf.Clamp(health, min, max);
         UpdateHealthBar();
     }
