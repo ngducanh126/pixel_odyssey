@@ -2,7 +2,19 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void BlockDamage() {
+    public void PausePatrol(float duration) {
+        if (enemyPatrol != null) {
+            enemyPatrol.enabled = false;
+            Debug.Log("BossController: Boss patrol paused");
+            StartCoroutine(ResumePatrolAfter(duration));
+        }
+    }
+    private System.Collections.IEnumerator ResumePatrolAfter(float duration) {
+        yield return new WaitForSeconds(duration);
+        if (enemyPatrol != null) enemyPatrol.enabled = true;
+        Debug.Log("BossController: Boss patrol resumed");
+    }
+        public void BlockDamage() {
         anim.SetTrigger("block");
         Debug.Log("BossController: Boss blocks incoming damage");
     }
