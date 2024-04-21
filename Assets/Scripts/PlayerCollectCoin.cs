@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public int score = 0; // Initial score
+    public int coinMultiplier = 1;
+    public void SetCoinMultiplier(int multiplier) {
+        coinMultiplier = multiplier;
+    }
+        public int score = 0; // Initial score
     public TextMeshProUGUI scoreText; // Reference to the TextMeshPro GUI element
     [SerializeField] private AudioSource collectCoinAudioSource; 
     public Button buyItemButton; // Reference to the BuyItem button
