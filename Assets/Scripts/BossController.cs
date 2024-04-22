@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void PausePatrol(float duration) {
+    public void RetreatToSafeZone(Vector3 safePosition) {
+        transform.position = Vector3.MoveTowards(transform.position, safePosition, 4f);
+        anim.SetTrigger("retreat");
+        Debug.Log("BossController: Boss retreats to safe zone");
+    }
+        public void PausePatrol(float duration) {
         if (enemyPatrol != null) {
             enemyPatrol.enabled = false;
             Debug.Log("BossController: Boss patrol paused");
