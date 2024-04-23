@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void RetreatToSafeZone(Vector3 safePosition) {
+    public bool IsPlayerLowHealth(GameObject player) {
+        var healthComp = player.GetComponent<PlayerHealth>();
+        if (healthComp != null) {
+            Debug.Log($"BossController: Player health is {healthComp.health}");
+            return healthComp.health < 20;
+        }
+        return false;
+    }
+        public void RetreatToSafeZone(Vector3 safePosition) {
         transform.position = Vector3.MoveTowards(transform.position, safePosition, 4f);
         anim.SetTrigger("retreat");
         Debug.Log("BossController: Boss retreats to safe zone");
