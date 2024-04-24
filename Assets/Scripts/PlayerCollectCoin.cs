@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void ResetCoinScore() {
+    public GameObject floatingTextPrefab;
+    public void ShowFloatingText(string text) {
+        if (floatingTextPrefab != null) Instantiate(floatingTextPrefab, transform.position, Quaternion.identity).GetComponent<TMPro.TextMeshProUGUI>().text = text;
+    }
+        public void ResetCoinScore() {
         score = 0;
         UpdateScoreText();
     }
