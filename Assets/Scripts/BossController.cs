@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public bool IsPlayerLowHealth(GameObject player) {
+    public void ComboAttack() {
+        anim.SetTrigger("combo1");
+        anim.SetTrigger("combo2");
+        Debug.Log("BossController: Boss performs a combo attack");
+    }
+        public bool IsPlayerLowHealth(GameObject player) {
         var healthComp = player.GetComponent<PlayerHealth>();
         if (healthComp != null) {
             Debug.Log($"BossController: Player health is {healthComp.health}");
