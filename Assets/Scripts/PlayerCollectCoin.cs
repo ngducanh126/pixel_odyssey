@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public GameObject floatingTextPrefab;
+    public AudioClip goldenCoinSound;
+    public void PlayGoldenCoinSound() {
+        if (goldenCoinSound != null) collectCoinAudioSource.PlayOneShot(goldenCoinSound);
+    }
+        public GameObject floatingTextPrefab;
     public void ShowFloatingText(string text) {
         if (floatingTextPrefab != null) Instantiate(floatingTextPrefab, transform.position, Quaternion.identity).GetComponent<TMPro.TextMeshProUGUI>().text = text;
     }
