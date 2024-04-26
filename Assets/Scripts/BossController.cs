@@ -2,7 +2,17 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void ComboAttack() {
+    public void OpenVulnerabilityWindow(float duration) {
+        anim.SetBool("vulnerable", true);
+        Debug.Log("BossController: Boss is vulnerable");
+        StartCoroutine(CloseVulnerabilityAfter(duration));
+    }
+    private System.Collections.IEnumerator CloseVulnerabilityAfter(float duration) {
+        yield return new WaitForSeconds(duration);
+        anim.SetBool("vulnerable", false);
+        Debug.Log("BossController: Boss is no longer vulnerable");
+    }
+        public void ComboAttack() {
         anim.SetTrigger("combo1");
         anim.SetTrigger("combo2");
         Debug.Log("BossController: Boss performs a combo attack");
