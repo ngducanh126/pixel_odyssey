@@ -8,7 +8,12 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public AudioClip goldenCoinSound;
+    public delegate void CoinMilestone(int coins);
+    public event CoinMilestone OnCoinMilestone;
+    public void CheckCoinMilestone(int milestone) {
+        if (score >= milestone && OnCoinMilestone != null) OnCoinMilestone(score);
+    }
+        public AudioClip goldenCoinSound;
     public void PlayGoldenCoinSound() {
         if (goldenCoinSound != null) collectCoinAudioSource.PlayOneShot(goldenCoinSound);
     }
