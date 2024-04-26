@@ -8,7 +8,16 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public delegate void CoinMilestone(int coins);
+    private int coinStreak = 0;
+    public void AddCoinStreak() {
+        coinStreak++;
+        if (coinStreak % 5 == 0) SetCoinMultiplier(coinMultiplier + 1);
+    }
+    public void ResetCoinStreak() {
+        coinStreak = 0;
+        SetCoinMultiplier(1);
+    }
+        public delegate void CoinMilestone(int coins);
     public event CoinMilestone OnCoinMilestone;
     public void CheckCoinMilestone(int milestone) {
         if (score >= milestone && OnCoinMilestone != null) OnCoinMilestone(score);
