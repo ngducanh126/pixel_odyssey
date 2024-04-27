@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void OpenVulnerabilityWindow(float duration) {
+    public void HealWhenIdle() {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle")) {
+            GetComponent<Boss>().health += 5;
+            Debug.Log("BossController: Boss heals while idle");
+        }
+    }
+        public void OpenVulnerabilityWindow(float duration) {
         anim.SetBool("vulnerable", true);
         Debug.Log("BossController: Boss is vulnerable");
         StartCoroutine(CloseVulnerabilityAfter(duration));
