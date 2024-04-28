@@ -8,7 +8,13 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    private int coinStreak = 0;
+    public void SpendCoins(int amount) {
+        if (score >= amount) {
+            score -= amount;
+            UpdateScoreText();
+        }
+    }
+        private int coinStreak = 0;
     public void AddCoinStreak() {
         coinStreak++;
         if (coinStreak % 5 == 0) SetCoinMultiplier(coinMultiplier + 1);
