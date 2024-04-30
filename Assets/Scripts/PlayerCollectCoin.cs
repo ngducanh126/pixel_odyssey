@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void AnimateCoinHUD() {
+    public void AddDebt(int amount) {
+        score -= amount;
+        UpdateScoreText();
+    }
+        public void AnimateCoinHUD() {
         if (scoreText != null) scoreText.transform.localScale = Vector3.one * 1.2f;
     }
         public void SpendCoins(int amount) {
