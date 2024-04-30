@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void HealWhenIdle() {
+    public void IntimidatePlayer(GameObject player) {
+        var move = player.GetComponent<PlayerMovement>();
+        if (move != null) {
+            move.speed *= 0.8f;
+            Debug.Log("BossController: Boss intimidates player, reducing speed");
+        }
+    }
+        public void HealWhenIdle() {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle")) {
             GetComponent<Boss>().health += 5;
             Debug.Log("BossController: Boss heals while idle");
