@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void AddDebt(int amount) {
+    public void DropCoinsOnDamage(int amount) {
+        score = Mathf.Max(0, score - amount);
+        UpdateScoreText();
+    }
+        public void AddDebt(int amount) {
         score -= amount;
         UpdateScoreText();
     }
