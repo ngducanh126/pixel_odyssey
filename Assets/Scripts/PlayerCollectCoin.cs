@@ -8,7 +8,15 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void DropCoinsOnDamage(int amount) {
+    public void SaveCoinCount() {
+        PlayerPrefs.SetInt("coins", score);
+        PlayerPrefs.Save();
+    }
+    public void LoadCoinCount() {
+        score = PlayerPrefs.GetInt("coins", 0);
+        UpdateScoreText();
+    }
+        public void DropCoinsOnDamage(int amount) {
         score = Mathf.Max(0, score - amount);
         UpdateScoreText();
     }
