@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void IntimidatePlayer(GameObject player) {
+    public void BreakShield() {
+        anim.SetTrigger("breakShield");
+        Debug.Log("BossController: Boss shield broken");
+    }
+        public void IntimidatePlayer(GameObject player) {
         var move = player.GetComponent<PlayerMovement>();
         if (move != null) {
             move.speed *= 0.8f;
