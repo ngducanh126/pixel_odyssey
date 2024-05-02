@@ -8,7 +8,12 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void SaveCoinCount() {
+    public bool doubleCoinsActive = false;
+    public void ToggleDoubleCoins(bool enable) {
+        doubleCoinsActive = enable;
+        coinMultiplier = enable ? 2 : 1;
+    }
+        public void SaveCoinCount() {
         PlayerPrefs.SetInt("coins", score);
         PlayerPrefs.Save();
     }
