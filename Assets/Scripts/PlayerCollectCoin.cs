@@ -8,7 +8,10 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public bool doubleCoinsActive = false;
+    public void SubmitCoinsToLeaderboard() {
+        Debug.Log("Coins submitted: " + score);
+    }
+        public bool doubleCoinsActive = false;
     public void ToggleDoubleCoins(bool enable) {
         doubleCoinsActive = enable;
         coinMultiplier = enable ? 2 : 1;
