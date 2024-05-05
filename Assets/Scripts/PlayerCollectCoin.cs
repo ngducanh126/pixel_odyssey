@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void SubmitCoinsToLeaderboard() {
+    public void DecayCoinsOverTime(float rate) {
+        score = Mathf.Max(0, score - Mathf.RoundToInt(rate * Time.deltaTime));
+        UpdateScoreText();
+    }
+        public void SubmitCoinsToLeaderboard() {
         Debug.Log("Coins submitted: " + score);
     }
         public bool doubleCoinsActive = false;
