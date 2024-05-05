@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void BreakShield() {
+    public void CallReinforcements(GameObject minionPrefab) {
+        for (int i = 0; i < 2; i++) {
+            Instantiate(minionPrefab, transform.position + new Vector3(i * 2, 0, 0), Quaternion.identity);
+        }
+        Debug.Log("BossController: Boss calls for reinforcements");
+    }
+        public void BreakShield() {
         anim.SetTrigger("breakShield");
         Debug.Log("BossController: Boss shield broken");
     }
