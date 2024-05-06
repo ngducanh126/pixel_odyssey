@@ -8,7 +8,10 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void DecayCoinsOverTime(float rate) {
+    public bool CanAfford(int amount) {
+        return score >= amount;
+    }
+        public void DecayCoinsOverTime(float rate) {
         score = Mathf.Max(0, score - Mathf.RoundToInt(rate * Time.deltaTime));
         UpdateScoreText();
     }
