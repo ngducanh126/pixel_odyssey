@@ -8,7 +8,10 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public bool CanAfford(int amount) {
+    public void AnimateCoinIcon() {
+        if (scoreText != null) scoreText.CrossFadeAlpha(0.5f, 0.2f, false);
+    }
+        public bool CanAfford(int amount) {
         return score >= amount;
     }
         public void DecayCoinsOverTime(float rate) {
