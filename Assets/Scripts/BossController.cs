@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void CallReinforcements(GameObject minionPrefab) {
+    public void TriggerHazard(GameObject hazard) {
+        if (hazard != null) {
+            hazard.SetActive(true);
+            Debug.Log("BossController: Boss triggers environmental hazard");
+        }
+    }
+        public void CallReinforcements(GameObject minionPrefab) {
         for (int i = 0; i < 2; i++) {
             Instantiate(minionPrefab, transform.position + new Vector3(i * 2, 0, 0), Quaternion.identity);
         }
