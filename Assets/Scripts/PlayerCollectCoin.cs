@@ -8,7 +8,12 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void AnimateCoinIcon() {
+    public delegate void CoinCountChanged(int newCount);
+    public event CoinCountChanged OnCoinCountChanged;
+    private void NotifyCoinCountChanged() {
+        if (OnCoinCountChanged != null) OnCoinCountChanged(score);
+    }
+        public void AnimateCoinIcon() {
         if (scoreText != null) scoreText.CrossFadeAlpha(0.5f, 0.2f, false);
     }
         public bool CanAfford(int amount) {
