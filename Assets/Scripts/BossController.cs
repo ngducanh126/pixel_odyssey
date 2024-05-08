@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void TriggerHazard(GameObject hazard) {
+    public void TauntWithCooldown(float cooldown) {
+        if (cooldownTimer >= cooldown) {
+            anim.SetTrigger("taunt");
+            cooldownTimer = 0;
+            Debug.Log("BossController: Boss taunts with cooldown");
+        }
+    }
+        public void TriggerHazard(GameObject hazard) {
         if (hazard != null) {
             hazard.SetActive(true);
             Debug.Log("BossController: Boss triggers environmental hazard");
