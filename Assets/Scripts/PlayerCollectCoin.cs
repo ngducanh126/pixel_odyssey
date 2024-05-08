@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public delegate void CoinCountChanged(int newCount);
+    public float rareCoinChance = 0.01f;
+    public void TrySpawnRareCoin() {
+        if (Random.value < rareCoinChance) Debug.Log("Rare coin spawned!");
+    }
+        public delegate void CoinCountChanged(int newCount);
     public event CoinCountChanged OnCoinCountChanged;
     private void NotifyCoinCountChanged() {
         if (OnCoinCountChanged != null) OnCoinCountChanged(score);
