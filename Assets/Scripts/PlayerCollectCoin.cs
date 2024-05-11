@@ -8,7 +8,10 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void RefundCoins(int amount) {
+    public void UnlockCoinAchievements() {
+        if (score >= 100) Debug.Log("Achievement: 100 Coins!");
+    }
+        public void RefundCoins(int amount) {
         score += amount;
         UpdateScoreText();
     }
