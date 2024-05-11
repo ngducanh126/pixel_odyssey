@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void TauntWithCooldown(float cooldown) {
+    public void TrackPlayer(GameObject player) {
+        if (player != null) {
+            Vector3 direction = (player.transform.position - transform.position).normalized;
+            transform.position += direction * 2f * Time.deltaTime;
+            Debug.Log("BossController: Boss tracks player position");
+        }
+    }
+        public void TauntWithCooldown(float cooldown) {
         if (cooldownTimer >= cooldown) {
             anim.SetTrigger("taunt");
             cooldownTimer = 0;
