@@ -8,7 +8,12 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void SetCoinCount(int value) {
+    private int comboCounter = 0;
+    public void AddCombo() {
+        comboCounter++;
+        if (comboCounter > 10) Debug.Log("Big combo!");
+    }
+        public void SetCoinCount(int value) {
         score = value;
         UpdateScoreText();
     }
