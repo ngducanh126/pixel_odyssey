@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void TrackPlayer(GameObject player) {
+    public void RecoverFromStun() {
+        anim.SetTrigger("recover");
+        Debug.Log("BossController: Boss recovers from stun");
+    }
+        public void TrackPlayer(GameObject player) {
         if (player != null) {
             Vector3 direction = (player.transform.position - transform.position).normalized;
             transform.position += direction * 2f * Time.deltaTime;
