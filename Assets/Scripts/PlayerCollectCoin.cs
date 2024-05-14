@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    private int comboCounter = 0;
+    public AudioClip streakSound;
+    public void PlayStreakSound() {
+        if (streakSound != null) collectCoinAudioSource.PlayOneShot(streakSound);
+    }
+        private int comboCounter = 0;
     public void AddCombo() {
         comboCounter++;
         if (comboCounter > 10) Debug.Log("Big combo!");
