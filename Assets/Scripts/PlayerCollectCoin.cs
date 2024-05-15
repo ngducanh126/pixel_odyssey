@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public void ShowCoinGainPopup(int amount) {
+    private bool coinLock = false;
+    public void SetCoinLock(bool enable) {
+        coinLock = enable;
+    }
+        public void ShowCoinGainPopup(int amount) {
         // Instantiate popup at player position
     }
         public AudioClip streakSound;
