@@ -8,7 +8,10 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public AudioClip streakSound;
+    public void ShowCoinGainPopup(int amount) {
+        // Instantiate popup at player position
+    }
+        public AudioClip streakSound;
     public void PlayStreakSound() {
         if (streakSound != null) collectCoinAudioSource.PlayOneShot(streakSound);
     }
