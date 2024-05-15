@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void RecoverFromStun() {
+    public void PlayPhaseChangeSound(AudioSource audioSource, AudioClip clip) {
+        if (audioSource != null && clip != null) {
+            audioSource.PlayOneShot(clip);
+            Debug.Log("BossController: Phase change sound played");
+        }
+    }
+        public void RecoverFromStun() {
         anim.SetTrigger("recover");
         Debug.Log("BossController: Boss recovers from stun");
     }
