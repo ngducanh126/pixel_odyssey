@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    private bool coinLock = false;
+    private int totalCoinsCollected = 0;
+    public void TrackCoinStats(int amount) {
+        totalCoinsCollected += amount;
+    }
+        private bool coinLock = false;
     public void SetCoinLock(bool enable) {
         coinLock = enable;
     }
