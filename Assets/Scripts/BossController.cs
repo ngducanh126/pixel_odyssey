@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void PlayPhaseChangeSound(AudioSource audioSource, AudioClip clip) {
+    public void DodgeAttack() {
+        anim.SetTrigger("dodge");
+        Debug.Log("BossController: Boss dodges player attack");
+    }
+        public void PlayPhaseChangeSound(AudioSource audioSource, AudioClip clip) {
         if (audioSource != null && clip != null) {
             audioSource.PlayOneShot(clip);
             Debug.Log("BossController: Phase change sound played");
