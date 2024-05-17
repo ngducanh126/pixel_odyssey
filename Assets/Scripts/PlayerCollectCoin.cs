@@ -8,7 +8,11 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    private int totalCoinsCollected = 0;
+    public void MultiplyCoins(int multiplier) {
+        score *= multiplier;
+        UpdateScoreText();
+    }
+        private int totalCoinsCollected = 0;
     public void TrackCoinStats(int amount) {
         totalCoinsCollected += amount;
     }
