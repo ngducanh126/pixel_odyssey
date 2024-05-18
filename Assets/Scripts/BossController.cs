@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public void DodgeAttack() {
+    public void CelebrateDefeat() {
+        anim.SetTrigger("celebrate");
+        Debug.Log("BossController: Boss celebrates after defeating player");
+    }
+        public void DodgeAttack() {
         anim.SetTrigger("dodge");
         Debug.Log("BossController: Boss dodges player attack");
     }
