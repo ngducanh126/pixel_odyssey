@@ -8,7 +8,12 @@ using UnityEngine.UI; // Namespace for UI
 
 public class PlayerCollectCoin : MonoBehaviour
 {
-    public int questCoins = 0;
+    public void ClearAllCoins() {
+        score = 0;
+        questCoins = 0;
+        UpdateScoreText();
+    }
+        public int questCoins = 0;
     public void AddQuestCoin() {
         questCoins++;
     }
