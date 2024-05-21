@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public void MeleeAttack() {
+    private float arrowCooldown = 1f;
+    private float lastArrowTime = -1f;
+    public void ShootArrow(GameObject arrowPrefab) {
+        if (Time.time - lastArrowTime >= arrowCooldown) {
+            Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
+            lastArrowTime = Time.time;
+        }
+    }
+        public void MeleeAttack() {
         animator.SetTrigger("melee");
         // Detect enemies in range and apply damage
     }
