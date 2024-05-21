@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public GameObject fireballPrefab; 
+    public void MeleeAttack() {
+        animator.SetTrigger("melee");
+        // Detect enemies in range and apply damage
+    }
+        public GameObject fireballPrefab; 
     public float fireballSpeed = 10f; 
     public float maxDistance = 10f; // Set your desired maximum distance
     [SerializeField] private Transform firePoint;
