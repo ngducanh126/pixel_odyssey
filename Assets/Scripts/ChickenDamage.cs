@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    private void OnTriggerExit2D(Collider2D collision) {
+    public void ShowTrapActivatedEffect() {
+        // Example: play particle system or change sprite
+        Debug.Log("Trap visual feedback: activated");
+    }
+        private void OnTriggerExit2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
             hitTrapAudioSource.Stop();
             Debug.Log("Player left trap area, sound stopped");
