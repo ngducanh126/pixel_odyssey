@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private float arrowCooldown = 1f;
+    private int comboStep = 0;
+    public void ComboAttack() {
+        comboStep = (comboStep + 1) % 3;
+        animator.SetInteger("comboStep", comboStep);
+    }
+        private float arrowCooldown = 1f;
     private float lastArrowTime = -1f;
     public void ShootArrow(GameObject arrowPrefab) {
         if (Time.time - lastArrowTime >= arrowCooldown) {
