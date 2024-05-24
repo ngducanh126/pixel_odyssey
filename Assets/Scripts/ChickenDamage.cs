@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    public void ShowTrapActivatedEffect() {
+    public void SetTrapDamage(float damage) {
+        trapDamage = damage;
+        Debug.Log($"Trap damage set to {damage}");
+    }
+        public void ShowTrapActivatedEffect() {
         // Example: play particle system or change sprite
         Debug.Log("Trap visual feedback: activated");
     }
