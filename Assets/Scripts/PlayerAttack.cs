@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private int comboStep = 0;
+    public void ChargedAttack(float chargeTime) {
+        float power = Mathf.Clamp(chargeTime, 0.5f, 2f);
+        animator.SetFloat("charge", power);
+        // Apply extra damage based on charge
+    }
+        private int comboStep = 0;
     public void ComboAttack() {
         comboStep = (comboStep + 1) % 3;
         animator.SetInteger("comboStep", comboStep);
