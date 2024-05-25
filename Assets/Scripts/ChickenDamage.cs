@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    public void SetTrapDamage(float damage) {
+    public void DisableTrap() {
+        gameObject.SetActive(false);
+        Debug.Log("Trap disabled after activation");
+    }
+        public void SetTrapDamage(float damage) {
         trapDamage = damage;
         Debug.Log($"Trap damage set to {damage}");
     }
