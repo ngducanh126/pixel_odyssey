@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public void ChargedAttack(float chargeTime) {
+    public void KnockbackEnemy(GameObject enemy, float force) {
+        Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
+        if (rb != null) rb.AddForce(Vector2.right * force, ForceMode2D.Impulse);
+    }
+        public void ChargedAttack(float chargeTime) {
         float power = Mathf.Clamp(chargeTime, 0.5f, 2f);
         animator.SetFloat("charge", power);
         // Apply extra damage based on charge
