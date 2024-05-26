@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public void KnockbackEnemy(GameObject enemy, float force) {
+    public void AttackTowardsMouse() {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = (mousePos - transform.position).normalized;
+        // Use direction for attack
+    }
+        public void KnockbackEnemy(GameObject enemy, float force) {
         Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
         if (rb != null) rb.AddForce(Vector2.right * force, ForceMode2D.Impulse);
     }
