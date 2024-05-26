@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    public void DisableTrap() {
+    public void RespawnTrap(Vector3 position) {
+        transform.position = position;
+        gameObject.SetActive(true);
+        Debug.Log($"Trap respawned at {position}");
+    }
+        public void DisableTrap() {
         gameObject.SetActive(false);
         Debug.Log("Trap disabled after activation");
     }
