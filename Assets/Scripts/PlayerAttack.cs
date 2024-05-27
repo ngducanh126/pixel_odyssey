@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public AudioClip attackSound;
+    public float critChance = 0.1f;
+    public void TryCriticalHit() {
+        if (Random.value < critChance) Debug.Log("Critical hit!");
+    }
+        public AudioClip attackSound;
     public void PlayAttackSound() {
         if (attackSound != null) AudioSource.PlayClipAtPoint(attackSound, transform.position);
     }
