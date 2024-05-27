@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public void AttackTowardsMouse() {
+    public AudioClip attackSound;
+    public void PlayAttackSound() {
+        if (attackSound != null) AudioSource.PlayClipAtPoint(attackSound, transform.position);
+    }
+        public void AttackTowardsMouse() {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (mousePos - transform.position).normalized;
         // Use direction for attack
