@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public float critChance = 0.1f;
+    public void HeavyAttackStun(GameObject enemy, float stunDuration) {
+        EnemyAI ai = enemy.GetComponent<EnemyAI>();
+        if (ai != null) ai.Stun(stunDuration);
+    }
+        public float critChance = 0.1f;
     public void TryCriticalHit() {
         if (Random.value < critChance) Debug.Log("Critical hit!");
     }
