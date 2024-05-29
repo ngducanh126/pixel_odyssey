@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    public void RespawnTrap(Vector3 position) {
+    public void ToggleTrapAudioMute(bool mute) {
+        hitTrapAudioSource.mute = mute;
+        Debug.Log($"Trap audio mute set to {mute}");
+    }
+        public void RespawnTrap(Vector3 position) {
         transform.position = position;
         gameObject.SetActive(true);
         Debug.Log($"Trap respawned at {position}");
