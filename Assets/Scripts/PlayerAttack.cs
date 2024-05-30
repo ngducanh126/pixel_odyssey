@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public void HeavyAttackStun(GameObject enemy, float stunDuration) {
+    private bool isDodging = false;
+    public void CancelAttackOnDodge() {
+        if (isDodging) animator.ResetTrigger("attack");
+    }
+        public void HeavyAttackStun(GameObject enemy, float stunDuration) {
         EnemyAI ai = enemy.GetComponent<EnemyAI>();
         if (ai != null) ai.Stun(stunDuration);
     }
