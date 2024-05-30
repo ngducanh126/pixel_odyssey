@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private bool isDodging = false;
+    public GameObject trailPrefab;
+    public void ShowWeaponTrail() {
+        if (trailPrefab != null) Instantiate(trailPrefab, firePoint.position, Quaternion.identity);
+    }
+        private bool isDodging = false;
     public void CancelAttackOnDodge() {
         if (isDodging) animator.ResetTrigger("attack");
     }
