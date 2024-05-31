@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public GameObject trailPrefab;
+    public void AttackWhileAirborne() {
+        if (!IsGrounded()) animator.SetTrigger("airAttack");
+    }
+        public GameObject trailPrefab;
     public void ShowWeaponTrail() {
         if (trailPrefab != null) Instantiate(trailPrefab, firePoint.position, Quaternion.identity);
     }
