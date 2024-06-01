@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public float moveSpeed = 6f;
+    public void Patrol() {
+        rb.velocity = new Vector2(-moveSpeed, 0);
+        Debug.Log("Monster is patrolling left");
+    }
+        public float moveSpeed = 6f;
 
     private Rigidbody2D rb;
 
