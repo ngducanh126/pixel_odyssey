@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    public void ToggleTrapAudioMute(bool mute) {
+    public bool IsTrapActive() {
+        return gameObject.activeSelf;
+    }
+        public void ToggleTrapAudioMute(bool mute) {
         hitTrapAudioSource.mute = mute;
         Debug.Log($"Trap audio mute set to {mute}");
     }
