@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public void AttackWhileAirborne() {
+    public void BlendAttackAnimations(string animA, string animB, float blend) {
+        animator.CrossFade(animA, blend);
+        animator.CrossFade(animB, blend);
+    }
+        public void AttackWhileAirborne() {
         if (!IsGrounded()) animator.SetTrigger("airAttack");
     }
         public GameObject trailPrefab;
