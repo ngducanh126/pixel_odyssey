@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public void BlendAttackAnimations(string animA, string animB, float blend) {
+    private bool attackLocked = false;
+    public void LockAttackAfterDamage(float duration) {
+        attackLocked = true;
+        Invoke("UnlockAttack", duration);
+    }
+    private void UnlockAttack() {
+        attackLocked = false;
+    }
+        public void BlendAttackAnimations(string animA, string animB, float blend) {
         animator.CrossFade(animA, blend);
         animator.CrossFade(animB, blend);
     }
