@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void Patrol() {
+    public void Jump() {
+        if (rb.velocity.y == 0) {
+            rb.AddForce(Vector2.up * 8f, ForceMode2D.Impulse);
+            Debug.Log("Monster jumps over obstacle");
+        }
+    }
+        public void Patrol() {
         rb.velocity = new Vector2(-moveSpeed, 0);
         Debug.Log("Monster is patrolling left");
     }
