@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public void SetAttackPower(float power) {
+    public delegate void AttackHit();
+    public event AttackHit OnAttackHit;
+    public void NotifyAttackHit() {
+        if (OnAttackHit != null) OnAttackHit();
+    }
+        public void SetAttackPower(float power) {
         animator.SetFloat("attackPower", power);
     }
         private bool attackLocked = false;
