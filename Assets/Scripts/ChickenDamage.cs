@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    public bool IsTrapActive() {
+    private float trapCooldown = 2f;
+    private float lastActivationTime = -10f;
+    public bool CanActivateTrap() {
+        return Time.time - lastActivationTime > trapCooldown;
+    }
+        public bool IsTrapActive() {
         return gameObject.activeSelf;
     }
         public void ToggleTrapAudioMute(bool mute) {
