@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private bool attackLocked = false;
+    public void SetAttackPower(float power) {
+        animator.SetFloat("attackPower", power);
+    }
+        private bool attackLocked = false;
     public void LockAttackAfterDamage(float duration) {
         attackLocked = true;
         Invoke("UnlockAttack", duration);
