@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void Jump() {
+    public void Roar() {
+        Debug.Log("Monster roars loudly");
+        // Play roar sound effect here
+    }
+        public void Jump() {
         if (rb.velocity.y == 0) {
             rb.AddForce(Vector2.up * 8f, ForceMode2D.Impulse);
             Debug.Log("Monster jumps over obstacle");
