@@ -2,7 +2,17 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    private float trapCooldown = 2f;
+    public void ManualTriggerTrap(GameObject player) {
+        if (player.CompareTag("Player")) {
+            PlayerHealth ph = player.GetComponent<PlayerHealth>();
+            if (ph != null && !ph.IsInvulnerable()) {
+                ph.TakeDamage(25f);
+                hitTrapAudioSource.Play();
+                Debug.Log("Trap manually triggered on player");
+            }
+        }
+    }
+        private float trapCooldown = 2f;
     private float lastActivationTime = -10f;
     public bool CanActivateTrap() {
         return Time.time - lastActivationTime > trapCooldown;
