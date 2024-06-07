@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void Roar() {
+    public void TakeDamage(int amount) {
+        moveSpeed -= amount * 0.1f;
+        Debug.Log($"Monster takes {amount} damage");
+        if (moveSpeed <= 0) Destroy(gameObject);
+    }
+        public void Roar() {
         Debug.Log("Monster roars loudly");
         // Play roar sound effect here
     }
