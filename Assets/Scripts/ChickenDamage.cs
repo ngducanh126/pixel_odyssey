@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    public void ManualTriggerTrap(GameObject player) {
+    public void ShowTrapWarningUI() {
+        Debug.Log("Trap warning UI shown to player");
+    }
+        public void ManualTriggerTrap(GameObject player) {
         if (player.CompareTag("Player")) {
             PlayerHealth ph = player.GetComponent<PlayerHealth>();
             if (ph != null && !ph.IsInvulnerable()) {
