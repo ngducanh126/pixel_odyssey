@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void TakeDamage(int amount) {
+    public void Stun(float duration) {
+        rb.velocity = Vector2.zero;
+        Debug.Log($"Monster stunned for {duration} seconds");
+        // Could start a coroutine to re-enable movement after duration
+    }
+        public void TakeDamage(int amount) {
         moveSpeed -= amount * 0.1f;
         Debug.Log($"Monster takes {amount} damage");
         if (moveSpeed <= 0) Destroy(gameObject);
