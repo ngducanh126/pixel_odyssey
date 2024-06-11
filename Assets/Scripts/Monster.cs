@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void Stun(float duration) {
+    public void Respawn(Vector3 position) {
+        transform.position = position;
+        rb.velocity = new Vector2(-moveSpeed, 0);
+        Debug.Log($"Monster respawned at {position}");
+    }
+        public void Stun(float duration) {
         rb.velocity = Vector2.zero;
         Debug.Log($"Monster stunned for {duration} seconds");
         // Could start a coroutine to re-enable movement after duration
