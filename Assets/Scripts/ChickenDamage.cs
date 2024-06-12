@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    public void ShowTrapWarningUI() {
+    private GameObject lastPlayerHit;
+    public GameObject GetLastPlayerHit() {
+        return lastPlayerHit;
+    }
+        public void ShowTrapWarningUI() {
         Debug.Log("Trap warning UI shown to player");
     }
         public void ManualTriggerTrap(GameObject player) {
