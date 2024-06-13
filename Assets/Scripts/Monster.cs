@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void Respawn(Vector3 position) {
+    public void ChasePlayer(GameObject player) {
+        if (player != null) {
+            Vector3 dir = (player.transform.position - transform.position).normalized;
+            rb.velocity = new Vector2(dir.x * moveSpeed, rb.velocity.y);
+            Debug.Log("Monster is chasing the player");
+        }
+    }
+        public void Respawn(Vector3 position) {
         transform.position = position;
         rb.velocity = new Vector2(-moveSpeed, 0);
         Debug.Log($"Monster respawned at {position}");
