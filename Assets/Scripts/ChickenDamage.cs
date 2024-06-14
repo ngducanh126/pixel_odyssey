@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    private GameObject lastPlayerHit;
+    private float damageMultiplier = 1f;
+    public void SetDamageMultiplier(float multiplier) {
+        damageMultiplier = multiplier;
+        Debug.Log($"Trap damage multiplier set to {multiplier}");
+    }
+        private GameObject lastPlayerHit;
     public GameObject GetLastPlayerHit() {
         return lastPlayerHit;
     }
