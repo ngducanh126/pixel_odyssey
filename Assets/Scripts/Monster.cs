@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void ChasePlayer(GameObject player) {
+    public void TriggerIdleAnimation() {
+        Debug.Log("Monster idle animation triggered");
+        // anim.SetTrigger("idle");
+    }
+        public void ChasePlayer(GameObject player) {
         if (player != null) {
             Vector3 dir = (player.transform.position - transform.position).normalized;
             rb.velocity = new Vector2(dir.x * moveSpeed, rb.velocity.y);
