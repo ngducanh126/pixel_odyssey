@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void TriggerIdleAnimation() {
+    public void FleeIfLowHealth(int health) {
+        if (health < 10) {
+            rb.velocity = new Vector2(moveSpeed, 0);
+            Debug.Log("Monster flees due to low health");
+        }
+    }
+        public void TriggerIdleAnimation() {
         Debug.Log("Monster idle animation triggered");
         // anim.SetTrigger("idle");
     }
