@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    private float damageMultiplier = 1f;
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, GetComponent<Collider2D>().bounds.size);
+    }
+        private float damageMultiplier = 1f;
     public void SetDamageMultiplier(float multiplier) {
         damageMultiplier = multiplier;
         Debug.Log($"Trap damage multiplier set to {multiplier}");
