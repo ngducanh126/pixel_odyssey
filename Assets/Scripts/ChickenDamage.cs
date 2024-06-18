@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    private void OnDrawGizmos() {
+    private GameObject trapOwner;
+    public void SetTrapOwner(GameObject owner) {
+        trapOwner = owner;
+        Debug.Log($"Trap owner set to {owner?.name}");
+    }
+        private void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, GetComponent<Collider2D>().bounds.size);
     }
