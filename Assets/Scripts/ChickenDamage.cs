@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    private GameObject trapOwner;
+    public void ResetTrap() {
+        trapDamage = 25f;
+        damageMultiplier = 1f;
+        gameObject.SetActive(true);
+        Debug.Log("Trap reset to default state");
+    }
+        private GameObject trapOwner;
     public void SetTrapOwner(GameObject owner) {
         trapOwner = owner;
         Debug.Log($"Trap owner set to {owner?.name}");
