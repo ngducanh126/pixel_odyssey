@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void FleeIfLowHealth(int health) {
+    public void DropLoot(GameObject lootPrefab) {
+        Instantiate(lootPrefab, transform.position, Quaternion.identity);
+        Debug.Log("Monster dropped loot on death");
+    }
+        public void FleeIfLowHealth(int health) {
         if (health < 10) {
             rb.velocity = new Vector2(moveSpeed, 0);
             Debug.Log("Monster flees due to low health");
