@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    public void SetTrapVolume(float volume) {
+    private int activationCount = 0;
+    public int GetActivationCount() {
+        return activationCount;
+    }
+        public void SetTrapVolume(float volume) {
         hitTrapAudioSource.volume = Mathf.Clamp01(volume);
         Debug.Log($"Trap sound volume set to {volume}");
     }
