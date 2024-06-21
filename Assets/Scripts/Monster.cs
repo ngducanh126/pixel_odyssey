@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void DropLoot(GameObject lootPrefab) {
+    public void UpdateHealthBar(UnityEngine.UI.Slider slider, int health) {
+        slider.value = health;
+        Debug.Log($"Monster health bar updated to {health}");
+    }
+        public void DropLoot(GameObject lootPrefab) {
         Instantiate(lootPrefab, transform.position, Quaternion.identity);
         Debug.Log("Monster dropped loot on death");
     }
