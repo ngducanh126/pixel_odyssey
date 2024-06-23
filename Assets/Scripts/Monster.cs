@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void UpdateHealthBar(UnityEngine.UI.Slider slider, int health) {
+    private float attackCooldown = 1.5f;
+    private float lastAttackTime = -10f;
+    public bool CanAttack() {
+        return Time.time - lastAttackTime > attackCooldown;
+    }
+        public void UpdateHealthBar(UnityEngine.UI.Slider slider, int health) {
         slider.value = health;
         Debug.Log($"Monster health bar updated to {health}");
     }
