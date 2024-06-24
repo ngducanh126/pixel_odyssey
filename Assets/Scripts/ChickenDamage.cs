@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    private int activationCount = 0;
+    public void DeactivateAfterUses(int maxUses) {
+        activationCount++;
+        if (activationCount >= maxUses) {
+            gameObject.SetActive(false);
+            Debug.Log("Trap deactivated after max uses");
+        }
+    }
+        private int activationCount = 0;
     public int GetActivationCount() {
         return activationCount;
     }
