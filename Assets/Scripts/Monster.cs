@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    private float attackCooldown = 1.5f;
+    public void Swim() {
+        Debug.Log("Monster is swimming");
+        // Change movement logic for water
+    }
+        private float attackCooldown = 1.5f;
     private float lastAttackTime = -10f;
     public bool CanAttack() {
         return Time.time - lastAttackTime > attackCooldown;
