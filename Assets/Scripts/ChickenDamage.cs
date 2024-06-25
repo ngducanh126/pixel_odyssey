@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    public void DeactivateAfterUses(int maxUses) {
+    private void OnTriggerStay2D(Collider2D collision) {
+        if (collision.CompareTag("Player")) {
+            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+            if (!playerHealth.IsInvulnerable()) {
+                playerHealth.TakeDamage(5f * Time.deltaTime);
+            }
+        }
+    }
+        public void DeactivateAfterUses(int maxUses) {
         activationCount++;
         if (activationCount >= maxUses) {
             gameObject.SetActive(false);
