@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenDamage : MonoBehaviour
 {
-    private void OnTriggerStay2D(Collider2D collision) {
+    public void DestroyTrap() {
+        Destroy(gameObject);
+        Debug.Log("Trap destroyed");
+    }
+        private void OnTriggerStay2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {
             PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
             if (!playerHealth.IsInvulnerable()) {
