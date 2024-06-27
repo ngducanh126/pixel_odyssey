@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void Swim() {
+    public void Freeze(float duration) {
+        rb.velocity = Vector2.zero;
+        Debug.Log($"Monster frozen for {duration} seconds");
+    }
+        public void Swim() {
         Debug.Log("Monster is swimming");
         // Change movement logic for water
     }
