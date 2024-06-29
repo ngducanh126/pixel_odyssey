@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void Freeze(float duration) {
+    public void AlertGroup(GameObject[] monsters) {
+        foreach (var m in monsters) {
+            m.SendMessage("ChasePlayer", gameObject);
+        }
+        Debug.Log("Monster alerts group to attack");
+    }
+        public void Freeze(float duration) {
         rb.velocity = Vector2.zero;
         Debug.Log($"Monster frozen for {duration} seconds");
     }
