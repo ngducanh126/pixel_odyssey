@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void AlertGroup(GameObject[] monsters) {
+    public void ClimbLadder(Transform ladderTop) {
+        transform.position = Vector3.MoveTowards(transform.position, ladderTop.position, moveSpeed * Time.deltaTime);
+        Debug.Log("Monster climbs ladder");
+    }
+        public void AlertGroup(GameObject[] monsters) {
         foreach (var m in monsters) {
             m.SendMessage("ChasePlayer", gameObject);
         }
