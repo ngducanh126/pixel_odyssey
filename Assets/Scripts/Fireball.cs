@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    private Animator anim;
+    public void Launch(Vector2 direction, float force) {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null) {
+            rb.velocity = direction.normalized * force;
+            Debug.Log($"Fireball launched with force {force}");
+        }
+    }
+        private Animator anim;
     private bool hasExploded;
     [SerializeField] private AudioSource fireHitAudioSource; 
     private BoxCollider2D boxCollider;
