@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void ClimbLadder(Transform ladderTop) {
+    public void Sleep() {
+        rb.velocity = Vector2.zero;
+        Debug.Log("Monster is sleeping");
+    }
+    public void WakeUp() {
+        rb.velocity = new Vector2(-moveSpeed, 0);
+        Debug.Log("Monster wakes up and resumes movement");
+    }
+        public void ClimbLadder(Transform ladderTop) {
         transform.position = Vector3.MoveTowards(transform.position, ladderTop.position, moveSpeed * Time.deltaTime);
         Debug.Log("Monster climbs ladder");
     }
