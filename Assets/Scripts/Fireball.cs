@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void Launch(Vector2 direction, float force) {
+    public void BounceOnGround() {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null && rb.velocity.y < 0) {
+            rb.velocity = new Vector2(rb.velocity.x, 8f);
+            Debug.Log("Fireball bounced on ground");
+        }
+    }
+        public void Launch(Vector2 direction, float force) {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null) {
             rb.velocity = direction.normalized * force;
