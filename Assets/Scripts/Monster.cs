@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void Sleep() {
+    public void IgnoreFireAfterDeath() {
+        if (!gameObject.activeSelf) {
+            Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Fire"));
+            Debug.Log("Monster ignores fire after death");
+        }
+    }
+        public void Sleep() {
         rb.velocity = Vector2.zero;
         Debug.Log("Monster is sleeping");
     }
