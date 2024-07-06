@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void BounceOnGround() {
+    public void ChangeColorOnImpact(Color color) {
+        GetComponent<SpriteRenderer>().color = color;
+        Debug.Log($"Fireball changed color to {color}");
+    }
+        public void BounceOnGround() {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null && rb.velocity.y < 0) {
             rb.velocity = new Vector2(rb.velocity.x, 8f);
