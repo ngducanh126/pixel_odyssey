@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void IgnoreFireAfterDeath() {
+    public void Knockback(Vector2 force) {
+        rb.AddForce(force, ForceMode2D.Impulse);
+        Debug.Log($"Monster knocked back with force {force}");
+    }
+        public void IgnoreFireAfterDeath() {
         if (!gameObject.activeSelf) {
             Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Fire"));
             Debug.Log("Monster ignores fire after death");
