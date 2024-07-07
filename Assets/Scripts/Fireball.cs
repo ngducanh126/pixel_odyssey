@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void ChangeColorOnImpact(Color color) {
+    public void SlowMotion(float factor) {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null) {
+            rb.velocity *= factor;
+            Debug.Log($"Fireball slow motion factor: {factor}");
+        }
+    }
+        public void ChangeColorOnImpact(Color color) {
         GetComponent<SpriteRenderer>().color = color;
         Debug.Log($"Fireball changed color to {color}");
     }
