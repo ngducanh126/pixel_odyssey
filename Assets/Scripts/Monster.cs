@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public void Knockback(Vector2 force) {
+    public void AvoidTraps(GameObject[] traps) {
+        foreach (var trap in traps) {
+            if (Vector2.Distance(transform.position, trap.transform.position) < 2f) {
+                rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+                Debug.Log("Monster avoids trap");
+            }
+        }
+    }
+        public void Knockback(Vector2 force) {
         rb.AddForce(force, ForceMode2D.Impulse);
         Debug.Log($"Monster knocked back with force {force}");
     }
