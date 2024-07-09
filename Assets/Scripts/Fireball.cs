@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void SlowMotion(float factor) {
+    public void ToggleSoundMute(bool mute) {
+        fireHitAudioSource.mute = mute;
+        Debug.Log($"Fireball sound mute set to {mute}");
+    }
+        public void SlowMotion(float factor) {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null) {
             rb.velocity *= factor;
