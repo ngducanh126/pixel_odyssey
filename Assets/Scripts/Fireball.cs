@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void ToggleSoundMute(bool mute) {
+    public void SetLifetime(float seconds) {
+        Destroy(gameObject, seconds);
+        Debug.Log($"Fireball will be destroyed after {seconds} seconds");
+    }
+        public void ToggleSoundMute(bool mute) {
         fireHitAudioSource.mute = mute;
         Debug.Log($"Fireball sound mute set to {mute}");
     }
