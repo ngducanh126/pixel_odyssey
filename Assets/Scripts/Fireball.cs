@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void SetLifetime(float seconds) {
+    public void EnableTrailEffect(ParticleSystem trail) {
+        if (trail != null) trail.Play();
+        Debug.Log("Fireball trail effect enabled");
+    }
+        public void SetLifetime(float seconds) {
         Destroy(gameObject, seconds);
         Debug.Log($"Fireball will be destroyed after {seconds} seconds");
     }
