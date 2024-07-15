@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void EnableTrailEffect(ParticleSystem trail) {
+    private float damageMultiplier = 1f;
+    public void SetDamageMultiplier(float multiplier) {
+        damageMultiplier = multiplier;
+        Debug.Log($"Fireball damage multiplier set to {multiplier}");
+    }
+        public void EnableTrailEffect(ParticleSystem trail) {
         if (trail != null) trail.Play();
         Debug.Log("Fireball trail effect enabled");
     }
