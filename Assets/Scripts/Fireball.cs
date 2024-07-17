@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    private float damageMultiplier = 1f;
+    public void CollideWithEnvironment(GameObject env) {
+        if (env.CompareTag("Environment")) {
+            anim.SetTrigger("explode");
+            Destroy(gameObject, 1f);
+            Debug.Log("Fireball collided with environment");
+        }
+    }
+        private float damageMultiplier = 1f;
     public void SetDamageMultiplier(float multiplier) {
         damageMultiplier = multiplier;
         Debug.Log($"Fireball damage multiplier set to {multiplier}");
