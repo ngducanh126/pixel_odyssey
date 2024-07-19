@@ -2,7 +2,18 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void CollideWithEnvironment(GameObject env) {
+    private bool isPaused = false;
+    public void PauseFireball() {
+        isPaused = True;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        Debug.Log("Fireball paused");
+    }
+    public void ResumeFireball(Vector2 velocity) {
+        isPaused = False;
+        GetComponent<Rigidbody2D>().velocity = velocity;
+        Debug.Log("Fireball resumed");
+    }
+        public void CollideWithEnvironment(GameObject env) {
         if (env.CompareTag("Environment")) {
             anim.SetTrigger("explode");
             Destroy(gameObject, 1f);
