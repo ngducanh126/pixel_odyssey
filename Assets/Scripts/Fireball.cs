@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    private bool isPaused = false;
+    private float explosionRadius = 1f;
+    public void SetExplosionRadius(float radius) {
+        explosionRadius = radius;
+        Debug.Log($"Fireball explosion radius set to {radius}");
+    }
+        private bool isPaused = false;
     public void PauseFireball() {
         isPaused = True;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
