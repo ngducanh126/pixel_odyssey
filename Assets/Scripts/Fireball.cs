@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    private float explosionRadius = 1f;
+    public void KnockbackOnHit(GameObject target, float force) {
+        Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
+        if (rb != null) {
+            rb.AddForce((target.transform.position - transform.position).normalized * force, ForceMode2D.Impulse);
+            Debug.Log($"Fireball knocks back {target.name} with force {force}");
+        }
+    }
+        private float explosionRadius = 1f;
     public void SetExplosionRadius(float radius) {
         explosionRadius = radius;
         Debug.Log($"Fireball explosion radius set to {radius}");
