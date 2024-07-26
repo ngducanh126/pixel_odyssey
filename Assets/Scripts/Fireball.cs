@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void KnockbackOnHit(GameObject target, float force) {
+    private GameObject owner;
+    public void SetOwner(GameObject fireballOwner) {
+        owner = fireballOwner;
+        Debug.Log($"Fireball owner set to {fireballOwner?.name}");
+    }
+        public void KnockbackOnHit(GameObject target, float force) {
         Rigidbody2D rb = target.GetComponent<Rigidbody2D>();
         if (rb != null) {
             rb.AddForce((target.transform.position - transform.position).normalized * force, ForceMode2D.Impulse);
