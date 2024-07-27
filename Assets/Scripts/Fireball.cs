@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    private GameObject owner;
+    private bool friendlyFire = false;
+    public void SetFriendlyFire(bool enabled) {
+        friendlyFire = enabled;
+        Debug.Log($"Fireball friendly fire set to {enabled}");
+    }
+        private GameObject owner;
     public void SetOwner(GameObject fireballOwner) {
         owner = fireballOwner;
         Debug.Log($"Fireball owner set to {fireballOwner?.name}");
