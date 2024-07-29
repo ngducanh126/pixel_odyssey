@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    private bool friendlyFire = false;
+    public void DestroyOnWaterContact(Collider2D other) {
+        if (other.CompareTag("Water")) {
+            Destroy(gameObject);
+            Debug.Log("Fireball destroyed on water contact");
+        }
+    }
+        private bool friendlyFire = false;
     public void SetFriendlyFire(bool enabled) {
         friendlyFire = enabled;
         Debug.Log($"Fireball friendly fire set to {enabled}");
