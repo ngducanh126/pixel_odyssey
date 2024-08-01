@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void DestroyOnWaterContact(Collider2D other) {
+    public void SetAnimationSpeed(float speed) {
+        anim.speed = speed;
+        Debug.Log($"Fireball animation speed set to {speed}");
+    }
+        public void DestroyOnWaterContact(Collider2D other) {
         if (other.CompareTag("Water")) {
             Destroy(gameObject);
             Debug.Log("Fireball destroyed on water contact");
