@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void SetAnimationSpeed(float speed) {
+    public void ResetFireball() {
+        hasExploded = false;
+        boxCollider.enabled = true;
+        Debug.Log("Fireball reset to initial state");
+    }
+        public void SetAnimationSpeed(float speed) {
         anim.speed = speed;
         Debug.Log($"Fireball animation speed set to {speed}");
     }
