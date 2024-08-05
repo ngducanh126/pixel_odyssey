@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void ResetFireball() {
+    public void PlaySpawnEffect(ParticleSystem spawnEffect) {
+        if (spawnEffect != null) spawnEffect.Play();
+        Debug.Log("Fireball spawn visual effect played");
+    }
+        public void ResetFireball() {
         hasExploded = false;
         boxCollider.enabled = true;
         Debug.Log("Fireball reset to initial state");
