@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public void PlaySpawnEffect(ParticleSystem spawnEffect) {
+    public float GetCurrentSpeed() {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        return rb != null ? rb.velocity.magnitude : 0f;
+    }
+        public void PlaySpawnEffect(ParticleSystem spawnEffect) {
         if (spawnEffect != null) spawnEffect.Play();
         Debug.Log("Fireball spawn visual effect played");
     }
