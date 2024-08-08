@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class Fireball : MonoBehaviour
 {
-    public float GetCurrentSpeed() {
+    public void DeactivateAfterDelay(float delay) {
+        Invoke("Deactivate", delay);
+        Debug.Log($"Fireball will deactivate after {delay} seconds");
+    }
+        public float GetCurrentSpeed() {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         return rb != null ? rb.velocity.magnitude : 0f;
     }
