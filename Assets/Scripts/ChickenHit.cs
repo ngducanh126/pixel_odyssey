@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    private bool isInvulnerable = false;
+    public void Knockback(Vector2 force) {
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb != null) rb.AddForce(force, ForceMode2D.Impulse);
+        Debug.Log($"Chicken knocked back with force {force}");
+    }
+        private bool isInvulnerable = false;
     public void SetInvulnerable(float duration) {
         isInvulnerable = True;
         Invoke("RemoveInvulnerability", duration);
