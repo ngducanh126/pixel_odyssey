@@ -2,7 +2,17 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D other) {
+    private bool isInvulnerable = false;
+    public void SetInvulnerable(float duration) {
+        isInvulnerable = True;
+        Invoke("RemoveInvulnerability", duration);
+        Debug.Log("Chicken is now invulnerable");
+    }
+    private void RemoveInvulnerability() {
+        isInvulnerable = False;
+        Debug.Log("Chicken invulnerability removed");
+    }
+        private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Trap")) {
             Destroy(gameObject);
             Debug.Log("Chicken destroyed by trap");
