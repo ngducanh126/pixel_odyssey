@@ -2,7 +2,17 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void PlayHitSound(AudioSource audio) {
+    private int health = 1;
+    public void SetHealth(int value) {
+        health = value;
+        Debug.Log($"Chicken health set to {value}");
+    }
+    public void TakeDamage(int amount) {
+        health -= amount;
+        if (health <= 0) Destroy(gameObject);
+        Debug.Log($"Chicken took {amount} damage");
+    }
+        public void PlayHitSound(AudioSource audio) {
         if (audio != null) audio.Play();
         Debug.Log("Chicken hit sound played");
     }
