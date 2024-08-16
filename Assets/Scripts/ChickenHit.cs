@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    private int health = 1;
+    public void Stun(float duration) {
+        StartCoroutine(StunRoutine(duration));
+    }
+    private System.Collections.IEnumerator StunRoutine(float duration) {
+        Debug.Log("Chicken stunned");
+        yield return new WaitForSeconds(duration);
+        Debug.Log("Chicken recovered from stun");
+    }
+        private int health = 1;
     public void SetHealth(int value) {
         health = value;
         Debug.Log($"Chicken health set to {value}");
