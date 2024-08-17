@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void Stun(float duration) {
+    public void SpawnFeathers(GameObject featherPrefab, int count) {
+        for (int i = 0; i < count; i++) {
+            Instantiate(featherPrefab, transform.position, Quaternion.identity);
+        }
+        Debug.Log("Feathers spawned on chicken destruction");
+    }
+        public void Stun(float duration) {
         StartCoroutine(StunRoutine(duration));
     }
     private System.Collections.IEnumerator StunRoutine(float duration) {
