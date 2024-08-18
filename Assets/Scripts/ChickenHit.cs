@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void SpawnFeathers(GameObject featherPrefab, int count) {
+    public void Respawn(Vector3 position) {
+        transform.position = position;
+        gameObject.SetActive(true);
+        Debug.Log($"Chicken respawned at {position}");
+    }
+        public void SpawnFeathers(GameObject featherPrefab, int count) {
         for (int i = 0; i < count; i++) {
             Instantiate(featherPrefab, transform.position, Quaternion.identity);
         }
