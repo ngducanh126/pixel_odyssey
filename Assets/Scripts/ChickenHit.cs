@@ -2,7 +2,19 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void Respawn(Vector3 position) {
+    public void FlashOnHit(Color flashColor, float duration) {
+        var sr = GetComponent<SpriteRenderer>();
+        if (sr != null) {
+            sr.color = flashColor;
+            Invoke("ResetColor", duration);
+        }
+        Debug.Log("Chicken flashes on hit");
+    }
+    private void ResetColor() {
+        var sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.color = Color.white;
+    }
+        public void Respawn(Vector3 position) {
         transform.position = position;
         gameObject.SetActive(true);
         Debug.Log($"Chicken respawned at {position}");
