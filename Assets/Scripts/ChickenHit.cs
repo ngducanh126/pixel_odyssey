@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void FlashOnHit(Color flashColor, float duration) {
+    public void AddScore(int score) {
+        GameManager.Instance.AddScore(score);
+        Debug.Log($"Score increased by {score} for chicken destroy");
+    }
+        public void FlashOnHit(Color flashColor, float duration) {
         var sr = GetComponent<SpriteRenderer>();
         if (sr != null) {
             sr.color = flashColor;
