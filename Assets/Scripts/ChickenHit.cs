@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void AddScore(int score) {
+    public void SlowMotionOnHit(float factor, float duration) {
+        Time.timeScale = factor;
+        Debug.Log("Chicken hit: slow motion activated");
+        Invoke("ResetTimeScale", duration);
+    }
+    private void ResetTimeScale() {
+        Time.timeScale = 1f;
+    }
+        public void AddScore(int score) {
         GameManager.Instance.AddScore(score);
         Debug.Log($"Score increased by {score} for chicken destroy");
     }
