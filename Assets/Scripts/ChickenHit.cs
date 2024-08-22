@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void Escape(Vector3 escapePoint) {
+    public void TriggerHitAnimation() {
+        var anim = GetComponent<Animator>();
+        if (anim != null) anim.SetTrigger("hit");
+        Debug.Log("Chicken hit animation triggered");
+    }
+        public void Escape(Vector3 escapePoint) {
         transform.position = Vector3.MoveTowards(transform.position, escapePoint, 5f * Time.deltaTime);
         Debug.Log("Chicken is escaping");
     }
