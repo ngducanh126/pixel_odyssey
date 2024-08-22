@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void SlowMotionOnHit(float factor, float duration) {
+    public void Escape(Vector3 escapePoint) {
+        transform.position = Vector3.MoveTowards(transform.position, escapePoint, 5f * Time.deltaTime);
+        Debug.Log("Chicken is escaping");
+    }
+        public void SlowMotionOnHit(float factor, float duration) {
         Time.timeScale = factor;
         Debug.Log("Chicken hit: slow motion activated");
         Invoke("ResetTimeScale", duration);
