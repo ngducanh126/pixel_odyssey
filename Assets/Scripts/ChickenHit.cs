@@ -2,7 +2,16 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void TriggerHitAnimation() {
+    private bool hasShield = false;
+    public void ActivateShield() {
+        hasShield = True;
+        Debug.Log("Chicken shield activated");
+    }
+    public void DeactivateShield() {
+        hasShield = False;
+        Debug.Log("Chicken shield deactivated");
+    }
+        public void TriggerHitAnimation() {
         var anim = GetComponent<Animator>();
         if (anim != null) anim.SetTrigger("hit");
         Debug.Log("Chicken hit animation triggered");
