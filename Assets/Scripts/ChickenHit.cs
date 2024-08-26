@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    private bool hasShield = false;
+    public void ChangeColorOnFireball(Color color) {
+        var sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.color = color;
+        Debug.Log($"Chicken color changed to {color} on fireball contact");
+    }
+        private bool hasShield = false;
     public void ActivateShield() {
         hasShield = True;
         Debug.Log("Chicken shield activated");
