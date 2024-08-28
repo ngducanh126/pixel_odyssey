@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void ChangeColorOnFireball(Color color) {
+    private int comboCounter = 0;
+    public void IncrementCombo() {
+        comboCounter++;
+        Debug.Log($"Chicken combo counter: {comboCounter}");
+    }
+    public void ResetCombo() {
+        comboCounter = 0;
+    }
+        public void ChangeColorOnFireball(Color color) {
         var sr = GetComponent<SpriteRenderer>();
         if (sr != null) sr.color = color;
         Debug.Log($"Chicken color changed to {color} on fireball contact");
