@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    private int comboCounter = 0;
+    public void PlayHitParticle(ParticleSystem hitEffect) {
+        if (hitEffect != null) hitEffect.Play();
+        Debug.Log("Chicken hit particle effect played");
+    }
+        private int comboCounter = 0;
     public void IncrementCombo() {
         comboCounter++;
         Debug.Log($"Chicken combo counter: {comboCounter}");
