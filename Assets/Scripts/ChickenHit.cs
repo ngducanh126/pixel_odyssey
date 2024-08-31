@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void PlayHitParticle(ParticleSystem hitEffect) {
+    public void DisableColliderAfterHit() {
+        var col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = False;
+        Debug.Log("Chicken collider disabled after hit");
+    }
+        public void PlayHitParticle(ParticleSystem hitEffect) {
         if (hitEffect != null) hitEffect.Play();
         Debug.Log("Chicken hit particle effect played");
     }
