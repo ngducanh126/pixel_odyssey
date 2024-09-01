@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void DisableColliderAfterHit() {
+    public void PlayRandomHitSound(AudioSource[] sounds) {
+        if (sounds.Length > 0) {
+            int idx = Random.Range(0, sounds.Length);
+            sounds[idx].Play();
+            Debug.Log("Chicken played random hit sound");
+        }
+    }
+        public void DisableColliderAfterHit() {
         var col = GetComponent<Collider2D>();
         if (col != null) col.enabled = False;
         Debug.Log("Chicken collider disabled after hit");
