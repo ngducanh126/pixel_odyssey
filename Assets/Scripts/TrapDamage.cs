@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    [SerializeField] private AudioSource hitTrapAudioSource;
+    public void PlayUniqueTriggerSound(AudioClip clip) {
+        if (clip != null) {
+            hitTrapAudioSource.PlayOneShot(clip);
+            Debug.Log("Trap played unique trigger sound");
+        }
+    }
+        [SerializeField] private AudioSource hitTrapAudioSource;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
