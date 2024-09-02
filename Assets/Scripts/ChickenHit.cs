@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class ChickenHit : MonoBehaviour
 {
-    public void PlayRandomHitSound(AudioSource[] sounds) {
+    public void DestroyAfterDelay(float delay) {
+        Destroy(gameObject, delay);
+        Debug.Log($"Chicken will be destroyed after {delay} seconds");
+    }
+        public void PlayRandomHitSound(AudioSource[] sounds) {
         if (sounds.Length > 0) {
             int idx = Random.Range(0, sounds.Length);
             sounds[idx].Play();
