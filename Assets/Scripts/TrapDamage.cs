@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void PlayUniqueTriggerSound(AudioClip clip) {
+    private float trapCooldown = 2f;
+    private float lastActivationTime = -10f;
+    public bool CanActivateTrap() {
+        return Time.time - lastActivationTime > trapCooldown;
+    }
+        public void PlayUniqueTriggerSound(AudioClip clip) {
         if (clip != null) {
             hitTrapAudioSource.PlayOneShot(clip);
             Debug.Log("Trap played unique trigger sound");
