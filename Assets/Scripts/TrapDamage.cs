@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    private float trapCooldown = 2f;
+    private int activationCount = 0;
+    public void DeactivateAfterUses(int maxUses) {
+        activationCount += 1;
+        if (activationCount >= maxUses) {
+            gameObject.SetActive(false);
+            Debug.Log("Trap deactivated after max uses");
+        }
+    }
+        private float trapCooldown = 2f;
     private float lastActivationTime = -10f;
     public bool CanActivateTrap() {
         return Time.time - lastActivationTime > trapCooldown;
