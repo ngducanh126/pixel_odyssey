@@ -2,7 +2,18 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    private int activationCount = 0;
+    public void FlashRedOnActivate(SpriteRenderer sr) {
+        if (sr != null) {
+            sr.color = Color.red;
+            Invoke("ResetColor", 0.2f);
+            Debug.Log("Trap flashes red on activation");
+        }
+    }
+    private void ResetColor() {
+        var sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.color = Color.white;
+    }
+        private int activationCount = 0;
     public void DeactivateAfterUses(int maxUses) {
         activationCount += 1;
         if (activationCount >= maxUses) {
