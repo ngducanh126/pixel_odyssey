@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void FlashRedOnActivate(SpriteRenderer sr) {
+    public void ResetTrap() {
+        activationCount = 0;
+        gameObject.SetActive(true);
+        Debug.Log("Trap reset to default state");
+    }
+        public void FlashRedOnActivate(SpriteRenderer sr) {
         if (sr != null) {
             sr.color = Color.red;
             Invoke("ResetColor", 0.2f);
