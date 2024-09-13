@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void ResetTrap() {
+    public void DestroyTrap() {
+        Destroy(gameObject);
+        Debug.Log("Trap destroyed by player");
+    }
+        public void ResetTrap() {
         activationCount = 0;
         gameObject.SetActive(true);
         Debug.Log("Trap reset to default state");
