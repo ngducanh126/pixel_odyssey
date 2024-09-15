@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void DestroyTrap() {
+    private GameObject trapOwner;
+    public void SetTrapOwner(GameObject owner) {
+        trapOwner = owner;
+        Debug.Log($"Trap owner set to {owner?.name}");
+    }
+        public void DestroyTrap() {
         Destroy(gameObject);
         Debug.Log("Trap destroyed by player");
     }
