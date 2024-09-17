@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    private GameObject trapOwner;
+    private float lastActivatedAt = 0f;
+    public void LogActivationTime() {
+        lastActivatedAt = Time.time;
+        Debug.Log($"Trap activated at {lastActivatedAt}");
+    }
+        private GameObject trapOwner;
     public void SetTrapOwner(GameObject owner) {
         trapOwner = owner;
         Debug.Log($"Trap owner set to {owner?.name}");
