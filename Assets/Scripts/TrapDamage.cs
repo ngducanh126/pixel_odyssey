@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    private float lastActivatedAt = 0f;
+    public void MuteTrapAudio(bool mute) {
+        hitTrapAudioSource.mute = mute;
+        Debug.Log($"Trap audio mute set to {mute}");
+    }
+        private float lastActivatedAt = 0f;
     public void LogActivationTime() {
         lastActivatedAt = Time.time;
         Debug.Log($"Trap activated at {lastActivatedAt}");
