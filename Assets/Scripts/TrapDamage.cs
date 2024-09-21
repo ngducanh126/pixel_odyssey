@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void MuteTrapAudio(bool mute) {
+    private float trapDamage = 25f;
+    public void SetTrapDamage(float damage) {
+        trapDamage = damage;
+        Debug.Log($"Trap damage set to {damage}");
+    }
+        public void MuteTrapAudio(bool mute) {
         hitTrapAudioSource.mute = mute;
         Debug.Log($"Trap audio mute set to {mute}");
     }
