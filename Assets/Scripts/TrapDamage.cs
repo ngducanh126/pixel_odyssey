@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    private float trapDamage = 25f;
+    public void DisableTrapAfterExit(Collider2D collision) {
+        if (collision.CompareTag("Player")) {
+            gameObject.SetActive(false);
+            Debug.Log("Trap disabled after player exit");
+        }
+    }
+        private float trapDamage = 25f;
     public void SetTrapDamage(float damage) {
         trapDamage = damage;
         Debug.Log($"Trap damage set to {damage}");
