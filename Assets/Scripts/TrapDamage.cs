@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void DisableTrapAfterExit(Collider2D collision) {
+    public void RearmTrapAfterCooldown(float cooldown) {
+        Invoke("RearmTrap", cooldown);
+        Debug.Log($"Trap will rearm after {cooldown} seconds");
+    }
+    private void RearmTrap() {
+        gameObject.SetActive(true);
+        Debug.Log("Trap rearmed");
+    }
+        public void DisableTrapAfterExit(Collider2D collision) {
         if (collision.CompareTag("Player")) {
             gameObject.SetActive(false);
             Debug.Log("Trap disabled after player exit");
