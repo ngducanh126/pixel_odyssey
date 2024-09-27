@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void RearmTrapAfterCooldown(float cooldown) {
+    public void ShowWarningUI(GameObject warningUI) {
+        if (warningUI != null) warningUI.SetActive(true);
+        Debug.Log("Trap warning UI shown");
+    }
+        public void RearmTrapAfterCooldown(float cooldown) {
         Invoke("RearmTrap", cooldown);
         Debug.Log($"Trap will rearm after {cooldown} seconds");
     }
