@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void ShowWarningUI(GameObject warningUI) {
+    public void SetCustomActivationSound(AudioClip clip) {
+        if (clip != null) hitTrapAudioSource.clip = clip;
+        Debug.Log("Trap custom activation sound set");
+    }
+        public void ShowWarningUI(GameObject warningUI) {
         if (warningUI != null) warningUI.SetActive(true);
         Debug.Log("Trap warning UI shown");
     }
