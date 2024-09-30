@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void SetCustomActivationSound(AudioClip clip) {
+    public int GetActivationCount() {
+        return activationCount;
+    }
+        public void SetCustomActivationSound(AudioClip clip) {
         if (clip != null) hitTrapAudioSource.clip = clip;
         Debug.Log("Trap custom activation sound set");
     }
