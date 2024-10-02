@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public int GetActivationCount() {
+    public void IgnoreInvulnerablePlayers(Collider2D collision) {
+        var ph = collision.GetComponent<PlayerHealth>();
+        if (ph != null && ph.IsInvulnerable()) {
+            Debug.Log("Trap ignored invulnerable player");
+            return;
+        }
+    }
+        public int GetActivationCount() {
         return activationCount;
     }
         public void SetCustomActivationSound(AudioClip clip) {
