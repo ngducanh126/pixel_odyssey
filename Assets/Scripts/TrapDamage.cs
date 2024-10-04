@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void IgnoreInvulnerablePlayers(Collider2D collision) {
+    public void SetTrapVolume(float volume) {
+        hitTrapAudioSource.volume = Mathf.Clamp01(volume);
+        Debug.Log($"Trap sound volume set to {volume}");
+    }
+        public void IgnoreInvulnerablePlayers(Collider2D collision) {
         var ph = collision.GetComponent<PlayerHealth>();
         if (ph != null && ph.IsInvulnerable()) {
             Debug.Log("Trap ignored invulnerable player");
