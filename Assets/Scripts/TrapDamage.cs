@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void SetTrapVolume(float volume) {
+    public void ActivateWithDelay(float delay) {
+        Invoke("ActivateTrap", delay);
+        Debug.Log($"Trap will activate after {delay} seconds");
+    }
+    private void ActivateTrap() {
+        gameObject.SetActive(true);
+        Debug.Log("Trap activated after delay");
+    }
+        public void SetTrapVolume(float volume) {
         hitTrapAudioSource.volume = Mathf.Clamp01(volume);
         Debug.Log($"Trap sound volume set to {volume}");
     }
