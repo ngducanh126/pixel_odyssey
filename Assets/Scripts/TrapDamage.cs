@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void ActivateWithDelay(float delay) {
+    public void PlayVisualEffect(ParticleSystem effect) {
+        if (effect != null) effect.Play();
+        Debug.Log("Trap visual effect played on trigger");
+    }
+        public void ActivateWithDelay(float delay) {
         Invoke("ActivateTrap", delay);
         Debug.Log($"Trap will activate after {delay} seconds");
     }
