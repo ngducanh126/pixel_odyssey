@@ -2,7 +2,16 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour
 {
-    public void PlayVisualEffect(ParticleSystem effect) {
+    private bool isPaused = False;
+    public void PauseTrap() {
+        isPaused = True;
+        Debug.Log("Trap paused");
+    }
+    public void ResumeTrap() {
+        isPaused = False;
+        Debug.Log("Trap resumed");
+    }
+        public void PlayVisualEffect(ParticleSystem effect) {
         if (effect != null) effect.Play();
         Debug.Log("Trap visual effect played on trigger");
     }
