@@ -3,7 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-
+    private bool isReloading = false;
+    public void Reload(float reloadTime) {
+        if (!isReloading) {
+            isReloading = true;
+            StartCoroutine(ReloadRoutine(reloadTime));
+            Debug.Log("Weapon reload started");
+        }
+    }
+    private IEnumerator ReloadRoutine(float reloadTime) {
+        yield return new WaitForSeconds(reloadTime);
+        isReloading = false;
+        Debug.Log("Weapon reload finished");
+    }
+    
     public GameObject projectile;
     public Transform shotPoint;
     public Animator camAnim;
