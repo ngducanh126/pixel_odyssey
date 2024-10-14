@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    private bool isReloading = false;
+    public void AlternateFire() {
+        camAnim.SetTrigger("shake");
+        Instantiate(projectile, shotPoint.position, transform.rotation * Quaternion.Euler(0,0,15));
+        Instantiate(projectile, shotPoint.position, transform.rotation * Quaternion.Euler(0,0,-15));
+        Debug.Log("Weapon alternate fire triggered");
+    }
+        private bool isReloading = false;
     public void Reload(float reloadTime) {
         if (!isReloading) {
             isReloading = true;
