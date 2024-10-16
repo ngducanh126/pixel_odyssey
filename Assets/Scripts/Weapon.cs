@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void AlternateFire() {
+    public void PlayMuzzleFlash(ParticleSystem muzzleFlash) {
+        if (muzzleFlash != null) muzzleFlash.Play();
+        Debug.Log("Weapon muzzle flash effect played");
+    }
+        public void AlternateFire() {
         camAnim.SetTrigger("shake");
         Instantiate(projectile, shotPoint.position, transform.rotation * Quaternion.Euler(0,0,15));
         Instantiate(projectile, shotPoint.position, transform.rotation * Quaternion.Euler(0,0,-15));
