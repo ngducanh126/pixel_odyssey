@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void PlayMuzzleFlash(ParticleSystem muzzleFlash) {
+    public void PlayFireSound(AudioSource fireSound) {
+        if (fireSound != null) fireSound.Play();
+        Debug.Log("Weapon fire sound played");
+    }
+        public void PlayMuzzleFlash(ParticleSystem muzzleFlash) {
         if (muzzleFlash != null) muzzleFlash.Play();
         Debug.Log("Weapon muzzle flash effect played");
     }
