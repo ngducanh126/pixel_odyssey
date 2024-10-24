@@ -3,7 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    private int weaponLevel = 1;
+    public void BurstFire(int shots, float interval) {
+        StartCoroutine(BurstFireRoutine(shots, interval));
+    }
+    private IEnumerator BurstFireRoutine(int shots, float interval) {
+        for (int i = 0; i < shots; i++) {
+            Instantiate(projectile, shotPoint.position, transform.rotation);
+            yield return new WaitForSeconds(interval);
+        }
+        Debug.Log("Weapon burst fire completed");
+    }
+        private int weaponLevel = 1;
     public void UpgradeWeapon() {
         weaponLevel++;
         Debug.Log($"Weapon upgraded to level {weaponLevel}");
