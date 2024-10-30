@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void CriticalHitShake() {
+    public void SetProjectileSpeed(float speed) {
+        var proj = projectile.GetComponent<Rigidbody2D>();
+        if (proj != null) proj.velocity = transform.right * speed;
+        Debug.Log($"Projectile speed set to {speed}");
+    }
+        public void CriticalHitShake() {
         camAnim.SetTrigger("shake");
         camAnim.SetTrigger("shake");
         Debug.Log("Critical hit! Extra camera shake");
