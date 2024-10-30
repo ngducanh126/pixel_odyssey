@@ -3,7 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void SetProjectileSpeed(float speed) {
+    private bool isReloading = false;
+    public void Reload(float reloadTime) {
+        if (!isReloading) {
+            isReloading = true;
+            StartCoroutine(ReloadRoutine(reloadTime));
+            Debug.Log("Weapon reload started");
+        }
+    }
+    private IEnumerator ReloadRoutine(float reloadTime) {
+        yield return new WaitForSeconds(reloadTime);
+        isReloading = false;
+        Debug.Log("Weapon reload finished");
+    }
+        public void SetProjectileSpeed(float speed) {
         var proj = projectile.GetComponent<Rigidbody2D>();
         if (proj != null) proj.velocity = transform.right * speed;
         Debug.Log($"Projectile speed set to {speed}");
