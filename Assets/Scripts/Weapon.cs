@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void DropWeapon() {
+    private bool isAiming = false;
+    public void AimDownSights(bool enable) {
+        isAiming = enable;
+        camAnim.SetBool("isAiming", enable);
+        Debug.Log($"Aiming down sights: {enable}");
+    }
+        public void DropWeapon() {
         transform.parent = null;
         gameObject.SetActive(false);
         Debug.Log("Weapon dropped");
