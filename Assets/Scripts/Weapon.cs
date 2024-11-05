@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    private bool isAiming = false;
+    private bool silencerOn = false;
+    public void ToggleSilencer() {
+        silencerOn = not silencerOn;
+        Debug.Log($"Silencer toggled: {silencerOn}");
+    }
+        private bool isAiming = false;
     public void AimDownSights(bool enable) {
         isAiming = enable;
         camAnim.SetBool("isAiming", enable);
