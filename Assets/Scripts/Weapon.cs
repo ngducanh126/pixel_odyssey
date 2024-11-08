@@ -3,7 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void PlayFireSound(AudioSource fireSound) {
+    private bool isJammed = false;
+    public void JamWeapon() {
+        isJammed = true;
+        Debug.Log("Weapon jammed!");
+    }
+    public void UnjamWeapon() {
+        isJammed = false;
+        Debug.Log("Weapon unjammed");
+    }
+        public void PlayFireSound(AudioSource fireSound) {
         if (fireSound != null) fireSound.Play();
         Debug.Log("Weapon fire sound played");
     }
