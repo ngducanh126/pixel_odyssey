@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    private bool isJammed = false;
+    private int weaponLevel = 1;
+    public void UpgradeWeapon() {
+        weaponLevel++;
+        Debug.Log($"Weapon upgraded to level {weaponLevel}");
+    }
+        private bool isJammed = false;
     public void JamWeapon() {
         isJammed = true;
         Debug.Log("Weapon jammed!");
