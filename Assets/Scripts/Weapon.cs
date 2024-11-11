@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    private int shotsFired = 0;
+    public void ChangeProjectile(GameObject newProjectile) {
+        projectile = newProjectile;
+        Debug.Log($"Projectile type changed to {newProjectile?.name}");
+    }
+        private int shotsFired = 0;
     public void IncrementShotsFired() {
         shotsFired++;
         Debug.Log($"Total shots fired: {shotsFired}");
