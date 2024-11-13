@@ -3,7 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void BurstFire(int shots, float interval) {
+    private float overheat = 0f;
+    private bool overheated = false;
+    public void AddHeat(float amount) {
+        if (!overheated) {
+            overheat += amount;
+            if (overheat > 100f) {
+                overheated = true;
+                Debug.Log("Weapon overheated!");
+            }
+        }
+    }
+    public void CoolDown(float amount) {
+        overheat = Mathf.Max(0, overheat - amount);
+        if (overheated && overheat < 20f) {
+            overheated = false;
+            Debug.Log("Weapon cooled down");
+        }
+    }
+        public void BurstFire(int shots, float interval) {
         StartCoroutine(BurstFireRoutine(shots, interval));
     }
     private IEnumerator BurstFireRoutine(int shots, float interval) {
