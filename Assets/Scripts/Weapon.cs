@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void ChangeProjectile(GameObject newProjectile) {
+    private bool isEnabled = true;
+    public void SetWeaponEnabled(bool enabled) {
+        isEnabled = enabled;
+        gameObject.SetActive(enabled);
+        Debug.Log($"Weapon enabled: {enabled}");
+    }
+        public void ChangeProjectile(GameObject newProjectile) {
         projectile = newProjectile;
         Debug.Log($"Projectile type changed to {newProjectile?.name}");
     }
