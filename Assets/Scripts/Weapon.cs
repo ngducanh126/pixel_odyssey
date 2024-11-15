@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    private bool isEnabled = true;
+    public void ChangeWeaponSkin(Material newSkin) {
+        var sr = GetComponent<SpriteRenderer>();
+        if (sr != null) sr.material = newSkin;
+        Debug.Log("Weapon skin changed");
+    }
+        private bool isEnabled = true;
     public void SetWeaponEnabled(bool enabled) {
         isEnabled = enabled;
         gameObject.SetActive(enabled);
