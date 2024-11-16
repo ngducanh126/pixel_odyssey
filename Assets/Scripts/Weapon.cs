@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    private float overheat = 0f;
+    public void CriticalHitShake() {
+        camAnim.SetTrigger("shake");
+        camAnim.SetTrigger("shake");
+        Debug.Log("Critical hit! Extra camera shake");
+    }
+        private float overheat = 0f;
     private bool overheated = false;
     public void AddHeat(float amount) {
         if (!overheated) {
