@@ -3,7 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void SetProjectileSpeed(float speed) {
+    public void DropWeapon() {
+        transform.parent = null;
+        gameObject.SetActive(false);
+        Debug.Log("Weapon dropped");
+    }
+    public void PickUpWeapon(Transform parent) {
+        transform.parent = parent;
+        gameObject.SetActive(true);
+        Debug.Log("Weapon picked up");
+    }
+        public void SetProjectileSpeed(float speed) {
         var proj = projectile.GetComponent<Rigidbody2D>();
         if (proj != null) proj.velocity = transform.right * speed;
         Debug.Log($"Projectile speed set to {speed}");
