@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    private bool silencerOn = false;
+    public void ApplyRecoil(float amount) {
+        transform.position -= transform.right * amount;
+        Debug.Log($"Weapon recoil applied: {amount}");
+    }
+        private bool silencerOn = false;
     public void ToggleSilencer() {
         silencerOn = not silencerOn;
         Debug.Log($"Silencer toggled: {silencerOn}");
