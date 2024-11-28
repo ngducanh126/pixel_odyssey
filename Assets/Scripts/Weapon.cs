@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void ApplyRecoil(float amount) {
+    private int shotsFired = 0;
+    public void IncrementShotsFired() {
+        shotsFired++;
+        Debug.Log($"Total shots fired: {shotsFired}");
+    }
+        public void ApplyRecoil(float amount) {
         transform.position -= transform.right * amount;
         Debug.Log($"Weapon recoil applied: {amount}");
     }
