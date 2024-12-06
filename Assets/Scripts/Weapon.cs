@@ -3,7 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    public void ChangeWeaponSkin(Material newSkin) {
+    private float charge = 0f;
+    public void ChargeShot(float amount) {
+        charge += amount;
+        if (charge >= 1f) {
+            Instantiate(projectile, shotPoint.position, transform.rotation);
+            charge = 0f;
+            Debug.Log("Charge shot fired!");
+        }
+    }
+        public void ChangeWeaponSkin(Material newSkin) {
         var sr = GetComponent<SpriteRenderer>();
         if (sr != null) sr.material = newSkin;
         Debug.Log("Weapon skin changed");
