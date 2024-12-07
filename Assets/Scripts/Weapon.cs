@@ -3,7 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
-    private float charge = 0f;
+    public void ResetWeapon() {
+        isReloading = false;
+        isJammed = false;
+        weaponLevel = 1;
+        overheat = 0f;
+        shotsFired = 0;
+        Debug.Log("Weapon reset to default state");
+    }
+        private float charge = 0f;
     public void ChargeShot(float amount) {
         charge += amount;
         if (charge >= 1f) {
