@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public GameObject terrainPrefab; // Assign your terrain prefab here in the inspector
+    public void RandomizeTerrainColor(GameObject terrain) {
+        var renderer = terrain.GetComponent<Renderer>();
+        if (renderer != null) {
+            renderer.material.color = new Color(Random.value, Random.value, Random.value);
+        }
+        Debug.Log("Terrain color randomized");
+    }
+        public GameObject terrainPrefab; // Assign your terrain prefab here in the inspector
     public GameObject coinPrefab;    // Assign your coin prefab here in the inspector
     public float spawnRate = 2.0f;   // How often terrains are spawned
     public float moveSpeed = 4f;     // Speed at which terrains move left
