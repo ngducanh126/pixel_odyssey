@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void RandomizeTerrainColor(GameObject terrain) {
+    public int maxTerrains = 10;
+    public bool CanSpawnTerrain() {
+        return transform.childCount < maxTerrains;
+    }
+        public void RandomizeTerrainColor(GameObject terrain) {
         var renderer = terrain.GetComponent<Renderer>();
         if (renderer != null) {
             renderer.material.color = new Color(Random.value, Random.value, Random.value);
