@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public int maxTerrains = 10;
+    public void ClearAllTerrains() {
+        foreach (Transform child in transform) {
+            Destroy(child.gameObject);
+        }
+        Debug.Log("All terrains cleared");
+    }
+        public int maxTerrains = 10;
     public bool CanSpawnTerrain() {
         return transform.childCount < maxTerrains;
     }
