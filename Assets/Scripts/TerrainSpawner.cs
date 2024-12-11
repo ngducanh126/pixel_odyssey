@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void ClearAllTerrains() {
+    public void SetMoveSpeed(float speed) {
+        moveSpeed = speed;
+        Debug.Log($"Move speed set to {speed}");
+    }
+        public void ClearAllTerrains() {
         foreach (Transform child in transform) {
             Destroy(child.gameObject);
         }
