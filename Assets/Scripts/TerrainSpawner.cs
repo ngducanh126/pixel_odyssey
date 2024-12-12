@@ -2,7 +2,19 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void SetMoveSpeed(float speed) {
+    private bool spawnPaused = false;
+    public void PauseSpawning() {
+        spawnPaused = true;
+        CancelInvoke(nameof(SpawnTerrain));
+        Debug.Log("Terrain spawning paused");
+    }
+    public void ResumeSpawning() {
+        if (!spawnPaused) return;
+        spawnPaused = false;
+        InvokeRepeating(nameof(SpawnTerrain), 0, spawnRate);
+        Debug.Log("Terrain spawning resumed");
+    }
+        public void SetMoveSpeed(float speed) {
         moveSpeed = speed;
         Debug.Log($"Move speed set to {speed}");
     }
