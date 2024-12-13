@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    private bool spawnPaused = false;
+    public bool spawnCoins = true;
+    public void ToggleCoinSpawning() {
+        spawnCoins = !spawnCoins;
+        Debug.Log($"Coin spawning toggled: {spawnCoins}");
+    }
+        private bool spawnPaused = false;
     public void PauseSpawning() {
         spawnPaused = true;
         CancelInvoke(nameof(SpawnTerrain));
