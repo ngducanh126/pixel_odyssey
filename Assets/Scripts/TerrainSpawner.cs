@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public bool spawnCoins = true;
+    public void RandomizeTerrainHeight(GameObject terrain) {
+        float newY = Random.Range(-0.5f, 0.7f);
+        terrain.transform.position = new Vector3(terrain.transform.position.x, newY, terrain.transform.position.z);
+        Debug.Log($"Terrain height randomized to {newY}");
+    }
+        public bool spawnCoins = true;
     public void ToggleCoinSpawning() {
         spawnCoins = !spawnCoins;
         Debug.Log($"Coin spawning toggled: {spawnCoins}");
