@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void RandomizeTerrainHeight(GameObject terrain) {
+    public delegate void TerrainDestroyed(GameObject terrain);
+    public event TerrainDestroyed OnTerrainDestroyed;
+    public void NotifyTerrainDestroyed(GameObject terrain) {
+        if (OnTerrainDestroyed != null) OnTerrainDestroyed(terrain);
+        Debug.Log("Terrain destroyed event triggered");
+    }
+        public void RandomizeTerrainHeight(GameObject terrain) {
         float newY = Random.Range(-0.5f, 0.7f);
         terrain.transform.position = new Vector3(terrain.transform.position.x, newY, terrain.transform.position.z);
         Debug.Log($"Terrain height randomized to {newY}");
