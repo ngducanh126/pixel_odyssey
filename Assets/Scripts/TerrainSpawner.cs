@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public delegate void TerrainDestroyed(GameObject terrain);
+    public Vector3 spawnOffset = Vector3.zero;
+    public void SetSpawnOffset(Vector3 offset) {
+        spawnOffset = offset;
+        Debug.Log($"Spawn offset set to {offset}");
+    }
+        public delegate void TerrainDestroyed(GameObject terrain);
     public event TerrainDestroyed OnTerrainDestroyed;
     public void NotifyTerrainDestroyed(GameObject terrain) {
         if (OnTerrainDestroyed != null) OnTerrainDestroyed(terrain);
