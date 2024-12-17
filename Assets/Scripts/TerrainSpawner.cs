@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public Vector3 spawnOffset = Vector3.zero;
+    public int GetActiveTerrainCount() {
+        return transform.childCount;
+    }
+        public Vector3 spawnOffset = Vector3.zero;
     public void SetSpawnOffset(Vector3 offset) {
         spawnOffset = offset;
         Debug.Log($"Spawn offset set to {offset}");
