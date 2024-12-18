@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public int GetActiveTerrainCount() {
+    public void SetTerrainPrefab(GameObject prefab) {
+        terrainPrefab = prefab;
+        Debug.Log("Terrain prefab switched at runtime");
+    }
+        public int GetActiveTerrainCount() {
         return transform.childCount;
     }
         public Vector3 spawnOffset = Vector3.zero;
