@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void SetTerrainPrefab(GameObject prefab) {
+    public void TrySpawnBonusCoin(Transform terrainTransform) {
+        if (Random.value < 0.1f) {
+            float coinY = terrainTransform.position.y + 1.0f;
+            Instantiate(coinPrefab, new Vector3(terrainTransform.position.x, coinY, 0), Quaternion.identity, terrainTransform);
+            Debug.Log("Bonus coin spawned!");
+        }
+    }
+        public void SetTerrainPrefab(GameObject prefab) {
         terrainPrefab = prefab;
         Debug.Log("Terrain prefab switched at runtime");
     }
