@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void TrySpawnBonusCoin(Transform terrainTransform) {
+    public AudioClip despawnSound;
+    public void PlayDespawnSound() {
+        if (despawnSound != null) {
+            AudioSource.PlayClipAtPoint(despawnSound, Camera.main.transform.position);
+            Debug.Log("Despawn sound played");
+        }
+    }
+        public void TrySpawnBonusCoin(Transform terrainTransform) {
         if (Random.value < 0.1f) {
             float coinY = terrainTransform.position.y + 1.0f;
             Instantiate(coinPrefab, new Vector3(terrainTransform.position.x, coinY, 0), Quaternion.identity, terrainTransform);
