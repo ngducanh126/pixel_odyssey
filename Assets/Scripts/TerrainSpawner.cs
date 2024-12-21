@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public AudioClip despawnSound;
+    public void ReduceSpawnCooldown(float amount) {
+        spawnRate = Mathf.Max(0.1f, spawnRate - amount);
+        CancelInvoke(nameof(SpawnTerrain));
+        InvokeRepeating(nameof(SpawnTerrain), 0, spawnRate);
+        Debug.Log($"Spawn cooldown reduced by {amount}, now {spawnRate}");
+    }
+        public AudioClip despawnSound;
     public void PlayDespawnSound() {
         if (despawnSound != null) {
             AudioSource.PlayClipAtPoint(despawnSound, Camera.main.transform.position);
