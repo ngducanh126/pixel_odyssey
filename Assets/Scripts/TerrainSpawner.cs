@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void ReduceSpawnCooldown(float amount) {
+    public void SetCoinPrefab(GameObject prefab) {
+        coinPrefab = prefab;
+        Debug.Log("Coin prefab set from script");
+    }
+        public void ReduceSpawnCooldown(float amount) {
         spawnRate = Mathf.Max(0.1f, spawnRate - amount);
         CancelInvoke(nameof(SpawnTerrain));
         InvokeRepeating(nameof(SpawnTerrain), 0, spawnRate);
