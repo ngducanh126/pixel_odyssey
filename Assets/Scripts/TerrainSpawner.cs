@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void SetCoinPrefab(GameObject prefab) {
+    public void ReverseMovementDirection() {
+        moveSpeed = -moveSpeed;
+        Debug.Log($"Movement direction reversed. New speed: {moveSpeed}");
+    }
+        public void SetCoinPrefab(GameObject prefab) {
         coinPrefab = prefab;
         Debug.Log("Coin prefab set from script");
     }
