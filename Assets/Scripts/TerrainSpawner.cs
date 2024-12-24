@@ -2,7 +2,10 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void ReverseMovementDirection() {
+    public float GetSpawnRate() {
+        return spawnRate;
+    }
+        public void ReverseMovementDirection() {
         moveSpeed = -moveSpeed;
         Debug.Log($"Movement direction reversed. New speed: {moveSpeed}");
     }
