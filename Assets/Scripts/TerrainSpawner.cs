@@ -2,7 +2,15 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public float GetSpawnRate() {
+    public void ResetSpawnerSettings() {
+        spawnRate = 2.0f;
+        moveSpeed = 4f;
+        maxTerrains = 10;
+        spawnCoins = true;
+        spawnOffset = Vector3.zero;
+        Debug.Log("Spawner settings reset to default");
+    }
+        public float GetSpawnRate() {
         return spawnRate;
     }
         public void ReverseMovementDirection() {
