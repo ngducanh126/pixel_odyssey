@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void SetSpawnAreaBounds(float minY, float maxY) {
+    public bool debugLogs = true;
+    public void ToggleDebugLogs() {
+        debugLogs = !debugLogs;
+        Debug.Log($"Debug logs toggled: {debugLogs}");
+    }
+        public void SetSpawnAreaBounds(float minY, float maxY) {
         minSpawnY = minY;
         maxSpawnY = maxY;
         Debug.Log($"Spawn area bounds set: {minY} to {maxY}");
