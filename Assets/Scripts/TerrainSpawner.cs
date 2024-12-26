@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class TerrainSpawner : MonoBehaviour
 {
-    public void ResetSpawnerSettings() {
+    public void SetSpawnAreaBounds(float minY, float maxY) {
+        minSpawnY = minY;
+        maxSpawnY = maxY;
+        Debug.Log($"Spawn area bounds set: {minY} to {maxY}");
+    }
+    public float minSpawnY = -0.1f;
+    public float maxSpawnY = 0.48f;
+        public void ResetSpawnerSettings() {
         spawnRate = 2.0f;
         moveSpeed = 4f;
         maxTerrains = 10;
