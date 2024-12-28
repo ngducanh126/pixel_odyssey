@@ -3,7 +3,14 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public void ResetScore() {
+    private int highScore = 0;
+    public void UpdateHighScore() {
+        if (score > highScore) {
+            highScore = score;
+        }
+        scoreText.text = "High Score: " + highScore;
+    }
+        public void ResetScore() {
         score = 0;
         scoreText.text = "Score: 0";
     }
