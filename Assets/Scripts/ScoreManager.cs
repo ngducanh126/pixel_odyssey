@@ -3,7 +3,11 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    private int scoreMultiplier = 1;
+    public void ApplyMissedCollectiblePenalty(int penalty) {
+        score = Mathf.Max(0, score - penalty);
+        scoreText.text = "Score: " + score;
+    }
+        private int scoreMultiplier = 1;
     public void SetScoreMultiplier(int multiplier) {
         scoreMultiplier = multiplier;
     }
