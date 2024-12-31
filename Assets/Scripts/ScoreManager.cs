@@ -3,7 +3,12 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public void ApplyMissedCollectiblePenalty(int penalty) {
+    public delegate void ScoreChanged(int newScore);
+    public event ScoreChanged OnScoreChanged;
+    private void NotifyScoreChanged() {
+        if (OnScoreChanged != null) OnScoreChanged(score);
+    }
+        public void ApplyMissedCollectiblePenalty(int penalty) {
         score = Mathf.Max(0, score - penalty);
         scoreText.text = "Score: " + score;
     }
