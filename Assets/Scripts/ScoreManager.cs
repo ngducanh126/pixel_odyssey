@@ -3,7 +3,15 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public delegate void ScoreChanged(int newScore);
+    public void SaveScore() {
+        PlayerPrefs.SetInt("score", score);
+        PlayerPrefs.Save();
+    }
+    public void LoadScore() {
+        score = PlayerPrefs.GetInt("score", 0);
+        scoreText.text = "Score: " + score;
+    }
+        public delegate void ScoreChanged(int newScore);
     public event ScoreChanged OnScoreChanged;
     private void NotifyScoreChanged() {
         if (OnScoreChanged != null) OnScoreChanged(score);
