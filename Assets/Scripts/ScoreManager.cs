@@ -3,7 +3,11 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public void SaveScore() {
+    public void SubtractScore(int amount) {
+        score = Mathf.Max(0, score - amount);
+        scoreText.text = "Score: " + score;
+    }
+        public void SaveScore() {
         PlayerPrefs.SetInt("score", score);
         PlayerPrefs.Save();
     }
