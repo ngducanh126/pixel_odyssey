@@ -3,7 +3,14 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public void SubtractScore(int amount) {
+    public GameObject floatingScorePrefab;
+    public void ShowFloatingScore(int amount, Vector3 position) {
+        if (floatingScorePrefab != null) {
+            GameObject popup = Instantiate(floatingScorePrefab, position, Quaternion.identity);
+            popup.GetComponentInChildren<UnityEngine.UI.Text>().text = "+" + amount;
+        }
+    }
+        public void SubtractScore(int amount) {
         score = Mathf.Max(0, score - amount);
         scoreText.text = "Score: " + score;
     }
