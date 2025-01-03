@@ -3,7 +3,11 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public GameObject floatingScorePrefab;
+    public void SetScore(int value) {
+        score = value;
+        scoreText.text = "Score: " + score;
+    }
+        public GameObject floatingScorePrefab;
     public void ShowFloatingScore(int amount, Vector3 position) {
         if (floatingScorePrefab != null) {
             GameObject popup = Instantiate(floatingScorePrefab, position, Quaternion.identity);
