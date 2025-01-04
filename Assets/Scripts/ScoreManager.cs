@@ -3,7 +3,11 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public void SetScore(int value) {
+    public void AnimateScoreIncrease() {
+        scoreText.color = Color.yellow;
+        // Could use coroutine to animate back to white
+    }
+        public void SetScore(int value) {
         score = value;
         scoreText.text = "Score: " + score;
     }
