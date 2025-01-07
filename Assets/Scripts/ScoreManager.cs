@@ -3,7 +3,11 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public int GetScore() {
+    public void AddPerfectRunBonus(int bonus) {
+        score += bonus;
+        scoreText.text = "Score: " + score;
+    }
+        public int GetScore() {
         return score;
     }
         public void AnimateScoreIncrease() {
