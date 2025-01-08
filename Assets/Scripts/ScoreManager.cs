@@ -3,7 +3,13 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public void AddPerfectRunBonus(int bonus) {
+    public AudioClip scoreUpSound;
+    public void PlayScoreUpSound() {
+        if (scoreUpSound != null) {
+            AudioSource.PlayClipAtPoint(scoreUpSound, Camera.main.transform.position);
+        }
+    }
+        public void AddPerfectRunBonus(int bonus) {
         score += bonus;
         scoreText.text = "Score: " + score;
     }
