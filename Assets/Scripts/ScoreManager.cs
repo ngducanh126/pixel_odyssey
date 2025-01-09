@@ -3,7 +3,11 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public AudioClip scoreUpSound;
+    public void DoubleScore() {
+        score *= 2;
+        scoreText.text = "Score: " + score;
+    }
+        public AudioClip scoreUpSound;
     public void PlayScoreUpSound() {
         if (scoreUpSound != null) {
             AudioSource.PlayClipAtPoint(scoreUpSound, Camera.main.transform.position);
