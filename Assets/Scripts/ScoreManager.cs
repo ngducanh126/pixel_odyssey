@@ -3,7 +3,10 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public void DecayScoreOverTime(float rate) {
+    public void SubmitScoreToLeaderboard() {
+        Debug.Log("Score submitted: " + score);
+    }
+        public void DecayScoreOverTime(float rate) {
         score = Mathf.Max(0, score - Mathf.RoundToInt(rate * Time.deltaTime));
         scoreText.text = "Score: " + score;
     }
