@@ -3,7 +3,11 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public bool IsNewHighScore() {
+    public void FlashScoreColor(Color flashColor) {
+        scoreText.color = flashColor;
+        // Could use coroutine to animate back to normal
+    }
+        public bool IsNewHighScore() {
         return score > highScore;
     }
         public void SubmitScoreToLeaderboard() {
