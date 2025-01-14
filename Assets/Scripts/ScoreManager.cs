@@ -3,7 +3,10 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public void FlashScoreColor(Color flashColor) {
+    public string GetFormattedScore() {
+        return score.ToString("N0");
+    }
+        public void FlashScoreColor(Color flashColor) {
         scoreText.color = flashColor;
         // Could use coroutine to animate back to normal
     }
