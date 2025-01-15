@@ -3,7 +3,12 @@ using UnityEngine.UI; // Make sure to include this if you're using UI elements
 
 public class ScoreManager : MonoBehaviour
 {
-    public string GetFormattedScore() {
+    public delegate void TargetScoreReached();
+    public event TargetScoreReached OnTargetScoreReached;
+    public void CheckTargetScore(int target) {
+        if (score >= target && OnTargetScoreReached != null) OnTargetScoreReached();
+    }
+        public string GetFormattedScore() {
         return score.ToString("N0");
     }
         public void FlashScoreColor(Color flashColor) {
