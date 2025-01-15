@@ -136,3 +136,15 @@ public class Monster : MonoBehaviour
         }
     }
 }
+private bool isStealth = False;
+public void EnterStealth() {
+    isStealth = True;
+    spriteRenderer.color = new Color(1,1,1,0.5f);
+    Debug.Log("Monster enters stealth mode");
+}
+public void ExitStealth() {
+    isStealth = False;
+    spriteRenderer.color = Color.white;
+    Debug.Log("Monster exits stealth mode");
+}
+
