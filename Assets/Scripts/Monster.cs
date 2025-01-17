@@ -148,3 +148,15 @@ public void ExitStealth() {
     Debug.Log("Monster exits stealth mode");
 }
 
+private bool isRaging = False;
+public void EnterRage(float boost) {
+    isRaging = True;
+    moveSpeed += boost;
+    Debug.Log("Monster enters rage state");
+}
+public void ExitRage(float boost) {
+    isRaging = False;
+    moveSpeed -= boost;
+    Debug.Log("Monster exits rage state");
+}
+
