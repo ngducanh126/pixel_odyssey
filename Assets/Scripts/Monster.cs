@@ -160,3 +160,8 @@ public void ExitRage(float boost) {
     Debug.Log("Monster exits rage state");
 }
 
+public void DropRareLoot(GameObject rareLootPrefab) {
+    Instantiate(rareLootPrefab, transform.position, Quaternion.identity);
+    Debug.Log("Monster dropped rare loot!");
+}
+
