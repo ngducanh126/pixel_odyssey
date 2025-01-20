@@ -165,3 +165,15 @@ public void DropRareLoot(GameObject rareLootPrefab) {
     Debug.Log("Monster dropped rare loot!");
 }
 
+private bool isPaused = False;
+public void PausePatrol() {
+    isPaused = True;
+    rb.velocity = Vector2.zero;
+    Debug.Log("Monster patrol paused");
+}
+public void ResumePatrol() {
+    isPaused = False;
+    rb.velocity = new Vector2(-moveSpeed, 0);
+    Debug.Log("Monster patrol resumed");
+}
+
