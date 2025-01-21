@@ -177,3 +177,8 @@ public void ResumePatrol() {
     Debug.Log("Monster patrol resumed");
 }
 
+public void TauntPlayer() {
+    Debug.Log("Monster taunts the player");
+    // anim.SetTrigger("taunt");
+}
+
