@@ -182,3 +182,15 @@ public void TauntPlayer() {
     // anim.SetTrigger("taunt");
 }
 
+private bool isBurrowed = False;
+public void BurrowUnderground() {
+    isBurrowed = True;
+    spriteRenderer.enabled = False;
+    Debug.Log("Monster burrows underground");
+}
+public void EmergeFromGround() {
+    isBurrowed = False;
+    spriteRenderer.enabled = True;
+    Debug.Log("Monster emerges from ground");
+}
+
