@@ -194,3 +194,10 @@ public void EmergeFromGround() {
     Debug.Log("Monster emerges from ground");
 }
 
+public delegate void ReinforcementsCalled();
+public event ReinforcementsCalled OnReinforcementsCalled;
+public void CallReinforcements() {
+    if (OnReinforcementsCalled != null) OnReinforcementsCalled();
+    Debug.Log("Monster calls for reinforcements");
+}
+
