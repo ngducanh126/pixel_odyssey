@@ -201,3 +201,16 @@ public void CallReinforcements() {
     Debug.Log("Monster calls for reinforcements");
 }
 
+public void HealOverTime(float amount, float duration) {
+    StartCoroutine(HealRoutine(amount, duration));
+}
+private IEnumerator HealRoutine(float amount, float duration) {
+    float timer = 0f;
+    float perSecond = amount / duration;
+    while (timer < duration) {
+        moveSpeed += perSecond * Time.deltaTime;
+        timer += Time.deltaTime;
+        yield return null;
+    }
+}
+
