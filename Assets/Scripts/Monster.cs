@@ -214,3 +214,8 @@ private IEnumerator HealRoutine(float amount, float duration) {
     }
 }
 
+public void Camouflage(Color camoColor) {
+    spriteRenderer.color = camoColor;
+    Debug.Log("Monster camouflaged");
+}
+
