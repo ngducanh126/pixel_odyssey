@@ -219,3 +219,9 @@ public void Camouflage(Color camoColor) {
     Debug.Log("Monster camouflaged");
 }
 
+public GameObject fireballPrefab;
+public void RangedAttack() {
+    Instantiate(fireballPrefab, transform.position, Quaternion.identity);
+    Debug.Log("Monster launches fireball");
+}
+
