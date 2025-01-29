@@ -225,3 +225,9 @@ public void RangedAttack() {
     Debug.Log("Monster launches fireball");
 }
 
+public GameObject trapPrefab;
+public void SetTrap(Vector3 position) {
+    Instantiate(trapPrefab, position, Quaternion.identity);
+    Debug.Log("Monster sets a trap");
+}
+
