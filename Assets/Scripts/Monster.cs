@@ -231,3 +231,15 @@ public void SetTrap(Vector3 position) {
     Debug.Log("Monster sets a trap");
 }
 
+private bool isAfraid = False;
+public void EnterFear() {
+    isAfraid = True;
+    moveSpeed *= 0.5f;
+    Debug.Log("Monster is afraid and moves slower");
+}
+public void ExitFear() {
+    isAfraid = False;
+    moveSpeed *= 2f;
+    Debug.Log("Monster recovers from fear");
+}
+
