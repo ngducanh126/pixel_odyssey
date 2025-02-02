@@ -243,3 +243,13 @@ public void ExitFear() {
     Debug.Log("Monster recovers from fear");
 }
 
+private bool shieldActive = False;
+public void ActivateShield() {
+    shieldActive = True;
+    Debug.Log("Monster shield activated");
+}
+public void DeactivateShield() {
+    shieldActive = False;
+    Debug.Log("Monster shield deactivated");
+}
+
