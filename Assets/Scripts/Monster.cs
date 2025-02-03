@@ -253,3 +253,8 @@ public void DeactivateShield() {
     Debug.Log("Monster shield deactivated");
 }
 
+public void Teleport(Vector3 target) {
+    transform.position = target;
+    Debug.Log($"Monster teleports to {target}");
+}
+
