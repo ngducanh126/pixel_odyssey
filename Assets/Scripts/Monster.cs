@@ -258,3 +258,10 @@ public void Teleport(Vector3 target) {
     Debug.Log($"Monster teleports to {target}");
 }
 
+public void RoarStun(float radius) {
+    Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius);
+    foreach (var hit in hits) {
+        if (hit.CompareTag("Player")) Debug.Log("Player stunned by monster roar");
+    }
+}
+
