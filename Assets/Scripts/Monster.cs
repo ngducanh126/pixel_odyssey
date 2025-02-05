@@ -265,3 +265,9 @@ public void RoarStun(float radius) {
     }
 }
 
+private bool canClimbWalls = False;
+public void EnableWallClimb(bool enable) {
+    canClimbWalls = enable;
+    Debug.Log("Monster wall climb: " + enable);
+}
+
