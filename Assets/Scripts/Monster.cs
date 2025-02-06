@@ -271,3 +271,10 @@ public void EnableWallClimb(bool enable) {
     Debug.Log("Monster wall climb: " + enable);
 }
 
+private bool isAsleep = False;
+public void SleepCycle(bool sleep) {
+    isAsleep = sleep;
+    rb.velocity = sleep ? Vector2.zero : new Vector2(-moveSpeed, 0);
+    Debug.Log(sleep ? "Monster is sleeping" : "Monster wakes up");
+}
+
