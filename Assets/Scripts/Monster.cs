@@ -278,3 +278,13 @@ public void SleepCycle(bool sleep) {
     Debug.Log(sleep ? "Monster is sleeping" : "Monster wakes up");
 }
 
+public void PickUpObject(GameObject obj) {
+    obj.transform.parent = transform;
+    Debug.Log("Monster picks up object");
+}
+public void ThrowObject(GameObject obj, Vector2 force) {
+    obj.transform.parent = None;
+    obj.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+    Debug.Log("Monster throws object");
+}
+
