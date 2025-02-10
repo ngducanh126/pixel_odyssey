@@ -288,3 +288,8 @@ public void ThrowObject(GameObject obj, Vector2 force) {
     Debug.Log("Monster throws object");
 }
 
+public void GroupMove(Vector3 target, float speed) {
+    transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+    Debug.Log("Monster moves in group formation");
+}
+
