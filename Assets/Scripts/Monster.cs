@@ -293,3 +293,9 @@ public void GroupMove(Vector3 target, float speed) {
     Debug.Log("Monster moves in group formation");
 }
 
+private bool canSwim = False;
+public void EnableSwimming(bool enable) {
+    canSwim = enable;
+    Debug.Log("Monster swimming: " + enable);
+}
+
