@@ -299,3 +299,9 @@ public void EnableSwimming(bool enable) {
     Debug.Log("Monster swimming: " + enable);
 }
 
+public float visionAngle = 45f;
+public void SetVisionCone(float angle) {
+    visionAngle = angle;
+    Debug.Log($"Monster vision cone set to {angle} degrees");
+}
+
