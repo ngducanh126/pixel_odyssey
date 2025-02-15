@@ -305,3 +305,8 @@ public void SetVisionCone(float angle) {
     Debug.Log($"Monster vision cone set to {angle} degrees");
 }
 
+public void DodgeProjectile(Vector2 direction, float force) {
+    rb.AddForce(direction * force, ForceMode2D.Impulse);
+    Debug.Log("Monster dodges projectile");
+}
+
