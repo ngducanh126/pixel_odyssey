@@ -310,3 +310,8 @@ public void DodgeProjectile(Vector2 direction, float force) {
     Debug.Log("Monster dodges projectile");
 }
 
+public void Dance() {
+    Debug.Log("Monster performs a dance");
+    // anim.SetTrigger("dance");
+}
+
