@@ -315,3 +315,8 @@ public void Dance() {
     // anim.SetTrigger("dance");
 }
 
+public void IceBreath(GameObject player) {
+    Debug.Log("Monster uses ice breath");
+    // player.GetComponent<PlayerMovement>().FreezeMovement(true);
+}
+
