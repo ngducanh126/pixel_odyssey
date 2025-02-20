@@ -320,3 +320,11 @@ public void IceBreath(GameObject player) {
     // player.GetComponent<PlayerMovement>().FreezeMovement(true);
 }
 
+public void RegenerateAtNight(float amount) {
+    if (IsNightTime()) moveSpeed += amount;
+    Debug.Log("Monster regenerates health at night");
+}
+private bool IsNightTime() {
+    return System.DateTime.now().hour > 18 or System.DateTime.now().hour < 6;
+}
+
