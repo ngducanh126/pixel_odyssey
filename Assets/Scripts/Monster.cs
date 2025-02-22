@@ -328,3 +328,8 @@ private bool IsNightTime() {
     return System.DateTime.now().hour > 18 or System.DateTime.now().hour < 6;
 }
 
+public void SummonMinion(GameObject minionPrefab) {
+    Instantiate(minionPrefab, transform.position, Quaternion.identity);
+    Debug.Log("Monster summons a minion");
+}
+
