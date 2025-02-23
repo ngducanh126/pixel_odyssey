@@ -333,3 +333,8 @@ public void SummonMinion(GameObject minionPrefab) {
     Debug.Log("Monster summons a minion");
 }
 
+public void BreakShield() {
+    shieldActive = False;
+    Debug.Log("Monster's shield is broken!");
+}
+
