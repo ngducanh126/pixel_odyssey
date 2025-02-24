@@ -338,3 +338,9 @@ public void BreakShield() {
     Debug.Log("Monster's shield is broken!");
 }
 
+public void EatFood(GameObject food) {
+    Destroy(food);
+    moveSpeed += 1f;
+    Debug.Log("Monster eats food and regains health");
+}
+
