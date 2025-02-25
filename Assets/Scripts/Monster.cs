@@ -344,3 +344,8 @@ public void EatFood(GameObject food) {
     Debug.Log("Monster eats food and regains health");
 }
 
+public void DisarmTrap(GameObject trap) {
+    Destroy(trap);
+    Debug.Log("Monster disarms a trap");
+}
+
