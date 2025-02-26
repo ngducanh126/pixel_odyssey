@@ -349,3 +349,8 @@ public void DisarmTrap(GameObject trap) {
     Debug.Log("Monster disarms a trap");
 }
 
+public void MimicPlayer(GameObject player) {
+    spriteRenderer.sprite = player.GetComponent<SpriteRenderer>().sprite;
+    Debug.Log("Monster mimics player appearance");
+}
+
