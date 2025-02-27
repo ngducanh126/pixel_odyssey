@@ -18,3 +18,11 @@ public class MonsterSpawner : MonoBehaviour
         Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
     }
 }
+public Vector2 spawnAreaMin = new Vector2(-5f, -1f);
+public Vector2 spawnAreaMax = new Vector2(5f, 2f);
+public Vector2 GetRandomSpawnPosition() {
+    float x = Random.Range(spawnAreaMin.x, spawnAreaMax.x);
+    float y = Random.Range(spawnAreaMin.y, spawnAreaMax.y);
+    return new Vector2(x, y);
+}
+
