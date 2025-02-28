@@ -26,3 +26,9 @@ public Vector2 GetRandomSpawnPosition() {
     return new Vector2(x, y);
 }
 
+public int spawnLimit = 10;
+private int currentSpawned = 0;
+public bool CanSpawnMore() {
+    return currentSpawned < spawnLimit;
+}
+
