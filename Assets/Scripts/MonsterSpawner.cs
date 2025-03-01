@@ -32,3 +32,8 @@ public bool CanSpawnMore() {
     return currentSpawned < spawnLimit;
 }
 
+public AudioClip spawnSound;
+public void PlaySpawnSound() {
+    if (spawnSound != null) AudioSource.PlayClipAtPoint(spawnSound, spawnPosition);
+}
+
