@@ -37,3 +37,9 @@ public void PlaySpawnSound() {
     if (spawnSound != null) AudioSource.PlayClipAtPoint(spawnSound, spawnPosition);
 }
 
+public GameObject[] monsterTypes;
+public GameObject GetRandomMonsterType() {
+    if (monsterTypes.Length == 0) return monsterPrefab;
+    return monsterTypes[Random.Range(0, monsterTypes.Length)];
+}
+
