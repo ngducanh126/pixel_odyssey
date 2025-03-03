@@ -47,3 +47,8 @@ public void ReduceSpawnCooldown(float amount) {
     spawnRate = Mathf.Max(0.5f, spawnRate - amount);
 }
 
+public GameObject spawnEffectPrefab;
+public void ShowSpawnEffect(Vector2 pos) {
+    if (spawnEffectPrefab != null) Instantiate(spawnEffectPrefab, pos, Quaternion.identity);
+}
+
