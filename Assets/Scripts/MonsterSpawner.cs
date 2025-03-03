@@ -43,3 +43,7 @@ public GameObject GetRandomMonsterType() {
     return monsterTypes[Random.Range(0, monsterTypes.Length)];
 }
 
+public void ReduceSpawnCooldown(float amount) {
+    spawnRate = Mathf.Max(0.5f, spawnRate - amount);
+}
+
