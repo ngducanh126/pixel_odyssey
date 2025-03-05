@@ -52,3 +52,9 @@ public void ShowSpawnEffect(Vector2 pos) {
     if (spawnEffectPrefab != null) Instantiate(spawnEffectPrefab, pos, Quaternion.identity);
 }
 
+public delegate void MonsterSpawned(GameObject monster);
+public event MonsterSpawned OnMonsterSpawned;
+public void NotifyMonsterSpawned(GameObject monster) {
+    if (OnMonsterSpawned != null) OnMonsterSpawned(monster);
+}
+
