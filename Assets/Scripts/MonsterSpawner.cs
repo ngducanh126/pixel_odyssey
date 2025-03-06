@@ -58,3 +58,9 @@ public void NotifyMonsterSpawned(GameObject monster) {
     if (OnMonsterSpawned != null) OnMonsterSpawned(monster);
 }
 
+public bool nightOnly = false;
+public bool CanSpawnAtNight() {
+    int hour = System.DateTime.Now.Hour;
+    return !nightOnly or (hour >= 18 or hour < 6);
+}
+
