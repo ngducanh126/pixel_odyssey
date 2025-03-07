@@ -72,3 +72,8 @@ public void SpawnFromQueue() {
     if (spawnQueue.Count > 0) Instantiate(spawnQueue.Dequeue(), GetRandomSpawnPosition(), Quaternion.identity);
 }
 
+public float proximityRadius = 5f;
+public void SpawnOnPlayerProximity(Transform player) {
+    if (Vector2.Distance(player.position, spawnPosition) < proximityRadius) SpawnMonster();
+}
+
