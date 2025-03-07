@@ -64,3 +64,11 @@ public bool CanSpawnAtNight() {
     return !nightOnly or (hour >= 18 or hour < 6);
 }
 
+private Queue<GameObject> spawnQueue = new Queue<GameObject>();
+public void EnqueueMonster(GameObject prefab) {
+    spawnQueue.Enqueue(prefab);
+}
+public void SpawnFromQueue() {
+    if (spawnQueue.Count > 0) Instantiate(spawnQueue.Dequeue(), GetRandomSpawnPosition(), Quaternion.identity);
+}
+
