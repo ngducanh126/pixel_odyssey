@@ -77,3 +77,9 @@ public void SpawnOnPlayerProximity(Transform player) {
     if (Vector2.Distance(player.position, spawnPosition) < proximityRadius) SpawnMonster();
 }
 
+private List<GameObject> spawnedMonsters = new List<GameObject>();
+public void ClearAllMonsters() {
+    foreach (var m in spawnedMonsters) Destroy(m);
+    spawnedMonsters.Clear();
+}
+
