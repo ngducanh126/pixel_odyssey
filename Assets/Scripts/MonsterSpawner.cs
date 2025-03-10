@@ -83,3 +83,8 @@ public void ClearAllMonsters() {
     spawnedMonsters.Clear();
 }
 
+public GameObject bossPrefab;
+public void SpawnBoss() {
+    Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
+}
+
