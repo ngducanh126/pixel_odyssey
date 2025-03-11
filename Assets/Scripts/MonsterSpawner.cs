@@ -88,3 +88,7 @@ public void SpawnBoss() {
     Instantiate(bossPrefab, spawnPosition, Quaternion.identity);
 }
 
+public void SetSpawnRate(float rate) {
+    spawnRate = rate;
+}
+
