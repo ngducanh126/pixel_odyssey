@@ -92,3 +92,8 @@ public void SetSpawnRate(float rate) {
     spawnRate = rate;
 }
 
+public float monsterLifetime = 10f;
+public void DespawnAfterTime(GameObject monster) {
+    Destroy(monster, monsterLifetime);
+}
+
