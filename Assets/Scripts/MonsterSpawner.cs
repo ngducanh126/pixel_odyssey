@@ -97,3 +97,8 @@ public void DespawnAfterTime(GameObject monster) {
     Destroy(monster, monsterLifetime);
 }
 
+public UnityEngine.UI.Text spawnTimerText;
+public void UpdateSpawnTimerUI(float timeLeft) {
+    if (spawnTimerText != null) spawnTimerText.text = timeLeft.ToString("F1");
+}
+
