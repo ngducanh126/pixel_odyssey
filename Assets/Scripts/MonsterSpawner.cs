@@ -107,3 +107,11 @@ public void SetBlockDuringCutscene(bool block) {
     blockDuringCutscene = block;
 }
 
+private int totalSpawned = 0;
+public void IncrementSpawnCounter() {
+    totalSpawned++;
+}
+public int GetTotalSpawned() {
+    return totalSpawned;
+}
+
