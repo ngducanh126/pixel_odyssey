@@ -102,3 +102,8 @@ public void UpdateSpawnTimerUI(float timeLeft) {
     if (spawnTimerText != null) spawnTimerText.text = timeLeft.ToString("F1");
 }
 
+public bool blockDuringCutscene = false;
+public void SetBlockDuringCutscene(bool block) {
+    blockDuringCutscene = block;
+}
+
