@@ -115,3 +115,8 @@ public int GetTotalSpawned() {
     return totalSpawned;
 }
 
+public void ResizeSpawnArea(Vector2 min, Vector2 max) {
+    spawnAreaMin = min;
+    spawnAreaMax = max;
+}
+
