@@ -120,3 +120,11 @@ public void ResizeSpawnArea(Vector2 min, Vector2 max) {
     spawnAreaMax = max;
 }
 
+private bool spawningPaused = false;
+public void PauseSpawning() {
+    spawningPaused = true;
+}
+public void ResumeSpawning() {
+    spawningPaused = false;
+}
+
