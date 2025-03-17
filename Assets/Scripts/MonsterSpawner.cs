@@ -128,3 +128,8 @@ public void ResumeSpawning() {
     spawningPaused = false;
 }
 
+public int scoreThreshold = 100;
+public void SpawnOnScore(int score) {
+    if (score >= scoreThreshold) SpawnMonster();
+}
+
