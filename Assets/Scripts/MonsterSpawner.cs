@@ -133,3 +133,8 @@ public void SpawnOnScore(int score) {
     if (score >= scoreThreshold) SpawnMonster();
 }
 
+public void SpawnWithRandomRotation() {
+    Quaternion rot = Quaternion.Euler(0, 0, Random.Range(0, 360));
+    Instantiate(monsterPrefab, spawnPosition, rot);
+}
+
