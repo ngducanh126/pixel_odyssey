@@ -138,3 +138,7 @@ public void SpawnWithRandomRotation() {
     Instantiate(monsterPrefab, spawnPosition, rot);
 }
 
+public void ChainSpawnOnDeath(GameObject monster) {
+    monster.GetComponent<Monster>().OnDeath += SpawnMonster;
+}
+
