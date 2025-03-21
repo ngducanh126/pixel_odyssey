@@ -142,3 +142,8 @@ public void ChainSpawnOnDeath(GameObject monster) {
     monster.GetComponent<Monster>().OnDeath += SpawnMonster;
 }
 
+public Color spawnEffectColor = Color.white;
+public void SetSpawnEffectColor(Color color) {
+    spawnEffectColor = color;
+}
+
