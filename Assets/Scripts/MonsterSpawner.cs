@@ -147,3 +147,8 @@ public void SetSpawnEffectColor(Color color) {
     spawnEffectColor = color;
 }
 
+public Collider2D triggerZone;
+public void SpawnOnTriggerZone() {
+    if (triggerZone != null && triggerZone.OverlapPoint(spawnPosition)) SpawnMonster();
+}
+
