@@ -152,3 +152,7 @@ public void SpawnOnTriggerZone() {
     if (triggerZone != null && triggerZone.OverlapPoint(spawnPosition)) SpawnMonster();
 }
 
+public void ShowSpawnPreview(Vector2 pos) {
+    // Editor-only: draw preview at pos
+}
+
