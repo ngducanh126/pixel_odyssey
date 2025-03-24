@@ -162,3 +162,8 @@ public void SpawnWithRandomScale() {
     m.transform.localScale = Vector3.one * s;
 }
 
+public float respawnDelay = 2f;
+public void DelaySpawnAfterPlayerRespawn() {
+    Invoke(nameof(SpawnMonster), respawnDelay);
+}
+
