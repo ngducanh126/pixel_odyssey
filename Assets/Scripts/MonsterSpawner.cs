@@ -156,3 +156,9 @@ public void ShowSpawnPreview(Vector2 pos) {
     // Editor-only: draw preview at pos
 }
 
+public void SpawnWithRandomScale() {
+    GameObject m = Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
+    float s = Random.Range(0.5f, 1.5f);
+    m.transform.localScale = Vector3.one * s;
+}
+
