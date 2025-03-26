@@ -167,3 +167,8 @@ public void DelaySpawnAfterPlayerRespawn() {
     Invoke(nameof(SpawnMonster), respawnDelay);
 }
 
+public Vector2[] multiSpawnPoints;
+public void SpawnAtMultiplePoints() {
+    foreach (var pos in multiSpawnPoints) Instantiate(monsterPrefab, pos, Quaternion.identity);
+}
+
