@@ -172,3 +172,7 @@ public void SpawnAtMultiplePoints() {
     foreach (var pos in multiSpawnPoints) Instantiate(monsterPrefab, pos, Quaternion.identity);
 }
 
+public void LogMonsterSpawn(GameObject monster) {
+    Debug.Log($"Monster spawned: {monster.name} at {monster.transform.position}");
+}
+
