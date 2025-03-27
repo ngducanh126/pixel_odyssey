@@ -176,3 +176,8 @@ public void LogMonsterSpawn(GameObject monster) {
     Debug.Log($"Monster spawned: {monster.name} at {monster.transform.position}");
 }
 
+public void SpawnWithAIState(string state) {
+    GameObject m = Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
+    m.GetComponent<Monster>().SetAIState(state);
+}
+
