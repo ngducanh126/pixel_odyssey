@@ -132,3 +132,7 @@ public class BuyItem : MonoBehaviour
 }
 
 
+public bool CanAfford(int cost) {
+    return playerCollectCoin.score >= cost;
+}
+
