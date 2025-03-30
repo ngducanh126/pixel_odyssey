@@ -136,3 +136,8 @@ public bool CanAfford(int cost) {
     return playerCollectCoin.score >= cost;
 }
 
+public GameObject confirmationPopup;
+public void ShowBuyConfirmation() {
+    if (confirmationPopup != null) confirmationPopup.SetActive(true);
+}
+
