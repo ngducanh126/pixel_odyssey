@@ -146,3 +146,11 @@ public void RefundItem(int cost) {
     playerCollectCoin.UpdateScoreText();
 }
 
+public void BuyMultipleItems(int count, int costPerItem) {
+    int totalCost = count * costPerItem;
+    if (CanAfford(totalCost)) {
+        playerCollectCoin.score -= totalCost;
+        playerCollectCoin.UpdateScoreText();
+    }
+}
+
