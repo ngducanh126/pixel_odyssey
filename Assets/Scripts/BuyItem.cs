@@ -141,3 +141,8 @@ public void ShowBuyConfirmation() {
     if (confirmationPopup != null) confirmationPopup.SetActive(true);
 }
 
+public void RefundItem(int cost) {
+    playerCollectCoin.score += cost;
+    playerCollectCoin.UpdateScoreText();
+}
+
