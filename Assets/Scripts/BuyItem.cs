@@ -154,3 +154,8 @@ public void BuyMultipleItems(int count, int costPerItem) {
     }
 }
 
+public AudioClip buySound;
+public void PlayBuySound() {
+    if (buySound != null) AudioSource.PlayClipAtPoint(buySound, transform.position);
+}
+
