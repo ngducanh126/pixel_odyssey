@@ -159,3 +159,8 @@ public void PlayBuySound() {
     if (buySound != null) AudioSource.PlayClipAtPoint(buySound, transform.position);
 }
 
+public float discountPercent = 0f;
+public int GetDiscountedPrice(int price) {
+    return Mathf.RoundToInt(price * (1f - discountPercent));
+}
+
