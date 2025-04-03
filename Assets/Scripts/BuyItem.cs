@@ -164,3 +164,8 @@ public int GetDiscountedPrice(int price) {
     return Mathf.RoundToInt(price * (1f - discountPercent));
 }
 
+public GameObject itemPreviewUI;
+public void PreviewItem(GameObject item) {
+    if (itemPreviewUI != null) itemPreviewUI.SetActive(true);
+}
+
