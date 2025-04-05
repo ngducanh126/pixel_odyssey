@@ -169,3 +169,8 @@ public void PreviewItem(GameObject item) {
     if (itemPreviewUI != null) itemPreviewUI.SetActive(true);
 }
 
+public GameObject limitedTimeBanner;
+public void ShowLimitedTimeOffer(bool show) {
+    if (limitedTimeBanner != null) limitedTimeBanner.SetActive(show);
+}
+
