@@ -174,3 +174,8 @@ public void ShowLimitedTimeOffer(bool show) {
     if (limitedTimeBanner != null) limitedTimeBanner.SetActive(show);
 }
 
+public Animator shopAnimator;
+public void AnimateBuyUI() {
+    if (shopAnimator != null) shopAnimator.SetTrigger("Buy");
+}
+
