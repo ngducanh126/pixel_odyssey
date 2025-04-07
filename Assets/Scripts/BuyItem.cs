@@ -179,3 +179,12 @@ public void AnimateBuyUI() {
     if (shopAnimator != null) shopAnimator.SetTrigger("Buy");
 }
 
+private bool buyCooldown = false;
+public void StartBuyCooldown(float duration) {
+    buyCooldown = true;
+    Invoke("EndBuyCooldown", duration);
+}
+private void EndBuyCooldown() {
+    buyCooldown = false;
+}
+
