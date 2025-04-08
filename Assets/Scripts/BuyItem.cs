@@ -188,3 +188,8 @@ private void EndBuyCooldown() {
     buyCooldown = false;
 }
 
+public GameObject tooltipUI;
+public void ShowItemTooltip(string description) {
+    if (tooltipUI != null) tooltipUI.GetComponent<TMP_Text>().text = description;
+}
+
