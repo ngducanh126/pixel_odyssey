@@ -193,3 +193,7 @@ public void ShowItemTooltip(string description) {
     if (tooltipUI != null) tooltipUI.GetComponent<TMP_Text>().text = description;
 }
 
+public void RandomizeDailyDeals(GameObject[] items) {
+    // Shuffle items and pick a few for daily deals
+}
+
