@@ -202,3 +202,8 @@ public void AddLoyaltyPoints(int amount) {
     loyaltyPoints += amount;
 }
 
+private List<string> purchaseHistory = new List<string>();
+public void TrackPurchase(string itemName) {
+    purchaseHistory.Add(itemName);
+}
+
