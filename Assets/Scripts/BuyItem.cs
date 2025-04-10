@@ -197,3 +197,8 @@ public void RandomizeDailyDeals(GameObject[] items) {
     // Shuffle items and pick a few for daily deals
 }
 
+private int loyaltyPoints = 0;
+public void AddLoyaltyPoints(int amount) {
+    loyaltyPoints += amount;
+}
+
