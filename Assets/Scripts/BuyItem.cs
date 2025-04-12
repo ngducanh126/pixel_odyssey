@@ -207,3 +207,7 @@ public void TrackPurchase(string itemName) {
     purchaseHistory.Add(itemName);
 }
 
+public void GiftItem(GameObject item, PlayerCollectCoin recipient) {
+    recipient.ReceiveGift(item);
+}
+
