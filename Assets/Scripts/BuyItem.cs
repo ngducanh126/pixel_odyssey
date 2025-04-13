@@ -211,3 +211,10 @@ public void GiftItem(GameObject item, PlayerCollectCoin recipient) {
     recipient.ReceiveGift(item);
 }
 
+public int bulkDiscountThreshold = 5;
+public float bulkDiscountPercent = 0.2f;
+public int GetBulkDiscountPrice(int count, int price) {
+    if (count >= bulkDiscountThreshold) return Mathf.RoundToInt(price * (1f - bulkDiscountPercent));
+    return price;
+}
+
