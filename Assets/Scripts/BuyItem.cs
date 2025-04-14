@@ -218,3 +218,8 @@ public int GetBulkDiscountPrice(int count, int price) {
     return price;
 }
 
+private List<GameObject> favoriteItems = new List<GameObject>();
+public void AddFavoriteItem(GameObject item) {
+    if (!favoriteItems.Contains(item)) favoriteItems.Add(item);
+}
+
