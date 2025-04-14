@@ -223,3 +223,8 @@ public void AddFavoriteItem(GameObject item) {
     if (!favoriteItems.Contains(item)) favoriteItems.Add(item);
 }
 
+public float restockTime = 3600f;
+public void ShowRestockTimer(float timeLeft) {
+    // Display timer in UI
+}
+
