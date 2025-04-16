@@ -228,3 +228,7 @@ public void ShowRestockTimer(float timeLeft) {
     // Display timer in UI
 }
 
+public void HighlightNewItem(GameObject item) {
+    // Add highlight effect to item in UI
+}
+
