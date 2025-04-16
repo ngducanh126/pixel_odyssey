@@ -232,3 +232,8 @@ public void HighlightNewItem(GameObject item) {
     // Add highlight effect to item in UI
 }
 
+public bool useAltCurrency = false;
+public void BuyWithAltCurrency(int altAmount) {
+    // Deduct alternate currency and process purchase
+}
+
