@@ -237,3 +237,7 @@ public void BuyWithAltCurrency(int altAmount) {
     // Deduct alternate currency and process purchase
 }
 
+public void LockItem(GameObject item, bool locked) {
+    // Set lock icon and disable buy button if locked
+}
+
