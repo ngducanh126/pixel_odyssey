@@ -241,3 +241,8 @@ public void LockItem(GameObject item, bool locked) {
     // Set lock icon and disable buy button if locked
 }
 
+public AudioClip confirmSound;
+public void PlayConfirmSound() {
+    if (confirmSound != null) AudioSource.PlayClipAtPoint(confirmSound, transform.position);
+}
+
