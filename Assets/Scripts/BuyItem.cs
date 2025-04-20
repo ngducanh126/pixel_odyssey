@@ -246,3 +246,7 @@ public void PlayConfirmSound() {
     if (confirmSound != null) AudioSource.PlayClipAtPoint(confirmSound, transform.position);
 }
 
+public void PreviewItemStats(GameObject item) {
+    // Show item stats in UI
+}
+
