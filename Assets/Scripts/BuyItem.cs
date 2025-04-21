@@ -250,3 +250,11 @@ public void PreviewItemStats(GameObject item) {
     // Show item stats in UI
 }
 
+private List<GameObject> buybackList = new List<GameObject>();
+public void AddToBuyback(GameObject item) {
+    buybackList.Add(item);
+}
+public void BuyBackItem(GameObject item) {
+    if (buybackList.Contains(item)) buybackList.Remove(item);
+}
+
