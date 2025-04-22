@@ -258,3 +258,7 @@ public void BuyBackItem(GameObject item) {
     if (buybackList.Contains(item)) buybackList.Remove(item);
 }
 
+public void ShowPurchaseError(string message) {
+    // Display error message in UI
+}
+
