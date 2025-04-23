@@ -266,3 +266,7 @@ public void ShopkeeperDialogue(string text) {
     // Show dialogue in shop UI
 }
 
+public void FilterItemsByType(string type) {
+    // Filter shop items by category
+}
+
