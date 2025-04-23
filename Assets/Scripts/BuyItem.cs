@@ -262,3 +262,7 @@ public void ShowPurchaseError(string message) {
     // Display error message in UI
 }
 
+public void ShopkeeperDialogue(string text) {
+    // Show dialogue in shop UI
+}
+
