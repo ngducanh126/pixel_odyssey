@@ -270,3 +270,7 @@ public void FilterItemsByType(string type) {
     // Filter shop items by category
 }
 
+public void ApplyBOGOFOffer(GameObject item) {
+    // Buy one get one free logic
+}
+
