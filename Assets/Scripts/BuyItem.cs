@@ -274,3 +274,7 @@ public void ApplyBOGOFOffer(GameObject item) {
     // Buy one get one free logic
 }
 
+public void ShowLowStockWarning(GameObject item) {
+    // Display warning if item stock is low
+}
+
