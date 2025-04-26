@@ -29,3 +29,7 @@ public class IdleBehavior : StateMachineBehaviour {
 
 
 }
+public void TriggerStretch(Animator animator) {
+    animator.SetTrigger("stretch");
+}
+
