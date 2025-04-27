@@ -278,3 +278,9 @@ public void ShowLowStockWarning(GameObject item) {
     // Display warning if item stock is low
 }
 
+public delegate void PurchaseSuccess(GameObject item);
+public event PurchaseSuccess OnPurchaseSuccess;
+public void NotifyPurchaseSuccess(GameObject item) {
+    if (OnPurchaseSuccess != null) OnPurchaseSuccess(item);
+}
+
