@@ -33,3 +33,7 @@ public void TriggerStretch(Animator animator) {
     animator.SetTrigger("stretch");
 }
 
+public void LookAround(Animator animator) {
+    animator.SetTrigger("lookAround");
+}
+
