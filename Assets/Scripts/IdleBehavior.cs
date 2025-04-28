@@ -37,3 +37,8 @@ public void LookAround(Animator animator) {
     animator.SetTrigger("lookAround");
 }
 
+public AudioClip whistleClip;
+public void PlayIdleWhistle(AudioSource source) {
+    if (whistleClip != null) source.PlayOneShot(whistleClip);
+}
+
