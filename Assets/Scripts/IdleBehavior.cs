@@ -42,3 +42,7 @@ public void PlayIdleWhistle(AudioSource source) {
     if (whistleClip != null) source.PlayOneShot(whistleClip);
 }
 
+public void TriggerYawn(Animator animator) {
+    animator.SetTrigger("yawn");
+}
+
