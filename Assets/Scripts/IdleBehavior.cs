@@ -46,3 +46,7 @@ public void TriggerYawn(Animator animator) {
     animator.SetTrigger("yawn");
 }
 
+public void FootTap(Animator animator) {
+    animator.SetTrigger("footTap");
+}
+
