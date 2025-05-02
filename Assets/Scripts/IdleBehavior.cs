@@ -50,3 +50,7 @@ public void FootTap(Animator animator) {
     animator.SetTrigger("footTap");
 }
 
+public void HeadScratch(Animator animator) {
+    animator.SetTrigger("headScratch");
+}
+
