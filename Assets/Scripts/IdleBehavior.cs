@@ -54,3 +54,8 @@ public void HeadScratch(Animator animator) {
     animator.SetTrigger("headScratch");
 }
 
+public AudioClip sighClip;
+public void PlayIdleSigh(AudioSource source) {
+    if (sighClip != null) source.PlayOneShot(sighClip);
+}
+
