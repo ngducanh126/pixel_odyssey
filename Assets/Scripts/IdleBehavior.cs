@@ -59,3 +59,7 @@ public void PlayIdleSigh(AudioSource source) {
     if (sighClip != null) source.PlayOneShot(sighClip);
 }
 
+public void SitDown(Animator animator) {
+    animator.SetTrigger("sitDown");
+}
+
