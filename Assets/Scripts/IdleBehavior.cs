@@ -67,3 +67,7 @@ public void Blink(Animator animator) {
     animator.SetTrigger("blink");
 }
 
+public void HandWave(Animator animator) {
+    animator.SetTrigger("handWave");
+}
+
