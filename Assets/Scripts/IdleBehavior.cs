@@ -63,3 +63,7 @@ public void SitDown(Animator animator) {
     animator.SetTrigger("sitDown");
 }
 
+public void Blink(Animator animator) {
+    animator.SetTrigger("blink");
+}
+
