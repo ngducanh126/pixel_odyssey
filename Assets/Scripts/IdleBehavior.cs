@@ -71,3 +71,8 @@ public void HandWave(Animator animator) {
     animator.SetTrigger("handWave");
 }
 
+public AudioClip humClip;
+public void PlayIdleHum(AudioSource source) {
+    if (humClip != null) source.PlayOneShot(humClip);
+}
+
