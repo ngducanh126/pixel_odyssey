@@ -76,3 +76,7 @@ public void PlayIdleHum(AudioSource source) {
     if (humClip != null) source.PlayOneShot(humClip);
 }
 
+public void EarTwitch(Animator animator) {
+    animator.SetTrigger("earTwitch");
+}
+
