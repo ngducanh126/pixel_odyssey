@@ -80,3 +80,7 @@ public void EarTwitch(Animator animator) {
     animator.SetTrigger("earTwitch");
 }
 
+public void TailWag(Animator animator) {
+    animator.SetTrigger("tailWag");
+}
+
