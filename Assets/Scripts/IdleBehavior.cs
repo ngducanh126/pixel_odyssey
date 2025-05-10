@@ -84,3 +84,7 @@ public void TailWag(Animator animator) {
     animator.SetTrigger("tailWag");
 }
 
+public void Shiver(Animator animator) {
+    animator.SetTrigger("shiver");
+}
+
