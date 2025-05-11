@@ -93,3 +93,7 @@ public void Sneeze(Animator animator, ParticleSystem sneezeEffect) {
     if (sneezeEffect != null) sneezeEffect.Play();
 }
 
+public void StretchAndYawn(Animator animator) {
+    animator.SetTrigger("stretchAndYawn");
+}
+
