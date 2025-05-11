@@ -88,3 +88,8 @@ public void Shiver(Animator animator) {
     animator.SetTrigger("shiver");
 }
 
+public void Sneeze(Animator animator, ParticleSystem sneezeEffect) {
+    animator.SetTrigger("sneeze");
+    if (sneezeEffect != null) sneezeEffect.Play();
+}
+
