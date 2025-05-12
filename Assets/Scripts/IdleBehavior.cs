@@ -97,3 +97,7 @@ public void StretchAndYawn(Animator animator) {
     animator.SetTrigger("stretchAndYawn");
 }
 
+public void LookAtCamera(Animator animator) {
+    animator.SetTrigger("lookAtCamera");
+}
+
