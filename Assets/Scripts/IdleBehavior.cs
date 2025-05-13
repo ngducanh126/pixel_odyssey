@@ -101,3 +101,7 @@ public void LookAtCamera(Animator animator) {
     animator.SetTrigger("lookAtCamera");
 }
 
+public void IdleJumpScare(Animator animator) {
+    animator.SetTrigger("jumpScare");
+}
+
