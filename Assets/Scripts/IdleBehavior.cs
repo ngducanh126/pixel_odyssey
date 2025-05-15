@@ -105,3 +105,7 @@ public void IdleJumpScare(Animator animator) {
     animator.SetTrigger("jumpScare");
 }
 
+public void CoinFlip(Animator animator) {
+    animator.SetTrigger("coinFlip");
+}
+
