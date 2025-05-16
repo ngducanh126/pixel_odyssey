@@ -109,3 +109,7 @@ public void CoinFlip(Animator animator) {
     animator.SetTrigger("coinFlip");
 }
 
+public void Juggle(Animator animator) {
+    animator.SetTrigger("juggle");
+}
+
