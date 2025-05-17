@@ -113,3 +113,7 @@ public void Juggle(Animator animator) {
     animator.SetTrigger("juggle");
 }
 
+public void IdleDance(Animator animator) {
+    animator.SetTrigger("idleDance");
+}
+
