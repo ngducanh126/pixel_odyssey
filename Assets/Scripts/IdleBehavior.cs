@@ -117,3 +117,7 @@ public void IdleDance(Animator animator) {
     animator.SetTrigger("idleDance");
 }
 
+public void PhoneCheck(Animator animator) {
+    animator.SetTrigger("phoneCheck");
+}
+
