@@ -121,3 +121,7 @@ public void PhoneCheck(Animator animator) {
     animator.SetTrigger("phoneCheck");
 }
 
+public void ShoeTie(Animator animator) {
+    animator.SetTrigger("shoeTie");
+}
+
