@@ -125,3 +125,7 @@ public void ShoeTie(Animator animator) {
     animator.SetTrigger("shoeTie");
 }
 
+public void HatAdjust(Animator animator) {
+    animator.SetTrigger("hatAdjust");
+}
+
