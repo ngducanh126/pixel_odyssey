@@ -129,3 +129,7 @@ public void HatAdjust(Animator animator) {
     animator.SetTrigger("hatAdjust");
 }
 
+public void PocketSearch(Animator animator) {
+    animator.SetTrigger("pocketSearch");
+}
+
