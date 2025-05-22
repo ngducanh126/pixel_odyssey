@@ -137,3 +137,8 @@ public void ShadowBox(Animator animator) {
     animator.SetTrigger("shadowBox");
 }
 
+public AudioClip snapClip;
+public void PlayFingerSnap(AudioSource source) {
+    if (snapClip != null) source.PlayOneShot(snapClip);
+}
+
