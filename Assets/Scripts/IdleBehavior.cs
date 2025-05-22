@@ -133,3 +133,7 @@ public void PocketSearch(Animator animator) {
     animator.SetTrigger("pocketSearch");
 }
 
+public void ShadowBox(Animator animator) {
+    animator.SetTrigger("shadowBox");
+}
+
