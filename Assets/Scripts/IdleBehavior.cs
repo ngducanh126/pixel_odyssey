@@ -142,3 +142,7 @@ public void PlayFingerSnap(AudioSource source) {
     if (snapClip != null) source.PlayOneShot(snapClip);
 }
 
+public void HairFlip(Animator animator) {
+    animator.SetTrigger("hairFlip");
+}
+
