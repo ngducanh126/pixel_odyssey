@@ -146,3 +146,7 @@ public void HairFlip(Animator animator) {
     animator.SetTrigger("hairFlip");
 }
 
+public void NoseRub(Animator animator) {
+    animator.SetTrigger("noseRub");
+}
+
