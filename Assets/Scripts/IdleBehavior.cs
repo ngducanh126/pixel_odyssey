@@ -150,3 +150,7 @@ public void NoseRub(Animator animator) {
     animator.SetTrigger("noseRub");
 }
 
+public void Wink(Animator animator) {
+    animator.SetTrigger("wink");
+}
+
