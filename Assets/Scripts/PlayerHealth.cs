@@ -356,3 +356,9 @@ public class PlayerHealth : MonoBehaviour
         return isInvulnerable;
     }
 }
+public void InstantDeath() {
+    health = 0;
+    UpdateHealthBar();
+    Die();
+}
+
