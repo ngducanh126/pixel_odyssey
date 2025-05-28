@@ -362,3 +362,10 @@ public void InstantDeath() {
     Die();
 }
 
+public Vector2 checkpointPosition;
+public void ReviveAtCheckpoint(float reviveHealth) {
+    transform.position = checkpointPosition;
+    health = reviveHealth;
+    UpdateHealthBar();
+}
+
