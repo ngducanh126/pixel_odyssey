@@ -369,3 +369,8 @@ public void ReviveAtCheckpoint(float reviveHealth) {
     UpdateHealthBar();
 }
 
+public GameObject healthWarningUI;
+public void ShowHealthWarning(bool show) {
+    if (healthWarningUI != null) healthWarningUI.SetActive(show);
+}
+
