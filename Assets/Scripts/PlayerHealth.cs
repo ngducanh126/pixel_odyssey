@@ -386,3 +386,16 @@ private IEnumerator GradualHealthDrainRoutine(float dps, float duration) {
     }
 }
 
+public void BoostMaxHealth(float amount, float duration) {
+    float originalMax = 100f;
+    float boostedMax = originalMax + amount;
+    health = Mathf.Min(health, boostedMax);
+    UpdateHealthBar();
+    StartCoroutine(RestoreMaxHealthAfter(boostedMax, originalMax, duration));
+}
+private IEnumerator RestoreMaxHealthAfter(float boosted, float original, float duration) {
+    yield return new WaitForSeconds(duration);
+    if (health > original) health = original;
+    UpdateHealthBar();
+}
+
