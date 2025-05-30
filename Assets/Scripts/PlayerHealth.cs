@@ -374,3 +374,15 @@ public void ShowHealthWarning(bool show) {
     if (healthWarningUI != null) healthWarningUI.SetActive(show);
 }
 
+public void StartGradualHealthDrain(float dps, float duration) {
+    StartCoroutine(GradualHealthDrainRoutine(dps, duration));
+}
+private IEnumerator GradualHealthDrainRoutine(float dps, float duration) {
+    float timer = 0f;
+    while (timer < duration) {
+        TakeDamage(dps * Time.deltaTime);
+        timer += Time.deltaTime;
+        yield return null;
+    }
+}
+
