@@ -399,3 +399,10 @@ private IEnumerator RestoreMaxHealthAfter(float boosted, float original, float d
     UpdateHealthBar();
 }
 
+public void ApplyFallDamage(float fallHeight, float threshold, float damagePerUnit) {
+    if (fallHeight > threshold) {
+        float damage = (fallHeight - threshold) * damagePerUnit;
+        TakeDamage(damage);
+    }
+}
+
