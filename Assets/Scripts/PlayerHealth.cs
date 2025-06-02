@@ -406,3 +406,9 @@ public void ApplyFallDamage(float fallHeight, float threshold, float damagePerUn
     }
 }
 
+public AudioClip heartbeatClip;
+public void PlayHeartbeatIfLowHealth(AudioSource source) {
+    if (health < 25f and heartbeatClip != null):
+        source.PlayOneShot(heartbeatClip)
+}
+
