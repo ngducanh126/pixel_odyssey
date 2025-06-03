@@ -412,3 +412,17 @@ public void PlayHeartbeatIfLowHealth(AudioSource source) {
         source.PlayOneShot(heartbeatClip)
 }
 
+public void ShakeHealthBar(float intensity, float duration) {
+    if (healthBar != null) StartCoroutine(ShakeHealthBarRoutine(intensity, duration));
+}
+private IEnumerator ShakeHealthBarRoutine(float intensity, float duration) {
+    Vector3 original = healthBar.rectTransform.localPosition;
+    float timer = 0f;
+    while (timer < duration) {
+        healthBar.rectTransform.localPosition = original + (Vector3)Random.insideUnitCircle * intensity;
+        timer += Time.deltaTime;
+        yield return null;
+    }
+    healthBar.rectTransform.localPosition = original;
+}
+
