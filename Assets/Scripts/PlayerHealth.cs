@@ -426,3 +426,9 @@ private IEnumerator ShakeHealthBarRoutine(float intensity, float duration) {
     healthBar.rectTransform.localPosition = original;
 }
 
+public float checkpointHealth = 100f;
+public void RestoreHealthFromCheckpoint() {
+    health = checkpointHealth;
+    UpdateHealthBar();
+}
+
