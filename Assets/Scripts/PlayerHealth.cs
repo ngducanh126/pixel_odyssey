@@ -432,3 +432,9 @@ public void RestoreHealthFromCheckpoint() {
     UpdateHealthBar();
 }
 
+public delegate void HealthFullyRestored();
+public event HealthFullyRestored OnHealthFullyRestored;
+public void NotifyHealthFullyRestored() {
+    if (OnHealthFullyRestored != null) OnHealthFullyRestored();
+}
+
